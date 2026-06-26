@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+  
+  <meta property="og:title" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Discover the origins and technology behind composable data systems. Learn the fundamentals of data systems and why you need to embrace composability.">
+  <meta property="og:image" content="assets/images/codex/seo/cover-seo-chapter-0.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="556">
+  <meta property="og:image:type" content="image/png">
+  <meta property="twitter:domain" content="">
+  <meta property="twitter:url" content="https://voltrondata.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@VoltronData">
+  <meta name="twitter:title" content="A new frontier: &lt;br&gt;Composable data systems">
+  <meta name="twitter:description" content="Discover the origins and technology behind composable data systems. Learn the fundamentals of data systems and why you need to embrace composability.">
+  <meta name="twitter:image" content="assets/images/codex/seo/cover-seo-chapter-0.png">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A new frontier: Composable data systems | Voltron Data</title>
+<meta name="generator" content="Jekyll v4.2.1">
+<meta property="og:title" content="A new frontier: Composable data systems">
+<meta name="author" content="Voltron Data">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Discover the origins and technology behind composable data systems. Learn the fundamentals of data systems and why you need to embrace composability.">
+<meta property="og:description" content="Discover the origins and technology behind composable data systems. Learn the fundamentals of data systems and why you need to embrace composability.">
+<link rel="canonical" href="https://voltrondata.com/codex/a-new-frontier">
+<meta property="og:url" content="https://voltrondata.com/codex/a-new-frontier">
+<meta property="og:site_name" content="Voltron Data">
+<meta property="og:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-0.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-05-03T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-0.png">
+<meta property="twitter:title" content="A new frontier: Composable data systems">
+<script type="application/ld+json" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Voltron Data"},"dateModified":"2023-05-03T00:00:00+00:00","datePublished":"2023-05-03T00:00:00+00:00","description":"Discover the origins and technology behind composable data systems. Learn the fundamentals of data systems and why you need to embrace composability.","headline":"A new frontier: Composable data systems","image":"https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-0.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://voltrondata.com/codex/a-new-frontier"},"url":"https://voltrondata.com/codex/a-new-frontier"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;display=swap">
+
+
+  <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link href="output.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+
+  <script src="assets/js/main.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+  <script defer data-domain="voltrondata.com" src="https://plausible.io/js/script.tagged-events.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+  
+  
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+  <link type="application/atom+xml" rel="alternate" href="https://voltrondata.com/feed.xml" title="Voltron Data">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+    <link rel="stylesheet" href="assets/css/archive-fallback.css">
+</head>
+<body>
+<header class="fixed inset-x-0 top-0 z-40">
+
+  <nav class="site-header-codex bg-transparent border-gray-200 !tracking-[0.01em]" aria-label="Global">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto my-auto pl-6 md:pl-6 lg:pl-4 pr-4 pt-[0.4rem] sm:pt-[1.4rem] md:pt-[1.7rem] lg:pt-[1.7rem]">
+        <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/" class="flex items-center space-x-2 rtl:space-x-reverse">
+          <img class="h-[1.15rem] sm:h-[1.2rem] md:h-[1.4rem] lg:h-[1.4rem] -mt-1" src="assets/images/voltron-data.svg" alt="Voltron Data">
+        </a>
+        <div class="flex items-center">
+            <button onclick="toggleMenu()" type="button" class="sm:inline-flex md:hidden lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span id="nav-trigger" class="nav-trigger sr-only">Open main menu</span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mega-menu-icons" class="items-center justify-between hidden w-full sm:hidden md:flex md:w-auto md:order-1">
+          <ul class="flex flex-col mt-4 font-normal md:flex-row md:mt-0 md:space-x-8 lg:space-x-12 rtl:space-x-reverse">
+            <li>
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+                <!-- Product -->
+                  Product
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover" class="absolute z-10 hidden w-auto">
+                <div aria-labelledby="dropdownHoverButton group">
+                  <div class="grid grid-cols-2 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group w-[18.2rem] rounded-l-md">
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/theseus" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-l-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="assets/images/nav/cover-theseus.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Theseus
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Our embeddable data engine.<br>Your product.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group w-[18.2rem] rounded-r-md">
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/enterprise-support" type="button" class="group-hover:bg-white hover:!no-underline block text-left  rounded-r-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="assets/images/nav/cover-enterprise.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Enterprise Support
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Get help adopting open standards.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <button id="dropdownHoverButton3" data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Resources -->
+                  Resources
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover3" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+
+                <div aria-labelledby="dropdownHoverButton3 group">
+                  <div class="grid grid-cols-3 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-l-md">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 pl-4">
+                        Featured
+                      </p>
+                      <a href="index.html" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-bl-md">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="assets/images/nav/cover-codex.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          The Composable<br>Codex
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          A 5-part guide to understanding composable data systems.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem]">
+                      <p class="flex invisible items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 px-4">
+                        Featured
+                      </p>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/benchmarks" type="button" class="group-hover:bg-white hover:!no-underline block text-left">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="assets/images/nav/cover-benchmark.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="relative px-4 text-black text-[1.7rem] leading-snug font-bold mr-4 !my-0">
+                          Benchmarks <span class="inline-block mr-2">Report</span>
+                        </p>
+                        <span class="absolute text-greenvoda-500 text-[0.65rem] bg-[#EBF4F4] font-space px-2.5 !py-2 -mt-8 ml-[7.5rem] font-light rounded inline !mb-0">NEW</span>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 pl-4 px-4 md:mb-9 lg:mb-0 !mt-0">
+                          Read about our 2024 benchmarks for our data engine, Theseus.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 pr-3 mr-4">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Resources
+                      </p>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/blog" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-blog.svg" alt="Blog icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/flexibility" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/productivity" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/lower-cost" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Company -->
+                  Company
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover2" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+                <div aria-labelledby="dropdownHoverButton2 group">
+                  <div class="border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 mx-3">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Company
+                      </p>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/about" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 mb-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-about.svg" alt="About icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            About
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/news" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-news.svg" alt="News icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            News
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/careers" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-careers.svg" alt="Careers icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Careers
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/contact" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="assets/images/header/icon-contact.svg" alt="Contact icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Contact
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+  
+    <!-- Mobile Menu -->
+    <div id="nav-menu-overlay" class="lg:invisible" role="dialog" aria-modal="true">
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+  
+        <div class="flex flex-wrap items-center justify-between w-full !px-5">
+          <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/">
+            <span class="sr-only">Voltron Data</span>
+            <img class="h-[1.3rem] sm:h-[1.3rem] md:h-[1.4rem] lg:h-[1.4rem] w-auto my-5" src="assets/images/voltron-data.svg" alt="Voltron Data">
+          </a>
+          <button onclick="toggleMenu()" class="rounded-md py-2.5 text-[#005151]">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <div class="flow-root">
+          <div class="mt-0 my-10">
+            
+            <div id="accordion-color" data-accordion="collapse">
+              <div class="group">
+                <p id="accordion-flush-heading-1" data-accordion="collapse" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
+                    <span class="pl-5 text-black">Product</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                  <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/theseus" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Theseus</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Our embeddable data engine. Your product.
+                    </p>
+                  </a>
+                  <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/enterprise-support" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Enterprise Support</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Get help adopting open standards.
+                    </p>
+                  </a>
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-2" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class=" sgroup flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-active-classes="bg-transparent" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                    <span class="pl-5 text-black">Resources</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                  <a href="index.html" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">The Composable Codex</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      A 5-part guide to understanding composable data systems.
+                    </p>
+                  </a>
+                  <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/benchmarks/theseus" class="py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Benchmarking Report</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Read about our 2024 benchmarks for our data engine, Theseus.
+                    </p>
+                  </a>
+                  <div class="py-3 block border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/blog" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-blog.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/flexibility" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/productivity" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/resources/data-systems/lower-cost" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left5">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-3" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="group flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                    <span class="pl-5 text-black">About</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                  <div class="py-3 border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/about" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-about.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            About
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/news" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-news.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            News
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/careers" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-careers.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Careers
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/contact" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="assets/images/header/icon-contact.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Contact
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- <div class="pt-20 mx-14 absolute inset-x-0 bottom-4"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+
+<!-- Codex modal -->
+<div id="form-codex" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 !z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white shadow-xl px-0 py-9">
+          <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="form-codex">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+          </button>
+          <div id="form-container" class="px-0">
+            <img class="h-[4.2rem] w-full object-contain mb-3 mt-6 " src="assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            <br>
+            <p class="!text-[0.95rem] !my-0 !px-14 !font-light !text-center" style="color: black !important">Sign up to receive email notifications<br>to stay in The Composable Codex loop.</p>
+            <br>
+            <form id='my-form' method='POST' name='contact-codex'><input type='hidden' name='form-name' value='contact-codex' />
+              <div class="px-14 mt-3">
+
+                <!--Email-->
+                <div>
+                  <label for="email" class="block text-sm font-normal leading-6 text-black pb-0.5 md:pb-1.5 lg:pb-1.5">Email</label>
+                  <div>
+                    <input required id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" onchange="validateEmail()" class="block w-full border-b py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#005151] sm:text-sm sm:leading-6">
+                    <span id="email-error" style="color: red; font-size: 12px;"></span>
+                  </div>                  
+                </div>
+              
+              </div>
+              <center>
+                <button type="submit" id="submit-btn" class="mt-6 flex w-fit justify-center bg-black hover:bg-[#005151] px-6 py-3 !text-base !tracking-wide font-medium leading-6 text-white rounded-full">
+                  Submit
+                </button>
+              </center>
+            </form>       
+          </div>
+          <div id="success-message" class="hidden !text-center px-10 pt-1 ">
+            <p class="font-semibold" style="color: black !important; font-size:25px !important; margin-top: 0px !important; padding-top: 0px !important; margin-bottom: 0px !important;">
+              Message Sent
+            </p>
+            <p class="text-base leading-6 text-black">
+              Thanks for your interest!
+            </p>
+          </div>
+      </div>
+  </div>
+</div> 
+
+<script nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+
+  // Form
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      // Enviar el formulario
+      fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+          // Mostrar mensaje de éxito
+          document.getElementById('form-container').classList.add('hidden');
+          document.getElementById('success-message').classList.remove('hidden');
+      })
+      .catch((error) => {
+          console.error("Error sending form: ", error);
+      });
+  };
+  document.querySelector("#my-form").addEventListener("submit", handleSubmit);
+  
+  function initHeader() {    
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+    function storeScrollData() {      
+      var y = getScrollPos().y;
+
+      var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+    setActivePageLink();
+  }
+
+  function setActivePageLink() { 
+  var pageLinks = document.querySelectorAll('a.page-link');
+  var currentUrl = window.location.pathname;
+  if(currentUrl === "/resources/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+  if(currentUrl === "/product/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+
+  pageLinks.forEach(function(link) {
+    var linkUrl = new URL(link.href).pathname;
+
+    if (currentUrl === linkUrl) {
+      link.classList.add('active');
+    }
+    else{
+      link.classList.add('inactive');
+    }
+  });
+}
+
+function toggleMenu() {  
+  var navTrigger = document.getElementById("nav-trigger");  
+  if (navTrigger.checked) {
+    navTrigger.checked = false;
+    animateMenu(true);
+  } else {
+    navTrigger.checked = true;
+    animateMenu(false);
+  }
+}
+
+
+function animateMenu(open) {
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  if (open) {
+    navMenuOverlay.style.opacity = "0"; 
+    navMenuOverlay.style.display = "none";   
+  } else {
+    navMenuOverlay.style.opacity = "1";
+    navMenuOverlay.style.display = "block";
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {  
+  initHeader();  
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  navMenuOverlay.style.display = "none"; 
+});
+
+function validateEmail() {
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // Expresión regular para validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailInput.value.trim() === '') {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('invalid'); 
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = true; 
+    } else if (emailRegex.test(emailInput.value)) {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailInput.classList.remove('invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = false; 
+    } else {
+      emailInput.classList.add('invalid'); 
+      emailInput.classList.add('input-focus-invalid');
+      emailError.textContent = 'Please enter valid email'; 
+      submitBtn.disabled = true; 
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownHoverButton = document.getElementById("dropdownHoverButton");
+    const dropdownHoverButton2 = document.getElementById("dropdownHoverButton2");
+    const dropdownHoverButton3 = document.getElementById("dropdownHoverButton3");
+    const dropdownHover = document.getElementById("dropdownHover");
+    const dropdownHover2 = document.getElementById("dropdownHover2");
+    const dropdownHover3 = document.getElementById("dropdownHover3");
+    //const groupElements = document.querySelectorAll(".rounded-l-md");
+
+    dropdownHover.classList.add('hidden');    
+    dropdownHoverButton.addEventListener('mouseenter', function () {      
+      dropdownHover.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover.style.opacity = '1';
+      }, 300);
+    });
+
+    dropdownHover2.classList.add('hidden');    
+    dropdownHoverButton2.addEventListener('mouseenter', function () {      
+      dropdownHover2.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover2.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover2.style.opacity = '1';
+      }, 300);
+    });
+
+
+    dropdownHover3.classList.add('hidden');    
+    dropdownHoverButton3.addEventListener('mouseenter', function () {      
+      dropdownHover3.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover3.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover3.style.opacity = '1';
+      }, 300);
+    });
+
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener("mouseover", function() {     
+      this.classList.add("font-bold", "text-teal-900");  
+      this.style.backgroundColor = "#eef1f9";     
+      dropdownButtons.forEach(otherButton => {
+        if (otherButton !== this) {
+          otherButton.classList.remove("font-bold", "text-teal-900");
+          otherButton.style.backgroundColor = "transparent";
+        }
+      });
+    });
+  });
+});
+
+
+//load active 
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownMenus = document.querySelectorAll("[id^='dropdownHover']");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+ 
+  dropdownMenus.forEach(dropdownMenu => {
+   
+    const links = dropdownMenu.querySelectorAll("a");
+    const currentURL = window.location.pathname;
+
+    
+    const urlStyles = {
+    "/theseus": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton" },
+    "/enterprise-support": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton" },
+    "/codex": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/benchmarks": { backgroundColor: "#F6F8FD", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/blog": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/flexibility": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/productivity": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/lower-cost": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton3" },
+    "/about": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/news": { backgroundColor: "#F6F8FD" , textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/careers": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/contact": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton2" }
+  };
+ 
+    links.forEach(link => {
+     
+      const linkURL = link.getAttribute("href");
+
+      
+      if (currentURL === linkURL || (currentURL.endsWith('/') && currentURL.slice(0, -1) === linkURL)) {
+       
+        const styles = urlStyles[linkURL];
+        
+       
+        if (styles) {
+          
+          const button = document.getElementById(styles.btnId);
+          
+          
+          if (button) {
+            button.classList.add("font-bold", styles.textColor);
+            button.style.backgroundColor = styles.backgroundColor;
+            
+            dropdownButtons.forEach(otherButton => {
+              if (otherButton !== button) {
+                otherButton.classList.remove("font-bold", styles.textColor);
+                otherButton.style.backgroundColor = "transparent";
+              }
+            });
+          }
+        }
+
+      }
+    });
+  });
+});
+
+
+</script>
+
+<script type="text/javascript" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+  document.write('<style type="text/css">div.cp_oculta{display: none; font-weight:300}</style>');
+  function MostrarOcultar(capa)
+  { 
+      if (document.getElementById)
+      {
+          var aux = document.getElementById(capa).style;
+          aux.display = aux.display ? "" : "block";
+          document.getElementById("enlace" + "arrow").text = aux.display ? "" : "";
+      }
+  }
+</script>
+    <main class="page-content-codex" aria-label="Content">
+
+        <div class="article-css mx-auto max-w-7xl px-10 md:px-6 lg:px-4">
+          
+          <div class="pt-28 md:pt-36 lg:pt-44 mb-[3.5rem] lg:mb-[4rem]">
+            <a href="index.html">
+              <img class="h-20 w-full object-contain my-2" src="assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            </a>
+          </div>
+
+          <div class="mt-0 lg:mt-10 mb-10 md:mb-14 lg:mb-32 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-3 lg:gap-5 align-middle place-content-stretch">
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="a-new-frontier.html" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3  bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-0-active.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-semibold inline md:inline-block lg:inline-block">00</span>
+                  <span class="text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem] font-semibold">
+                    <span class="inline md:block lg:block">A New</span> Frontier</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="open-standards.html" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-1.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">01</span>
+                  <span class="text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Open</span> Standards</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="language-interoperability.html" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-2.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">02</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Language</span> Interoperability</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="data-connectivity.html" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-3.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">03</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Data</span> Connectivity</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="accelerated-hardware.html" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-0.5 lg:px-0.5 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-4.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">04</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Accelerated </span> Hardware</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+
+          <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-14 lg:gap-16 mt-18 md:mt-24 lg:mt-32">
+            <div class="chapter-intro col-span-1 md:col-span-3 lg:col-span-3 pb-4 order-2 md:order-1 lg:order-1">
+              <div class="text-xs hidden md:block lg:block">
+                <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono">
+                  Chapter 00
+                </div>
+              </div>
+<br>
+
+              <h1 class="hidden md:block lg:block mb-4 md:mb-6 lg:mb-6">A new frontier: <br>Composable data systems</h1>
+
+              <div class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6">
+                Building data systems is hard: it is expensive, sucks up resources, and few experts are capable of designing and implementing them. But the tides are shifting. Instead of coding from scratch, the pieces are now in place to build by composing first.
+                <br><br>
+                In this chapter, we share some of the history behind the design of composable data systems: how it started, what it took, and where we are today. We define the key layers of a data system, and how they can be composed by reusing open source software components and building on top of open standards.
+              </div>
+              <h2 class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6 pt-6 lg:pt-10 mb-0 md:mb-3 lg:mb-5">
+                So, what are composable data systems? <a href="#composable-data-systems">Keep reading below</a>.
+              </h2>
+            </div>
+
+            <div class="seo-li col-span-1 md:col-span-2 lg:col-span-2 order-1 md:order-2 lg:order-2 mt-18 md:mt-5 lg:mt-5">
+              <div class="pb-0 md:pb-4 pt-3 md:pt-0 lg:pt-10">
+                <div class="px-3 md:px-6 lg:px-6 py-12 border border-black">
+                  
+                  <div class="my-0 lg:my-[2.1rem] text-xs block md:hidden lg:hidden pl-[1.35rem]">
+                    <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono text-[0.65rem]">
+                      Chapter 00
+                    </div>
+                  </div>
+                  <p class="block md:hidden lg:hidden !pb-2 pl-[1.35rem] text-2xl font-bold">A new frontier: <br>Composable data systems</p>
+            
+                  <div class="grid grid-cols-3 gap-2 text-xs px-6 lg:px-8">
+                    <div class="col-span-2">
+                      <div class="inline text-xs font-light bg-[#e3e3e3] w-fit p-1">Estimated Read Time:</div>
+                    </div>
+                    <div class="text-gray-900 text-left font-extralight">14 minutes</div>
+                  </div>
+                  
+                  <div>
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.14em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.18rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit p-1">Topics:</div>
+                    </div>
+                      <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                        <ul>
+                          <li class="text-xs font-space">Composability</li>
+                          <li class="text-xs font-space">Standards</li>
+                          <li class="text-xs font-space">Modules</li>
+                        </ul>
+                      </div>
+                    </div>
+                
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.14em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.18rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit p-1">Tags:</div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        <li class="text-xs font-space">Modular</li>
+                        <li class="text-xs font-space">Interoperable</li>
+                        <li class="text-xs font-space">Customizable</li>
+                        <li class="text-xs font-space">Extensible</li>
+                        <li class="text-xs font-space">Data Systems</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+
+        <div class="article-css bg-no-repeat bg-cover bg-top md:bg-right lg:bg-center bg-[url('../../assets/images/codex/chapter0/main-image-full-mobile.jpg')] sm:bg-[url('../../assets/images/codex/chapter0/main-image-full-sm.jpg')] md:bg-[url('../../assets/images/codex/chapter0/main-image-full.jpg')] lg:bg-[url('../../assets/images/codex/chapter0/main-image-full.jpg')]">
+          <!-- Banner -->
+          <div class="my-14 banner-phrase">
+            <div class="mx-auto md:max-w-3xl lg:max-w-5xl px-10 md:px-5 lg:px-10">
+              <div class="pt-6 md:pt-[4rem] lg:pt-[4rem] pb-10 md:pb-24 lg:pb-[8rem]">
+                <p class="banner-quote md:!leading-[3rem] lg:!leading-[3.5rem] !mb-0">"Invention, it must be humbly admitted, <span class="block">does not consist in creating out of void, </span>but out of chaos."</p>
+                <p class="text-[18px] mt-[25px] mb-[20px] font-bold">Mary Shelley<br><span class="font-medium">author of FRANKENSTEIN</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-css mx-auto max-w-7xl">
+          <div class="px-10 md:px-6 lg:px-4">
+
+            <!-- FIX ToC -->
+            <nav id="navegacion" class="section-nav w-[100%] md:w-[17rem] lg:w-[21rem] xl:w-[24rem] pt-6 md:pt-4 lg:pt-6 navegacion float-none md:float-left lg:float-left">
+              
+              <div class="px-10 md:px-5 lg:px-8 pt-9 pb-7 border border-black">
+          
+                  <center>
+                    <div class="bg-[#000000] text-white w-fit py-0.5 px-[0.3rem] text-[0.74rem] border-black border font-normal">
+                      Contents
+                    </div>
+                  </center>
+
+                
+                <div class="-mt-3 pb-10">
+                  <span class="-mt-[0.148em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.17rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                </div>
+
+
+                <div class="list text-gray-900 text-xs leading-5">
+
+                  <ol class="zero">
+                    <li>
+                      <a href="#composable-data-systems" class="nav-id nav-link">
+                        The path to composable data systems
+                      </a>
+                    </li>
+                  </ol>
+
+                  <ol>
+                    <li>
+<a href="#starting-from-zero" class="nav-id nav-link">
+                        Starting from zero</a>
+
+                        <ol class="foo" style="padding: 4px 0 0 1px;">
+                          <li><a href="#micro-trends" class="nav-id nav-link">Micro trends</a></li>
+                          <li><a href="#macro-trends" class="nav-id nav-link">Macro trends</a></li>
+                        </ol>
+                    </li>
+
+                    <li>
+<a href="#building-a-new-composable-frontier" class="nav-id nav-link">
+                      Building a new composable frontier</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#open-source-gives-you-more-choices" class="nav-id nav-link">Open source gives you more choices</a></li>
+                        <li><a href="#standards-help-you-make-better-choices" class="nav-id nav-link">Standards help you make better choices</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#composing-the-next-frontier" class="nav-id nav-link">
+                      Composing the next frontier</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#what-is-a-composable-data-system" class="nav-id nav-link">What is a composable system?</a></li>
+                        <li><a href="#structure-of-a-composable-data-system" class="nav-id nav-link">Structure of a composable data system</a></li>
+                        <li><a href="#why-now" class="nav-id nav-link">Why now?</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#keep-up-with-composable-data-systems" class="nav-id nav-link">
+                      Keep up with composable data systems</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#how-can-I-keep-up-with-voltron-data" class="nav-id nav-link">How can I keep up with Voltron Data?</a></li>
+                        <li><a href="#who-is-the-composable-codex-for" class="nav-id nav-link">Who is The Composable Codex for?</a></li>
+                        <li><a href="#who-wrote-the-composable-codex" class="nav-id nav-link">Who wrote The Composable Codex?</a></li>
+                        <li><a href="#how-can-I-cite-the-codex" class="nav-id nav-link">How can I cite The Codex?</a></li>
+                      </ol>
+                    </li>
+                  </ol>  
+
+                </div>
+              </div>   
+              <div class="grid grid-cols-5 border-l border-r border-b border-black">
+                <a class="group border-r border-black py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="index.html">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-[0.35rem] group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+                    </svg>
+                  </center>                 
+                </a>
+                <a class="group col-span-4 py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="open-standards.html">
+                  <center>
+                    <span class="inline h-5 text-xs group-hover:!text-white tracking-wide">Next chapter</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline ml-1 group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                    </svg>                    
+                  </center>
+                </a>
+              </div>
+            </nav>
+
+            <div id="NavigationContent" class="top-fix w-full md:w-[60%] lg:w-[62%] top-0 relative inline-block float-none md:float-right lg:float-right">
+              <a id="composable-data-systems"></a>
+              <p><a id="composable-data-systems" name="composable-data-systems"></a></p>
+<h2 class="!pt-8 md:!pt-0 lg:!pt-0">
+<font>0.0</font> The path to composable data systems</h2>
+
+<p>Back in 2010, a movement started without a name.</p>
+
+<p>You can think of it as the “build your own database” (BYODB) movement. Or the “build your own data system” movement. We’ve also heard the “build your own data engine”, the “build your own execution engine”, and even the “build your own data processing system” movement.</p>
+
+<p>Meta is <a href="https://engineering.fb.com/2023/03/09/open-source/velox-open-source-execution-engine/" target="_blank">building their own data system</a>. Walmart is <a href="https://blogs.nvidia.com/blog/2019/07/11/walmart-nvidia/" target="_blank">building their own data system</a>. So is Microsoft, GE, Netflix, Airbnb, Apple, Two Sigma, Twitter, Man Group, Goldman Sachs, and the list goes on.</p>
+
+<p>These companies have effectively started building their own data systems in-house. What does that look like? A typical data system is a collection of both hardware and software that people in an organization can use to work with data. The layers of the system work together so that people can store, access, transform, and analyze data. Databases, Data Warehouses, and Data Lakes are all flavors of data systems you might be familiar with.</p>
+
+<p>The dream is that the system just works seamlessly: there is infinitely scalable storage, execution is fast, and data can be queried without caveats about which programming languages or APIs are supported. As <a href="https://benn.substack.com/p/the-end-of-big-data" target="_blank">Benn Stancil</a> put it: “bigger, faster, and polyglot.”</p>
+
+<div class="grid place-content-end !my-0 !py-0"><a class="!font-plus text-xs !font-light !border-b-0 !text-right" href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716491201/dream-data-system.png" download="">Download ↓</a></div>
+<p class="!mt-1 !mb-6">
+<img class="border border-black py-2" src="assets/images/codex/chapter0/dream-data-system.svg" alt="Diagram showing the ideal data system setup where various programming languages are queryable with infinitely scalable storage. The top row contains three individual boxes, each containing icons for the programming languages SQL, Python, and R. The bottom row is one large box that says Infinitely Scalable Storage… with an icon of storage containers. Three arrows extend from this box up to the three boxes with programming languages. In the middle there is floating text that says ...querable with…."></p>
+<figcaption class="!mt-0 center !pt-0"><span class="font-bold">Figure 00.01. </span>The dream: a data system that just works. Source: 
+<a href="https://benn.substack.com/p/the-end-of-big-data" target="_blank">Benn Stancil
+</a></figcaption>
+
+<p>In “<a href="https://www.oreilly.com/content/in-search-of-database-nirvana/" target="_blank">search of database nirvana</a>”, the BYODB movement was born. Companies that could afford it started building all or a significant portion of the software components from scratch - engineering entirely bespoke data systems to serve their niche needs.</p>
+
+<p>Although we cannot know the exact numbers, a fair estimate is that each of these companies has invested upwards of $100 million dollars a year to this cause. And for most companies, building data systems is not their core business. From companies that have raised money to build databases as their core business, we know that it is both hard and expensive to build a new database.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Money Raised</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/snowflake-computing" target="_blank">Snowflake</a></td>
+      <td>$2B</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/databricks" target="_blank">Databricks</a></td>
+      <td>$4B</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/mongodb-inc" target="_blank">MongoDB</a></td>
+      <td>$311M</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/memsql" target="_blank">SingleStore</a></td>
+      <td>$464.1M</td>
+    </tr>
+    <tr>
+      <td>
+<a href="https://www.crunchbase.com/organization/cockroach-labs" target="_blank">Cockroach Labs</a>  (CockroachDB)</td>
+      <td>$633.1M</td>
+    </tr>
+    <tr>
+      <td>
+<a href="https://www.crunchbase.com/organization/pingcap" target="_blank">Pingcap</a>  (TiDB)</td>
+      <td>$341.6M</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/elasticsearch" target="_blank">Elastic</a></td>
+      <td>$162M</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/timescaledb" target="_blank">TimescaleDB</a></td>
+      <td>$181.1M</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/motherduck" target="_blank">MotherDuck</a></td>
+      <td>$100M</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.crunchbase.com/organization/polars" target="_blank">Polars</a></td>
+      <td>€3.6M</td>
+    </tr>
+  </tbody>
+</table>
+
+<center><figcaption class="center">
+<span class="font-bold pr-1">Table 00.01. 
+</span>Money raised to build databases as products. Data from <a href="https://www.crunchbase.com/" target="_blank">Crunchbase</a> (September 2023)
+</figcaption></center>
+
+<p><a name="starting-from-zero"></a></p>
+<h2 id="01-starting-from-zero">
+<font>0.1</font> Starting from zero</h2>
+
+<p>So, why are companies like Netflix building their own data systems in-house? As a group of engineers at Meta, Voltron Data, Databricks, and Sundeck note:</p>
+
+<!-- Quote -->
+<div class="block pt-3 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/6 md:h-4/5 lg:h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">hundreds of database system offerings were developed in the last few decades and are today available in the industry…</p>
+            <p class="!mt-2 !text-xs"><a href="https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf" target="_blank">Pedreira et al. (2023)</a></p>
+        </div>
+    </div>
+</div>
+
+<p>The fundamental reason most companies chose to go the BYODB path-even with hundreds of choices and even though the investment was so expensive-is that they thought there was nothing in the market to serve their niche. And at the time, they were right.</p>
+
+<p>The decision to spend millions of dollars and years of development on a moonshot data infrastructure project cannot be easy for any company. What would push a company over the edge to choose to build their own data system? It is likely a combination of two trends happening in the universe:</p>
+
+<ol>
+  <li>
+<mark>Micro trends</mark> <em>(“small world” scale trends that pushed them away from their current system)</em>, and</li>
+  <li>
+<mark>Macro trends</mark> <em>(“big world” industry-scale trends that pulled them towards making a change)</em>.</li>
+</ol>
+
+<p><a name="micro-trends"></a></p>
+<h3 id="011-micro-trends">
+<font>0.1.1</font> Micro trends</h3>
+
+<p>There are three common micro trends at play, all of which are tough for any off-the-shelf data system to deliver:</p>
+
+<ol>
+  <li>
+<mark>Lock-in</mark>: Nobody likes feeling locked into their stack. Especially when they know that any change to the system means they will need to:
+    <ul>
+      <li>Migrate all the data into the new system,</li>
+      <li>Retrain all the data teams to use the new system, and</li>
+      <li>Rewrite all the existing data workloads in a new user interface.</li>
+    </ul>
+  </li>
+  <li>
+<mark>Scale</mark>: Nobody likes running out of resources. Especially when they have to rewrite queries to scale a workload.</li>
+  <li>
+<mark>Performance</mark>:<br>Nobody likes a slow system. Speed matters. Compute time matters. Data transport time matters.</li>
+</ol>
+
+<p><a name="macro-trends"></a></p>
+<h3 id="012-macro-trends">
+<font>0.1.2</font> Macro trends</h3>
+
+<p>So the micro trends made teams feel like they were stuck with their data systems. Meanwhile, these same teams were looking ahead, and could see the emergence of two macro trends on the horizon:</p>
+
+<ol>
+  <li>
+    <p><strong><mark>The AI Arms Race</mark></strong>: <br><br>Even before <a href="https://a16z.com/2023/05/25/ai-canon/" target="_blank">the rise of LLMs</a>, there was a real need for “<a href="https://youtu.be/wdmf1msbtVs" target="_blank">faster, more scalable, more cost-effective machine learning.</a>” In the early days of the BYODB movement, many companies may not have been able to pinpoint exactly how or why they would need to use AI or ML. But, for sure, no one wanted to be caught flat-footed in the “AI Arms Race.” The FOMO (<em>fear of missing out</em>) was real.</p>
+  </li>
+  <li>
+    <p><strong><mark>The rise of GPUs and other accelerated hardware</mark></strong>:<br><br>Hardware has changed both in predictable and unpredictable ways since the start of the BYODB movement. What was once a field where CPUs reigned is now “<a href="https://contrary.com/foundations-and-frontiers/evolution-of-chips" target="_blank">a wild west of hardware</a>”, where chips like GPUs, FPGAs, ASICs, TPUs, and other specialized hardware have been rapidly evolving. But, as <a href="https://youtu.be/wdmf1msbtVs" target="_blank">noted at JupyterCon in 2018</a>, “the tools we use have not scaled so gracefully to take advantage of modern hardware.” Developers leading the BYODB movement realized that while software was a gatekeeper to accelerated hardware, this was just temporary. In the future, software would provide a gateway to accelerated hardware, but only for those whose systems were positioned to <a href="https://hardwarelottery.github.io/" target="_blank">win the hardware lottery</a>. Just as with AI, no one wanted to hear the question “GPUs are here - are we ready?” and answer “no.” The FUD (<em>fear, uncertainty, and doubt</em>) was real.</p>
+  </li>
+</ol>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 pt-4 pb-3">
+    <!-- Image  -->
+    <div>
+        <p class="!m-0 !text-right"><a download="" href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/data-system-hardware-trends.png" class="!font-plus text-xs !font-light !border-b-0">Download ↓</a></p>
+        <div class="border border-black">
+        <lottie-player speed="1" autoplay="" loop="" src="assets/images/codex/chapter0/data-system-hardware-trends.json" alt="A chart illustrating trends in hardware. The Y axis represents Speed and the X axis represents Time. The data shows that Storage, Network, and GPUs have gotten faster over time. The CPU line runs across the chart flat, demonstrating CPUs have not increased speed over time." class="py-6" style="width:400px; height: 300px;">
+        </lottie-player>
+        </div>
+        <br>
+        <center><figcaption>
+        <span class="font-bold pr-1">Figure 00.02. </span>Trends in hardware.</figcaption></center>
+    </div>
+    <div class="pb-2 pt-2 md:pt-2 lg:pt-12 pl-0 md:pl-0 lg:pl-5">
+        <ul class="space-y-2 md:space-y-3 lg:space-y-3">
+            <li>
+<b>Storage</b> + <b>networking</b> becoming much faster</li>
+            <li>
+<b>Hardware accelerators</b> delivering better compute</li>
+            <li>
+<b>Single-core CPU</b> performance topping out</li>
+        </ul>
+    </div>
+</div>
+
+<p>For all these reasons and probably more, we now have a nice little cohort of companies who have been building their own data systems and lived to tell us about it.</p>
+
+<p><a name="building-a-new-composable-frontier"></a></p>
+<h2 id="02-building-a-new-composable-frontier">
+<font>0.2</font> Building a new composable frontier</h2>
+
+<p>What does this new frontier of data systems look like? It actually looks a lot like your traditional data system.</p>
+
+<div class="block pt-3 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/6 md:h-4/5 lg:h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">While modern specialized data systems may seem distinct at first, at the core, they are all composed of a similar set of logical components.</p>
+            <p class="!mt-2 !text-xs"><a href="https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf" target="_blank">Pedreira et al. (2023)</a></p>
+        </div>
+    </div>
+</div>
+
+<p>A minimal viable data system can be broken down into three main layers:</p>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716491528/composable-data-system-modules.png" download="" class="!font-plus text-xs !font-light !border-b-0">Download ↓</a></p>
+<!-- Column 2 Images  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 border border-black py-6 md:py-8 lg:py-8 pr-4 lg:pr-8 pl-4 lg:pl-8">
+    <lottie-player id="figure0003-key" speed="0.5" src="assets/images/codex/chapter0/composable-data-system-modules--key.json" alt="A diagram that explains three main layers of a data system. On the left side of the diagram, there is a numerical Key labeled one through three that defines the “Layers”. Layer one defines the User Interface as “users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API”. Layer two defines the Execution Engine as “The engine performs operations on the data, as specified by users”. Layer three defines “Data Storage” as This is the layer that stores data that is available to users”. On the right side of the diagram, the data system is visualized by boxes lined up vertically. At the top is layer one, layer two is below it, layer three is at the bottom. Layer One represents the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. Layer two is the execution engine which performs operations on the data, as specified by users. Layer three is data storage which stores data that is available to users. Between each layer are boxes that are grayed out. Between Layer One and Layer Two are two boxes: Intermediate Representation is written in the top box and below it is a box that represents Connectivity. Between Layer 2 and Layer three are boxes that represent Intermediate Representation and Data Memory Layout. The content within these boxes represents standards that will be covered in Figure 00.05 later in the chapter." class="h-64 md:h-60 lg:h-[300px] w-full">
+    </lottie-player>
+    <lottie-player id="figure0003-stack" speed="0.5" src="assets/images/codex/chapter0/composable-data-system-modules--stack.json" alt="A diagram that shows the three layers of a data system. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+</div>
+<center>
+  <figcaption class="center py-5">
+     <span class="font-bold pr-1">Figure 00.03. </span>The three main layers in a data system.
+  </figcaption>
+</center>
+
+<p>There is a lot of room for innovation within and between these layers. Each layer is an onion with its own layers. As just one example, optimizers often exist as a layer within execution engines. In a bespoke data system, one or more of these layers will be developed as custom software. But that does not mean that the whole layer needs to be engineered from scratch. One thing the BYODB movement made painfully clear is that building most of these layers from the ground up is not the optimal use of everyone’s time and money.</p>
+
+<!-- Quote: Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+    <p class="!mt-0 md:!mt-5 lg:!mt-5 !pr-0 md:!pr-10 lg:!pr-12">Many talented engineers are developing the same thing over and over again, building systems that are essentially minor incremental improvements over the status quo.</p>
+    <!-- Quote  -->
+    <div class="block pt-5 lg:pt-0 pb-5 lg:pb-5">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-6">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-3/5 md:h-4/5 lg:h-4/5 "></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-5 text-left">     
+                <p class="text-left !mb-2">We have companies that have a lot of money writing the same database system software over and over.</p>
+                <p class="!mt-2 !text-xs"><a href="https://youtu.be/7V1oi_8uvuM" target="_blank">Andy Pavlo</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Luckily, once they started building their own data systems, teams inside those pioneering companies started realizing the power of two complementary forces:</p>
+
+<ol>
+  <li><mark>Open source gives you more choices</mark></li>
+  <li><mark>Standards help you make better choices</mark></li>
+</ol>
+
+<p>Understanding how to balance these two forces has laid the groundwork for a paradigm shift in how we think about modern data system design.</p>
+
+<p><a name="open-source-gives-you-more-choices"></a></p>
+<h3 id="021-open-source-gives-you-more-choices">
+<font>0.2.1</font> Open source gives you more choices</h3>
+
+<p>Early on in the BYODB movement, teams realized that you do not have to work on the entirety of the problem. Instead, you can work on slivers of the problem.</p>
+
+<!-- Quote: Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pb-5">
+    <div class="pr-0 md:pr-5 lg:pr-5">
+        <p>This realization enabled a number of open source projects to crop up and start gaining traction. Many of these open source projects took the <a href="https://en.wikipedia.org/wiki/Unix_philosophy" target="_blank">Unix philosophy</a> to heart: make each project do one thing well.</p>
+    </div>
+    <!-- Quote  -->
+    <div class="block pl-0 lg:pl-16 py-5 lg:py-1">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-[70%] md:h-4/6 lg:h-[72%] "></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+                <p class="text-left !mb-2">Open source means each problem only has to be solved once.</p>
+                <p class="!mt-2 text-xs"><a href="https://twitter.com/naval/status/1444366754650656770?s=20" target="_blank">Naval Ravikant</a> (<a href="https://twitter.com/naval" target="_blank">@naval</a>), co-founder and chairman of <a href="https://wellfound.com/" target="_blank">AngelList</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quote -->
+<div class="block pt-2 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">You are starting to see various projects, in the open source community or organizations, to break out portions of a modern OLAP system into standalone components that are open source that other people can build on, other people can take advantage of, and other people could reuse for their own new OLAP systems. The idea here is that instead of everyone building the same thing, let's everyone work together on one thing, and have that be really really good and everyone gets to reap the rewards.</p>
+            <p class="!mt-2 !text-xs"><a href="https://www.youtube.com/watch?v=7V1oi_8uvuM" target="_blank">Andy Pavlo</a></p>
+        </div>
+    </div>
+</div>
+
+<p>One example of this kind of open source project is <a href="https://calcite.apache.org/" target="_blank">Apache Calcite</a>, a query parser and optimizer that can be embedded in an execution engine. Their website headline says it best: “The foundation for your next high-performance database.” This means a team could lean on Calcite instead of having to build their own query optimizer from scratch, one of the hardest pieces of a data system to implement well.</p>
+
+<!-- Quote -->
+<div class="block pt-2 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-3/4 md:h-5/6 lg:h-5/6 "></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">There is probably no single person in the world who fully understands all subtleties of the complex interplay of rewrite rules, approximate cost models, and search-space traversal heuristics that underlie the optimization of complex queries.</p>
+            <p class="!mt-2 !text-xs"><a href="https://www.cs.cmu.edu/~natassa/courses/15-721/papers/P001.pdf" target="_blank">Chaudhuri &amp; Weikum (2000)</a></p>
+        </div>
+    </div>
+</div>
+
+<p>Open source projects like Calcite started cropping up and gaining momentum as everyone in the trenches of the BYODB movement came to the same realization around the same time. Here are just some examples:</p>
+
+<ul>
+  <li>
+<strong><a href="https://github.com/apache/iceberg" target="_blank">Apache Iceberg</a></strong> (originally written for <a href="https://en.wikipedia.org/wiki/Apache_Iceberg" target="_blank">Netflix</a>)</li>
+  <li>
+<strong><a href="https://github.com/apache/parquet-format" target="_blank">Apache Parquet</a></strong> (originally written for <a href="https://en.wikipedia.org/wiki/Apache_Parquet" target="_blank">Twitter and Cloudera</a>)</li>
+  <li>
+<strong><a href="https://github.com/greenplum-db/gporca" target="_blank">Orca</a></strong> (originally written for <a href="https://greenplum.org/" target="_blank">Greenplum</a>)</li>
+  <li>
+<strong><a href="https://github.com/trinodb/trino" target="_blank">Trino</a></strong> (originally written for <a href="https://en.wikipedia.org/wiki/Trino_(SQL_query_engine)" target="_blank">Facebook</a>)</li>
+</ul>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pt-5 ">
+    <div class="lg:pr-5">
+        <p>For data systems developers, open source was a lightbulb moment. First, it meant that engineering teams were not spread so thin trying to innovate across the entire surface area of the data system. Instead, they could focus on innovating in targeted, high-impact areas. Second, it expanded their choices. For example, when building an engine, they could leverage <a href="https://calcite.apache.org/" target="_blank">Calcite</a> or <a href="https://github.com/greenplum-db/gporca" target="_blank">Orca</a> as the query optimizer.</p>
+    </div>
+    <!-- Quote  -->
+    <div class="block pl-0 lg:pl-16 py-5 lg:py-0">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-3/4 md:h-3/4 lg:h-4/5"></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 pb-6 text-left">     
+                <p class="text-left !mb-2">
+                If you have an apple and I have an apple and we exchange apples then you and I will still each have one apple.
+                <span class="!mt-2 block">
+                But if you have an idea and I have an idea and we exchange these ideas, then each of us will have two ideas.
+                </span>
+                </p>
+                <p class="mt-2 !text-xs">George Bernard Shaw</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>The downside of having more choices is that ultimately you do have to make choices. An evergreen problem with open source is: how do you choose? How do you choose which user interface, query optimizer, or database connector to build with and depend on? That is where standards come in.</p>
+
+<p><a name="standards-help-you-make-better-choices"></a></p>
+<h3 id="022-standards-help-you-make-better-choices">
+<font>0.2.2</font> Standards help you make better choices</h3>
+
+<p>Open source and standards go together like milk and cookies. You may not realize it, but standards keep all of us sane every day. These are just a few classic examples that you might not even realize are standards:</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+<ul class="pt-4">
+<li>
+<b><a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank">ISO 8601</a></b>
+- (International Organization for Standardization for date and formats)
+</li>
+<li>
+<b><a href="https://www.rfc-editor.org/rfc/rfc9110.html" target="_blank">HTTP</a></b>
+- (Hypertext Transfer Protocol for web browsing)
+</li>
+<li>
+<b><a href="https://datatracker.ietf.org/doc/html/rfc5321" target="_blank">SMTP</a></b>
+- (Simple Mail Transfer Protocol for email transmission)
+</li>
+<li>
+<b><a href="https://www.rssboard.org/rss-specification" target="_blank">RSS</a></b>
+- (Really Simple Syndication for syndicated content)
+</li>
+<li>
+<b><a href="https://www.ietf.org/rfc/rfc5724.txt" target="_blank">SMS</a></b>
+- (Short Message Service for text messages)
+</li>
+</ul>
+<!-- Image  -->
+<div class="block pl-0 lg:pl-10">
+    <div class="max-auto pt-8 lg:pt-2 font-space">
+        <img class="h-72 md:h-80 lg:h-[20rem] w-full object-contain " src="assets/images/codex/chapter0/xkcd-1179.png" alt="A xkcd cartoon that declares a 'Public Service Announcement'. It highlights the importance of standards by showing an example of all the ways a person can write or type out a date. It says the correct way to write a date is to start with the year followed by the month followed by the day. The source image can be found at: https://xkcd.com/1179/">
+        <br>
+        <center><figcaption class="center">
+        <span class="font-bold pr-1">Figure 00.04.</span><a href="https://xkcd.com/1179/" target="_blank">ISO 8601</a>.<br> 
+        Source: xkcd.com
+        </figcaption></center>
+    </div>
+</div>
+</div>
+
+<p>What <em>is</em> a standard? The <a href="https://standards.theodi.org/introduction/what-are-open-standards-for-data/" target="_blank">Open Data Institute</a> offers this definition:</p>
+
+<!-- Quote -->
+<div class="block pt-2 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/5 md:h-4/5 lg:h-5/6 "></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">Standards are documented, reusable agreements that solve a specific set of problems or meet clearly defined needs. <span class="block mt-2"> Standards are used when it's important to be consistent, be able to repeat processes, make comparisons, or reach a shared understanding.</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 lg:grid-cols-2">
+    <p>In technical domains, standards ease interoperability struggles. As the <a href="http://wiki.gis.com/wiki/index.php/Data_Interoperability" target="_blank">IEEE</a> (Institute of Electrical and Electronics Engineers) defines it, interoperability is the "ability of a system or a product to work with other systems or products without special effort on the part of the customer. Interoperability is made possible by the implementation of standards."</p>
+    <!-- Quote  -->
+    <div class="block pl-0 lg:pl-16 mb-2">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-3/4 md:h-4/5 lg:h-4/5 "></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+                <p class="text-left !mb-2">Technical standards are awesome. Standards help teams save time and money by giving them a common language for how their products can interact with other products.</p>
+                <p class="!mt-2 !text-xs"><a href="https://mignano.medium.com/the-standards-innovation-paradox-e14cab521391" target="_blank">Michael Mignano</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>In data systems, interoperability is an umbrella of problems that all boil down to how information moves through the different layers:</p>
+
+<ol>
+  <li>
+<mark>Data interoperability</mark><br> This requires <a href="open-standards.html#open-standards-on-arrow" target="_blank">common data structures</a> to represent datasets in-memory while they are being processed.
+<span class="!my-3"></span>
+</li>
+  <li>
+<mark>Query interoperability</mark><br> This requires a <a href="open-standards.html#a-composable-ecosystem" target="_blank">common format</a> for representing query plans that are portable across engines, and not dependent on a specific storage engine, database, or SQL dialect.
+<span class="!my-3"></span>
+</li>
+  <li>
+<mark>System interoperability</mark><br> This requires <a href="open-standards.html#composable-systems-with-arrow" target="_blank">serialization and data interchange interfaces</a> (network wire protocols, database clients, etc.) for moving data.</li>
+</ol>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 lg:grid-cols-2">
+    <p class="!mb-0">It turns out that developing and maintaining data systems without standards is <a href="open-standards.html#hacking-data-interoperability" target="_blank">very difficult</a>. While it is true that developing with standards means that you have less choices, you have to hitch your design decisions to something. Otherwise, you are writing the glue code yourself, which means every change you make in the future will be expensive.</p>
+    <!-- Quote  -->
+    <div class="block pl-0 lg:pl-16 !mt-5">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-3/5 md:h-2/3 lg:h-3/4"></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+                <p class="text-left !mb-2">Data interoperability will always be a pain absent fast, efficient standards.</p>
+                <p class="!mt-2 !text-xs"><a href="https://youtu.be/XRxUeL3bQfQ?si=7bWadjhCop_cJI48&t=476" target="_blank">Wes McKinney</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>The alternative is to let standards limit choices now, with the knowledge that every change in the future will require minimal engineering effort and be less expensive because of it.</p>
+
+<p>For these reasons, standards are the secret sauce for many developers who build data systems because most problems they need to solve are (a) common to the majority of data systems and (b) have an already agreed upon “best solution.”</p>
+
+<p><a name="composing-the-next-frontier"></a></p>
+<h2 id="03-composing-the-next-frontier">
+<font>0.3</font> Composing the next frontier</h2>
+
+<p>Where are we now? Should anyone BYODB today? Probably not.</p>
+
+<!-- Quote -->
+<div class="block pt-2 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-2/4"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">It is too expensive / time-consuming to build a DBMS from scratch.</p>
+            <p class="!mt-2 !text-xs"><a href="https://twitter.com/andy_pavlo/status/1523666179247595520?s=20" target="_blank">Andy Pavlo</a></p>
+        </div>
+    </div>
+</div>
+
+<p>But what about the companies who have already taken the BYODB plunge - would they do it all over again, knowing what they know now? Also probably not.</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 lg:grid-cols-2 pb-5">
+    <p>While many of the early BYODB pioneers continue to reap the benefits of their bespoke data systems, they are also now keenly aware of the downsides. Here are just some of the challenges that teams at these companies now face:</p>
+    <!-- Quote  -->
+    <div class="block pl-0 lg:pl-16 lg:mt-10 py-5 lg:py-0">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-2/5 md:h-2/4 lg:h-3/5"></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+                <p class="text-left !mb-2">In databases, we are never happy.</p>
+                <p class="!mt-2 !text-xs"><a href="https://youtu.be/KekKAKI0Aho?si=6LNObsDQ94r9l6We&t=163" target="_blank">Gustavo Alonso</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ol>
+  <li>
+<mark>Maintenance is forever</mark><br> Now, each company owns the infrastructure that, in the best-case scenario, many internal business units depend on. Those who have built bespoke solutions from the ground up have made their systems that much more expensive as a result.</li>
+  <li>
+<mark>Performance is unpredictable</mark><br> Optimizing system performance can feel like a game of whack-a-mole. The second you push forward on one performance area, another one becomes the bottleneck.</li>
+  <li>
+<mark>Change is constant</mark><br> Every architecture decision has an expiration date. A healthy data system has an <a href='http://evolutionaryarchitecture.com/' target='_blank'>evolutionary architecture</a> that supports constant change across every layer: user interfaces, engines, and data storage.</li>
+</ol>
+
+<p>In search of data system nirvana, teams building their own data systems are closer, but not there yet. They are realizing that maybe the real data system nirvana was the open source projects and standards they met along the way.</p>
+
+<p><a name="what-is-a-composable-data-system"></a></p>
+<h3 id="031-what-is-a-composable-system">
+<font>0.3.1</font> What is a composable system?</h3>
+
+<p>Many lead developers at companies that have built their own systems are now advocating for a paradigm shift in data system design. The paradigm shift would benefit not just the companies that can afford to build their own systems, but also any organization that wants to modernize any existing data system. The shift is to move away from building systems by coding first and to instead start building by composing first.</p>
+
+<p>Composability is a pretty powerful concept.</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 lg:grid-cols-2 py-1 md:py-4 lg:py-5">
+    <!-- Quote  -->
+    <div class="py-5 lg:py-0">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5 pb-6 lg:pb-0">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-5/6"></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left ml-0 lg:-ml-3">     
+                <p class="text-left !mb-2">Because composability allows anyone in a network to take existing programs and adapt or build on top of them, it unlocks completely new use cases that don't exist in our world. In other words: composability is innovation.</p>
+                <p class="!mt-2 !text-xs"><a href="https://a16zcrypto.com/posts/article/how-composability-unlocks-crypto-and-everything-else/" target="_blank">Linda Xie, A16z</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Quote  -->
+    <div class="pl-0 lg:pl-16 py-3 lg:py-0">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5 pb-6 lg:pb-0">
+            <div>
+                <img class="h-8" src="assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-3/5 md:h-3/4 lg:h-3/4"></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+                <p class="text-left !mb-2">Composability is to software as compounding interest is to finance.</p>
+                <p class="!mt-2 !text-xs"><a href="https://a16zcrypto.com/posts/article/composability-is-to-software-as-compounding-interest-is-to-finance/" target="_blank">Chris Dixon, A16z</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>A composable data system is one that is designed by reusing available components. But one does not simply build a data system from components that are just sitting around. Taking the lessons learned from the BYODB movement, a healthy composable data system balances the complementary forces of:</p>
+
+<ul>
+  <li>Open source components to support innovation</li>
+  <li>Standards for data interoperability</li>
+</ul>
+
+<!-- Quote -->
+<div class="block mt-8 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">Considering the recent popularity of open source projects aimed at standardizing different aspects of the data stack, we advocate for a paradigm shift in how data management systems are designed.
+            <span class="block !mt-2">We believe that by decomposing these into a modular stack of reusable components, development can be streamlined while creating a more consistent experience for users.</span></p>
+            <p class="!mt-2 !text-xs"><a href="https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf" target="_blank">Pedreira et al. (2023)</a></p>
+        </div>
+    </div>
+</div>
+
+<p><a name="structure-of-a-composable-data-system"></a></p>
+<h3 id="032-structure-of-a-composable-data-system">
+<font>0.3.2</font> Structure of a composable data system</h3>
+
+<p>A composable data system has the same three core layers as a traditional data system:</p>
+
+<ol>
+  <li><strong>A user interface</strong></li>
+  <li><strong>An execution engine</strong></li>
+  <li><strong>Data storage</strong></li>
+</ol>
+
+<p>You can think of these layers as the “do-ers” of a system. These are the tools we know and love, the logos you recognize, and the docs people spend hours combing through.</p>
+
+<p>But in a composable system, the “gluers” are just as or even more important. The gluers are the core standards that glue the layers together:</p>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716491713/composable-data-system-open-standards.png" download="" class="!font-plus text-xs !font-light !border-b-0">Download ↓</a></p>
+<!-- Column 2 Images  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-0 md:gap-0 lg:gap-10 border border-black py-4 lg:py-8 pr-4 lg:pr-8 pl-4 lg:pl-12">
+    <lottie-player speed="1" loop="" autoplay="" src="assets/images/codex/chapter0/composable-data-system-open-standards--key.json" alt="Key: A diagram that shows the three layers of a data system with emphasis on the standards between each layer. On the left is an alphabetical Key that defines the Standards. Letter A defines Intermediate Representation as a standard way to represent query plans. Letter B represents Connectivity and defines it as a standard for accessing databases. Letter C represents Data Memory Layout and defines it as a standard format for representing data in memory. On the right is a diagram with the layers presented vertically. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users. Between the User Interface and Execution Engine layer is Intermediate Representation which is a standard way to represent query plans and Connectivity which is a standard for accessing databases. Between the execution engine and data storage layer is Intermediate Representation and Dataset Memory Layout which is a standard format for representing data in memory." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+    <lottie-player speed="1" loop="" autoplay="" src="assets/images/codex/chapter0/composable-data-system-open-standards--stack.json" alt="Stack: A diagram that shows the three layers of a data system with important standards layered in. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users. Between the User Interface and Execution Engine layer is Intermediate Representation which is a standard way to represent query plans and Connectivity which is a standard for accessing databases. Between the execution engine and data storage layer is Intermediate Representation and Dataset Memory Layout which is a standard format for representing data in memory." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+</div>
+<center>
+  <figcaption class="center py-5">
+     <span class="font-bold pr-1">Figure 00.05. </span>A composable data system, composed of layers plus standards.
+  </figcaption>
+</center>
+
+<p>This glue is not new. These glue pieces have to exist in some capacity in every data system, but the difference is that, without standards, they all work slightly differently. And those small differences add up to big troubles at the systems level. Composable data systems are not just possible but also practical today due to the <a href="open-standards.html#a-composable-ecosystem" target="_blank">emergence of open standards</a> in this space. Standards serve as the strips of glue that are needed to bridge the gaps between the user interface, execution engine, and data storage layers in a way that is:</p>
+
+<ul>
+  <li>Documented</li>
+  <li>Consistent</li>
+  <li>Reusable</li>
+</ul>
+
+<p>In later chapters in this Codex, we will cover each of these standards in depth.</p>
+
+<p><a name="why-now"></a></p>
+<h3 id="033-why-now">
+<font>0.3.3</font> Why now?</h3>
+
+<p>The idea of modular, interoperable data systems is not new. Folks have been dancing around this topic for a while, starting with <a href="https://www.cs.cmu.edu/~natassa/courses/15-721/papers/P001.pdf" target="_blank">A RISC-style Database System</a> in 2000, <a href="https://www.usenix.org/publications/login/winter2018/khurana" target="_blank">The Deconstructed Database</a> in 2018, the “<a href="https://ottertune.com/blog/2022-databases-retrospective" target="_blank">commoditization of query execution</a> ,” and most recently, <a href="https://www.kleinerperkins.com/perspectives/infrastructure-in-23/#:~:text=The%20unbundling%20of%20OLAP" target="_blank">“The Unbundling of OLAP”</a>.</p>
+
+<p>Up until now, composable data systems were only accessible to a handful of elite organizations. Few experts are capable of designing and implementing composable systems, and much of the software created has been squirreled away inside closed-source commercial products.</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-3/4 md:h-3/4 lg:h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">We foresee that composability is soon to cause another major disruption to how data management systems are designed.</p>
+            <p class="mt-2 !text-xs"><a href="https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf" target="_blank">Pedreira et al. (2023)</a></p>
+        </div>
+    </div>
+</div>
+
+<p>What is new now is that mere mortals can build composable data systems. Because of the BYODB movement, we now have the pieces in place for everybody else to compose with:</p>
+
+<ul>
+  <li>A reliable ecosystem of open source projects that paves the way for everyone else to “stand on the shoulders of giants.”</li>
+  <li>Standards to ensure interoperability between those open source components.</li>
+</ul>
+
+<p>Because of the BYODB movement, people can now spin up better, faster, more powerful data systems that would have taken years to build in the past. Because of the BYODB movement, composable systems are now what scientist Stuart Kauffman coined “the adjacent possible.”</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-5">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/5 md:h-4/5 lg:h-5/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">Innovative environments are better at helping their inhabitants explore the adjacent possible, because they expose a wide and diverse sample of spare parts, and they encourage novel ways of recombining those parts.</p>
+            <p class="mt-2 !text-xs"><a href="https://www.amazon.com/gp/product/1594485380?creative=9325&linkCode=as2&creativeASIN=1594485380&linkId=1e015af9118a75d37b98871c0d2b0aea" target="_blank">Steven Johnson, Where Good Ideas Come From: The Natural History of Innovation</a></p>
+        </div>
+    </div>
+</div>
+
+<p><a name="keep-up-with-composable-data-systems"></a></p>
+<h2 id="04-keep-up-with-composable-data-systems">
+<font>0.4</font> Keep up with composable data systems</h2>
+
+<p>Over the course of the next four chapters, our goal is to share what it takes to design, build, and maintain composable data systems. Along the way, we highlight existing open source projects and standards that we build with and trust.</p>
+
+<p>Switching to a composable system framework is a process. In our experience, you cannot completely move to a composable data system easily or quickly. What you can do is minimize the friction involved in switching by:</p>
+
+<ol>
+  <li>
+<strong>Arming yourself with knowledge about every layer of the system.</strong> This involves doing a bunch of research for each and every component, and asking the important interoperability questions.</li>
+  <li>
+<strong>Discouraging developing in the dark.</strong> Teams need to be very cautious about letting engineers in a vacuum just implement the version of each component aspect the best they could at the time. A lot of the time, this development work is filling in interoperability gaps that standards could bridge better.</li>
+  <li>
+<strong>Designing for deviance in the system.</strong> You will have to work to retain enough extensibility to avoid lock-in or any single point of failure for a given layer in the system. Anytime you have only one component in a layer, you risk lock-in.</li>
+</ol>
+
+<p>A composable approach to data system design aims to make composing the least annoying part of the process. We wrote The Composable Codex to help teams minimize the friction of switching to a composable data system design.</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-8">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-3/4 md:h-3/4 lg:h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-1">Start where you are, use what you have, do what you can.</p>
+            <p class="!mt-1 !text-xs"><a href="https://en.wikipedia.org/wiki/Arthur_Ashe" target="_blank">Arthur Ashe</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="n-box" style="border: solid 1px black; box-shadow: 5px 5px 1px black;">
+	<div class="n-text !my-auto font-medium !w-full">
+	<p><a href="open-standards.html">Read Chapter 01: Open Standards Over Silos</a></p>
+        <p><em>Open source gives choices, but standards help make better ones. Learn about your composable options.</em></p>
+        <p>Access all of <a href='/codex'>The Composable Codex chapters</a>.</p>
+	</div>
+</div>
+
+<p><a name="how-can-I-keep-up-with-voltron-data"></a></p>
+<h3 id="041-how-can-i-keep-up-with-voltron-data">
+<font>0.4.1</font> How can I keep up with Voltron Data?</h3>
+
+<p>You can keep up with all things Voltron Data by following us on <a href="https://www.linkedin.com/company/voltrondata/">LinkedIn</a> and <a href="https://twitter.com/VoltronData">X</a> (formerly Twitter). If you want to receive alerts for future content like The Composable Codex, sign up for our email list.</p>
+
+<p><a data-modal-target="form-codex" data-modal-toggle="form-codex" class="bg-greenvoda-500 hover:bg-black shadow-sm hover:shadow-xl px-[0.75rem] py-[0.42rem] text-sm rounded-full w-[100%] cursor-pointer" style="text-decoration-line: none !important;">
+<span style="color:white;">Sign up with your email
+</span></a></p>
+
+<p><a name="who-is-the-composable-codex-for"></a></p>
+<h3 id="042-who-is-the-composable-codex-for">
+<font>0.4.2</font> Who is The Composable Codex for?</h3>
+
+<p>The Codex is written for data systems designers, developers, and decision-makers who are composable-curious. Based on our experience working at and with different organizations, we assume the following:</p>
+
+<ol>
+  <li>
+<strong>No one wants to build from scratch:</strong> while the BYODB movement leaves a legacy, most organizations do not want to build their own data system, or build any part of their data system from scratch.</li>
+  <li>
+<strong>No system is a blank slate:</strong> most organizations start with one or all layers of a data system already in place. So the question becomes: how do we start augmenting what we have and build towards composable as a future state?</li>
+  <li>
+<strong>No one has unlimited resources:</strong> most organizations are resource-constrained, and need to carefully manage time, budgets, people, and expectations.</li>
+</ol>
+
+<p><a name="who-wrote-the-composable-codex"></a></p>
+<h3 id="043-who-wrote-the-composable-codex">
+<font>0.4.3</font> Who wrote The Composable Codex?</h3>
+
+<p>The Codex is written by engineers, data scientists, and leaders at Voltron Data. You can find out more about what we do at Voltron Data here: <a href="https://voltrondata.com/product">https://voltrondata.com/product</a></p>
+
+<p><a name="how-can-I-cite-the-codex"></a></p>
+<h3 id="044-how-can-i-cite-the-codex">
+<font>0.4.4</font> How can I cite The Codex?</h3>
+
+<p>For attribution, please cite this work as:</p>
+
+<p>Voltron Data. 2023. The Composable Codex. <a href="https://voltrondata.com/codex">https://voltrondata.com/codex</a></p>
+
+<pre class="text-[0.6rem] h-auto overflow-x-hidden overflow-y-hidden bg-white">
+<button type="button" class="group !cursor-pointer absolute right-[0.1rem] top-2 font-normal hover:font-semibold w-fit text-left bg-transparent !opacity-60 hover:!opacity-100" onclick="copyToClipboard('#p5')"><img class="h-[0.9rem] w-[0.9rem] inline mr-2 !opacity-60 hover:!opacity-100" src="assets/images/icon-copy.svg" alt="copy icon"></button>
+<code id="p5" class="BibTeX" style="background-color:white !important; font-size:12.5px !important">@ONLINE{composablecodex,
+    author = {Voltron Data},
+    title = {"The Composable Codex"},
+    year = {2023},
+    url = {https://voltrondata.com/codex},
+    langid = {en}
+} <br></code></pre>
+
+<p><br></p>
+
+
+            </div>
+          </div>
+
+          
+        </div>
+    </main>
+
+    <div id="footer">
+<footer class="items-center justify-between" aria-label="Global">
+      <div class="mx-auto max-w-7xl px-6 md:px-5 lg:px-5 mt-10 md:mt-10 lg:mt-10 mb-5 md:mb-5 lg:mb-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 border-t border-l border-black">
+
+
+          <div class="col-span-1 md:col-span-2 lg:col-span-5 order-2 md:order-1 lg:order-1">
+
+            <div class="grid grid-cols-3 lg:grid-cols-6 font-space text-black font-extralight text-[0.8rem] tracking-wide text-center">
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Home
+              </a>
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/theseus" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Product
+              </a>
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/about" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Company
+              </a>
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/careers" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Careers
+              </a>
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/blog" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Resources
+              </a>
+              <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/contact" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Contact
+              </a>
+            </div>
+            
+            <div class="block text-[0.75rem] text-center font-extralight font-space border-r border-b border-black py-2.5">
+              
+              
+              <div class="text-black font-light tracking-wide">
+                Copyright © Voltron Data. 2024
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-span-1 md:col-span-1 lg:col-span-2 order-1 md:order-2 lg:order-2">
+            <a href="https://web.archive.org/web/20240926150551/https://voltrondata.com/" class="block py-[0.59rem] md:py-[1.35rem] lg:py-[0.71rem] border-r border-black">
+              <svg class="w-[10rem] items-center mx-auto" version="1.1" id="Voltron Data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 351.7 45" style="enable-background:new 0 0 351.7 45;" xml:space="preserve">
+                <style type="text/css">
+                  .st0{fill:#000000;}
+                </style>
+                <g>
+                  <g>
+                    <path class="st0" d="M75.7,14.4c-0.2-0.3-0.1-0.5,0.2-0.5h2.2c0.2,0,0.4,0,0.5,0.1c0.2,0.1,0.2,0.2,0.3,0.4l5.6,11.5h0.1l5.6-11.5
+                      c0.1-0.2,0.2-0.3,0.3-0.4c0.2-0.1,0.4-0.1,0.5-0.1h2.2c0.3,0,0.4,0.2,0.2,0.5L85,31.3c-0.1,0.2-0.2,0.3-0.4,0.3h-0.2
+                      c-0.2,0-0.3-0.1-0.4-0.3L75.7,14.4z"></path>
+                    <path class="st0" d="M111.1,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9S106.1,13.6,111.1,13.6z M111.1,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      C105.1,26.1,107.5,29,111.1,29L111.1,29z"></path>
+                    <path class="st0" d="M141.7,28.8c0.4,0,0.5,0.1,0.5,0.5v1.5c0,0.4-0.1,0.5-0.5,0.5h-10.2c-0.4,0-0.5-0.1-0.5-0.5V14.4
+                      c0-0.4,0.1-0.5,0.5-0.5h1.9c0.4,0,0.5,0.1,0.5,0.5v14.4H141.7z"></path>
+                    <path class="st0" d="M162.1,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5h-5.1c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H162.1L162.1,13.9z"></path>
+                    <path class="st0" d="M175.6,30.8c0,0.4-0.1,0.5-0.5,0.5h-1.9c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5h6.5
+                      c2.9,0,6.2,1.4,6.2,5.5c0,3.2-2,4.8-4.3,5.3l4.2,6c0.3,0.4,0.1,0.7-0.4,0.7h-2c-0.2,0-0.4-0.1-0.5-0.1c-0.2-0.1-0.3-0.2-0.4-0.4
+                      l-4.1-6h-2.8V30.8z M179.5,22.2c2.7,0,3.5-1.3,3.5-2.9s-0.8-2.9-3.5-2.9h-3.9v5.7L179.5,22.2L179.5,22.2z"></path>
+                    <path class="st0" d="M204.8,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9C195.8,17.5,199.7,13.6,204.8,13.6z M204.8,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      S201.2,29,204.8,29L204.8,29z"></path>
+                    <path class="st0" d="M227.5,20L227.5,20l-0.1,10.9c0,0.4-0.1,0.5-0.5,0.5h-1.8c-0.4,0-0.5-0.1-0.5-0.5v-17c0-0.2,0.1-0.2,0.3-0.2
+                      h0.1c0.1,0,0.2,0,0.2,0.1c0.1,0.1,0.1,0.1,0.2,0.2l11.1,11.4h0.1v-11c0-0.4,0.1-0.5,0.5-0.5h1.8c0.4,0,0.5,0.1,0.5,0.5v16.9
+                      c0,0.2-0.1,0.3-0.3,0.3H239c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.1-0.1-0.2-0.2L227.5,20z"></path>
+                    <path class="st0" d="M270.6,13.9c5,0,8.8,3.6,8.8,8.7s-3.8,8.7-8.8,8.7h-6.3c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5
+                      H270.6L270.6,13.9z M266.7,16.5v12.3h3.9c3.6,0,5.9-2.8,5.9-6.2s-2.3-6.2-5.9-6.2L266.7,16.5z"></path>
+                    <path class="st0" d="M305.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.3-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L305.9,30.8z M297,19.1l-2.9,5.9h5.8L297,19.1L297,19.1z"></path>
+                    <path class="st0" d="M326,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5H313c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H326L326,13.9z"></path>
+                    <path class="st0" d="M350.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.4-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L350.9,30.8z M342,19.1l-2.9,5.9h5.8L342,19.1L342,19.1z"></path>
+                  </g>
+                  <g>
+                    <path class="st0" d="M26.1,0.6L26.1,0.6H13.5H0.8l6.3,10.9l6.3,11l6.3,10.9L26,44.3l6.3-10.9l6.3-10.9l-6.3-10.9L26.1,0.6z
+                      M30.8,32.5l-4.7,8.1l-4.7-8.1l-5.8-10l5.8-10l4.7-8.1l4.7,8.1l5.7,10L30.8,32.5z"></path>
+                    <polygon class="st0" points="37.6,0.6 38.8,2.6 48.1,2.6 43.4,10.6 44.5,12.6 51.4,0.6 		"></polygon>
+                  </g>
+                </g>
+              </svg>
+            </a>
+  
+            <div class="grid grid-cols-8 text-center border-t border-b border-r py-[0.2rem] md:py-[0.21rem] lg:py-[0.2rem] border-black">
+              <div></div>
+<div></div>
+<div></div>
+              <a href="https://twitter.com/voltrondata" target="_blank" class=" hover:no-underline pt-[0.5rem] pb-[0.45rem] rounded-full">
+                <img alt="Twitter" title="Twitter" src="assets/images/footer/twitter.svg" class="opacity-70 hover:opacity-100" style="height: 15px">
+              </a>
+              <a href="https://www.linkedin.com/company/voltrondata" target="_blank" class="hover:no-underline pt-[0.1rem] pb-[0.45rem]">
+                <svg class="w-[0.85rem] h-[0.9rem] text-gray-800 hover:text-[#0072b1] inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 15 15">
+                  <path fill-rule="evenodd" d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"></path>
+                  <path d="M3 5.012H0V15h3V5.012Z"></path>
+                </svg>
+              </a>
+              <div></div>
+<div></div>
+<div></div>
+            </div>
+          </div>
+
+
+
+        </div>
+        
+      </div>
+
+</footer>
+</div>
+    
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+  
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="50bd322f-7036-440a-87b8-6c335591e4b1" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="REDACTED" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script></body>
+</html><html>
+<style>
+
+  body {
+    background-color: #F5F3F5;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .active-link {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    letter-spacing: 0.35px !important;
+    border-bottom: #000000 0.03em solid !important;
+    letter-spacing: 0.25px !important;
+  }
+  nav{
+    background-color: #F5F3F5 !important;
+  }
+  #dropdownHoverButton{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton2{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton3{
+    font-size: 14px !important;
+  }
+  b{
+    font-weight: 600;
+  }
+  strong{
+    font-weight: 600;
+  }
+  .banner-quote{
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1 {
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h2 {
+    color: #000000;
+    font-weight: 700 !important;
+    padding: 60px 0 20px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  h3 {
+    color: #000000 !important;
+    padding: 50px 0 20px 0;
+    font-size: 21px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  h4 {
+    color: #000 !important;
+    font-weight: 600 !important;
+    padding: 40px 0 20px 0;
+    font-size: 18px;
+  }
+  h5 {
+    color: #000 !important;
+    margin: 40px 0 10px 0;
+    font-size: 18px !important;
+    line-height: 26px !important;
+  }
+  h6 { /* txt-md-light */
+    margin: 25px 0 10px 0;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.4px;
+    font-family:  'Plus Jakarta Sans', sans-serif;
+    color: rgb(17 24 39);
+    text-align: left;
+    font-weight: 400;
+  }
+  p {
+    color: rgb(17 24 39);
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    line-height: calc(1ex / 0.32);
+    margin: calc(1ex / 0.33) 0; 
+  }
+  .text-force{ /* font-size = p */
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+  }
+  mark{
+    background-color: #D2CFDF !important;
+    padding: 1px 4px;
+    font-weight: 600;
+  }
+  .center{
+    text-align: center !important;
+  }
+
+  ul{
+    list-style-type: disc;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  ol{
+    list-style-type: decimal;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  li{
+    padding-left: 8px;
+    padding-top: 0;
+    padding-bottom: 5px;
+  }
+  li:before {
+    font-family: 'DM Mono', monospace;
+  }
+  figcaption{
+    margin-top: 0px !important;
+    padding-bottom: 20px;
+  }
+  img{
+    padding-top: 20px;
+  }
+
+
+ /* CSS CODE CODEX */
+ pre{
+    font-size: 14px !important;
+  }
+  .hljs {
+    margin-top: 5px !important;
+    background-color: #F5F3F5 !important;
+  }
+  pre.badge::before {
+    background-color: #D2CFDF !important;
+    color: black;
+    font-size: 12px !important;
+    left: 0 !important;
+    width: fit-content !important;
+  }
+
+
+  
+  .navegacion.fijo {
+    position: fixed;
+    top: 0px;    
+    left: auto;
+    z-index: 1;
+    background-color: #F5F3F5;
+    transition: top 0.7s ease-in-out;
+  }
+
+  .input-focus-valid {
+    border-color: black !important;
+    outline: 2px solid black !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus-invalid {
+    border-color: red !important;
+    outline: 2px solid red !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus {
+    outline: 2px solid black;
+    border-radius: 1px !important;
+  }
+  img{
+    padding: 0;
+  }
+
+  th{
+    width: 100% !important;
+  }
+  td{
+    padding: 5px 25px !important;
+  }
+
+
+  @media (min-width: 661px) and (max-width: 1150px) {
+    .banner-quote{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h1{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h2{
+      font-size: 28px;
+      line-height: 32px;
+    }
+    h3{
+      font-size: 20px;
+      line-height: 28px;
+    }
+    p {
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    ol{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    li{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    h6{
+      font-size: 14.5px !important;
+      line-height: 25px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      position: fixed;
+      transition: top 0.7s ease-in-out;
+    }
+    figcaption{
+      margin-top: -10px !important;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navegacion.fijo {
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+      transition: top 0.7s ease-in-out;
+    }
+    .top-fix{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .banner-quote{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    p {
+      font-size: 13px;
+    }
+    h1{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    h2{
+      font-size: 25px;
+      line-height: 30px;
+    }
+    h3{
+      font-size: 18px;
+      line-height: 23px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    h6{
+      font-size: 16px !important;
+      line-height: 28px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      transition: top 0.7s ease-in-out;
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+    }
+    figcaption{
+      margin-top: 0px !important;
+      padding-bottom: 20px;
+    }
+    ul{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+    ol{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+  }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script> 
+
+<script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+<script nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+  const cloudinary = require('cloudinary');
+
+  cloudinary.v2.config({
+    cloud_name: 'dm6arzeue',
+    api_key: 'REDACTED',
+    api_secret: 'REDACTED',
+    secure: true,
+  });
+
+  cloudinary.v2.api
+  .resource_by_asset_id('3e534ee11403fc7babf0ef02495b9bd6')
+  .then(console.log)
+  
+</script>
+
+
+<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS"></script>
+<script nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+  //Animate when Visible
+  function createLottieInteractivity(playerId) {
+  LottieInteractivity.create({
+    player: playerId,
+    mode: "scroll",
+    actions: [
+      {
+        visibility:[0.3, 1.0],
+        type: "playOnce"
+      }
+    ]
+  });
+}
+createLottieInteractivity("#figure0003-key");
+createLottieInteractivity("#figure0003-stack");
+</script>
+
+
+<script nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+// Cloudinary Download
+const downloadLinks = document.querySelectorAll('a[download]');
+
+downloadLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+
+    const imageUrl = link.href;
+    const fileName = link.download || imageUrl.split('/').pop();
+
+    fetch(imageUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => console.error('Error downloading image:', error));
+  });
+});
+
+
+let navegacionFija = false; // Variable para controlar si la navegación está fija
+const navegacion = document.getElementById("navegacion");
+let posicionInicial = navegacion.getBoundingClientRect().top + window.scrollY;
+
+function ajustarNavegacionFija() {  
+  const scrollActual = window.scrollY;
+
+  if (scrollActual >= posicionInicial) {
+    if (!navegacionFija) {
+      navegacionFija = true;
+      navegacion.classList.add("fijo");
+    }
+  } else {
+    if (navegacionFija) {
+      navegacionFija = false;
+      navegacion.classList.remove("fijo");
+    }
+  }
+}
+
+
+const contenedor = document.getElementById("NavigationContent");
+const titulos = contenedor.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+
+function resaltarEnlaceActivo() {
+    // Recorre los títulos y verifica su posición en relación con la posición inicial
+    titulos.forEach((titulo) => {
+        let rectTitulo = titulo.getBoundingClientRect();
+        let posicionTitulo = rectTitulo.top + window.scrollY;
+        
+        const scrollActual = window.scrollY;
+        
+        if (Math.round(scrollActual)   >= (Math.round(posicionTitulo) - 1)  ) {
+          
+          const enlaces = document.querySelectorAll(".nav-id.nav-link");
+            enlaces.forEach((enlace) => {
+            let tituloTextoLimpio = titulo.outerText;
+            let enlaceTextoLimpio = enlace.outerText;            
+            if(tituloTextoLimpio.includes(enlaceTextoLimpio)){
+              enlace.classList.add("active-link");
+            }
+            else{
+              enlace.classList.remove("active-link");
+            }
+                
+            });
+        } else {
+
+         
+      
+        }      
+    });
+}
+
+window.addEventListener("scroll", ajustarNavegacionFija);
+window.addEventListener("scroll", resaltarEnlaceActivo);
+
+
+</script>
+
+<script type="text/javascript" nonce="zRQES3128iMtQkij78X07mdBVYo4yIHS">
+  function copyToClipboard(p5) {  
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  var codeContent = $(p5).text().trim();
+  
+  var indentedCode = codeContent.replace(/^/gm, '   '); // Add three indentation spaces to the left of each line
+  var indentedCodeWithRightMargin = indentedCode.replace(/$/gm, '   '); // Add three spaces indent to the right of each line
+  $temp.val(indentedCodeWithRightMargin);
+  $temp.select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+
+</html>

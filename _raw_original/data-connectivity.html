@@ -1,0 +1,2919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+  
+  <meta property="og:title" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Composable data systems can simplify data sprawl and help users avoid costly migrations and rewrites. Discover how to avoid costly migrations and lengthy rewrites by adopting open standards for data connectivity and transport.">
+  <meta property="og:image" content="/assets/images/codex/seo/cover-seo-chapter-3.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="556">
+  <meta property="og:image:type" content="image/png">
+  <meta property="twitter:domain" content="">
+  <meta property="twitter:url" content="https://voltrondata.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@VoltronData">
+  <meta name="twitter:title" content="From data sprawl to &lt;br&gt;data connectivity">
+  <meta name="twitter:description" content="Composable data systems can simplify data sprawl and help users avoid costly migrations and rewrites. Discover how to avoid costly migrations and lengthy rewrites by adopting open standards for data connectivity and transport.">
+  <meta name="twitter:image" content="/assets/images/codex/seo/cover-seo-chapter-3.png">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>From data sprawl to data connectivity | Voltron Data</title>
+<meta name="generator" content="Jekyll v4.2.1">
+<meta property="og:title" content="From data sprawl to data connectivity">
+<meta name="author" content="Voltron Data">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Composable data systems can simplify data sprawl and help users avoid costly migrations and rewrites. Discover how to avoid costly migrations and lengthy rewrites by adopting open standards for data connectivity and transport.">
+<meta property="og:description" content="Composable data systems can simplify data sprawl and help users avoid costly migrations and rewrites. Discover how to avoid costly migrations and lengthy rewrites by adopting open standards for data connectivity and transport.">
+<link rel="canonical" href="https://voltrondata.com/codex/data-connectivity">
+<meta property="og:url" content="https://voltrondata.com/codex/data-connectivity">
+<meta property="og:site_name" content="Voltron Data">
+<meta property="og:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-3.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-05-03T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-3.png">
+<meta property="twitter:title" content="From data sprawl to data connectivity">
+<script type="application/ld+json" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Voltron Data"},"dateModified":"2023-05-03T00:00:00+00:00","datePublished":"2023-05-03T00:00:00+00:00","description":"Composable data systems can simplify data sprawl and help users avoid costly migrations and rewrites. Discover how to avoid costly migrations and lengthy rewrites by adopting open standards for data connectivity and transport.","headline":"From data sprawl to data connectivity","image":"https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-3.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://voltrondata.com/codex/data-connectivity"},"url":"https://voltrondata.com/codex/data-connectivity"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;display=swap">
+
+
+  <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link href="/output.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+
+  <script src="/assets/js/main.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+  <script defer data-domain="voltrondata.com" src="https://plausible.io/js/script.tagged-events.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+  
+  <link type="application/atom+xml" rel="alternate" href="https://voltrondata.com/feed.xml" title="Voltron Data">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<header class="fixed inset-x-0 top-0 z-40">
+
+  <nav class="site-header-codex bg-transparent border-gray-200 !tracking-[0.01em]" aria-label="Global">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto my-auto pl-6 md:pl-6 lg:pl-4 pr-4 pt-[0.4rem] sm:pt-[1.4rem] md:pt-[1.7rem] lg:pt-[1.7rem]">
+        <a href="/" class="flex items-center space-x-2 rtl:space-x-reverse">
+          <img class="h-[1.15rem] sm:h-[1.2rem] md:h-[1.4rem] lg:h-[1.4rem] -mt-1" src="/assets/images/voltron-data.svg" alt="Voltron Data">
+        </a>
+        <div class="flex items-center">
+            <button onclick="toggleMenu()" type="button" class="sm:inline-flex md:hidden lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span id="nav-trigger" class="nav-trigger sr-only">Open main menu</span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mega-menu-icons" class="items-center justify-between hidden w-full sm:hidden md:flex md:w-auto md:order-1">
+          <ul class="flex flex-col mt-4 font-normal md:flex-row md:mt-0 md:space-x-8 lg:space-x-12 rtl:space-x-reverse">
+            <li>
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+                <!-- Product -->
+                  Product
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover" class="absolute z-10 hidden w-auto">
+                <div aria-labelledby="dropdownHoverButton group">
+                  <div class="grid grid-cols-2 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group w-[18.2rem] rounded-l-md">
+                      <a href="/theseus" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-l-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-theseus.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Theseus
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Our embeddable data engine.<br>Your product.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group w-[18.2rem] rounded-r-md">
+                      <a href="/enterprise-support" type="button" class="group-hover:bg-white hover:!no-underline block text-left  rounded-r-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-enterprise.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Enterprise Support
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Get help adopting open standards.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <button id="dropdownHoverButton3" data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Resources -->
+                  Resources
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover3" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+
+                <div aria-labelledby="dropdownHoverButton3 group">
+                  <div class="grid grid-cols-3 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-l-md">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 pl-4">
+                        Featured
+                      </p>
+                      <a href="/codex" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-bl-md">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-codex.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          The Composable<br>Codex
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          A 5-part guide to understanding composable data systems.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem]">
+                      <p class="flex invisible items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 px-4">
+                        Featured
+                      </p>
+                      <a href="/benchmarks" type="button" class="group-hover:bg-white hover:!no-underline block text-left">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-benchmark.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="relative px-4 text-black text-[1.7rem] leading-snug font-bold mr-4 !my-0">
+                          Benchmarks <span class="inline-block mr-2">Report</span>
+                        </p>
+                        <span class="absolute text-greenvoda-500 text-[0.65rem] bg-[#EBF4F4] font-space px-2.5 !py-2 -mt-8 ml-[7.5rem] font-light rounded inline !mb-0">NEW</span>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 pl-4 px-4 md:mb-9 lg:mb-0 !mt-0">
+                          Read about our 2024 benchmarks for our data engine, Theseus.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 pr-3 mr-4">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Resources
+                      </p>
+                      <a href="/blog" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-blog.svg" alt="Blog icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/flexibility" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/productivity" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/lower-cost" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Company -->
+                  Company
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover2" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+                <div aria-labelledby="dropdownHoverButton2 group">
+                  <div class="border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 mx-3">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Company
+                      </p>
+                      <a href="/about" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 mb-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-about.svg" alt="About icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            About
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/news" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-news.svg" alt="News icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            News
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/careers" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-careers.svg" alt="Careers icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Careers
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/contact" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-contact.svg" alt="Contact icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Contact
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+  
+    <!-- Mobile Menu -->
+    <div id="nav-menu-overlay" class="lg:invisible" role="dialog" aria-modal="true">
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+  
+        <div class="flex flex-wrap items-center justify-between w-full !px-5">
+          <a href="/">
+            <span class="sr-only">Voltron Data</span>
+            <img class="h-[1.3rem] sm:h-[1.3rem] md:h-[1.4rem] lg:h-[1.4rem] w-auto my-5" src="/assets/images/voltron-data.svg" alt="Voltron Data">
+          </a>
+          <button onclick="toggleMenu()" class="rounded-md py-2.5 text-[#005151]">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <div class="flow-root">
+          <div class="mt-0 my-10">
+            
+            <div id="accordion-color" data-accordion="collapse">
+              <div class="group">
+                <p id="accordion-flush-heading-1" data-accordion="collapse" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
+                    <span class="pl-5 text-black">Product</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                  <a href="/theseus" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Theseus</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Our embeddable data engine. Your product.
+                    </p>
+                  </a>
+                  <a href="/enterprise-support" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Enterprise Support</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Get help adopting open standards.
+                    </p>
+                  </a>
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-2" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class=" sgroup flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-active-classes="bg-transparent" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                    <span class="pl-5 text-black">Resources</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                  <a href="/codex" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">The Composable Codex</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      A 5-part guide to understanding composable data systems.
+                    </p>
+                  </a>
+                  <a href="/benchmarks/theseus" class="py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Benchmarking Report</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Read about our 2024 benchmarks for our data engine, Theseus.
+                    </p>
+                  </a>
+                  <div class="py-3 block border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="/blog" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-blog.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/flexibility" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/productivity" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/lower-cost" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left5">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-3" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="group flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                    <span class="pl-5 text-black">About</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                  <div class="py-3 border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="/about" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-about.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            About
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/news" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-news.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            News
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/careers" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-careers.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Careers
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/contact" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-contact.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Contact
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- <div class="pt-20 mx-14 absolute inset-x-0 bottom-4"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+
+<!-- Codex modal -->
+<div id="form-codex" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 !z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white shadow-xl px-0 py-9">
+          <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="form-codex">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+          </button>
+          <div id="form-container" class="px-0">
+            <img class="h-[4.2rem] w-full object-contain mb-3 mt-6 " src="/assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            <br>
+            <p class="!text-[0.95rem] !my-0 !px-14 !font-light !text-center" style="color: black !important">Sign up to receive email notifications<br>to stay in The Composable Codex loop.</p>
+            <br>
+            <form id='my-form' method='POST' name='contact-codex'><input type='hidden' name='form-name' value='contact-codex' />
+              <div class="px-14 mt-3">
+
+                <!--Email-->
+                <div>
+                  <label for="email" class="block text-sm font-normal leading-6 text-black pb-0.5 md:pb-1.5 lg:pb-1.5">Email</label>
+                  <div>
+                    <input required id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" onchange="validateEmail()" class="block w-full border-b py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#005151] sm:text-sm sm:leading-6">
+                    <span id="email-error" style="color: red; font-size: 12px;"></span>
+                  </div>                  
+                </div>
+              
+              </div>
+              <center>
+                <button type="submit" id="submit-btn" class="mt-6 flex w-fit justify-center bg-black hover:bg-[#005151] px-6 py-3 !text-base !tracking-wide font-medium leading-6 text-white rounded-full">
+                  Submit
+                </button>
+              </center>
+            </form>       
+          </div>
+          <div id="success-message" class="hidden !text-center px-10 pt-1 ">
+            <p class="font-semibold" style="color: black !important; font-size:25px !important; margin-top: 0px !important; padding-top: 0px !important; margin-bottom: 0px !important;">
+              Message Sent
+            </p>
+            <p class="text-base leading-6 text-black">
+              Thanks for your interest!
+            </p>
+          </div>
+      </div>
+  </div>
+</div> 
+
+<script nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+
+  // Form
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      // Enviar el formulario
+      fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+          // Mostrar mensaje de éxito
+          document.getElementById('form-container').classList.add('hidden');
+          document.getElementById('success-message').classList.remove('hidden');
+      })
+      .catch((error) => {
+          console.error("Error sending form: ", error);
+      });
+  };
+  document.querySelector("#my-form").addEventListener("submit", handleSubmit);
+  
+  function initHeader() {    
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+    function storeScrollData() {      
+      var y = getScrollPos().y;
+
+      var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+    setActivePageLink();
+  }
+
+  function setActivePageLink() { 
+  var pageLinks = document.querySelectorAll('a.page-link');
+  var currentUrl = window.location.pathname;
+  if(currentUrl === "/resources/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+  if(currentUrl === "/product/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+
+  pageLinks.forEach(function(link) {
+    var linkUrl = new URL(link.href).pathname;
+
+    if (currentUrl === linkUrl) {
+      link.classList.add('active');
+    }
+    else{
+      link.classList.add('inactive');
+    }
+  });
+}
+
+function toggleMenu() {  
+  var navTrigger = document.getElementById("nav-trigger");  
+  if (navTrigger.checked) {
+    navTrigger.checked = false;
+    animateMenu(true);
+  } else {
+    navTrigger.checked = true;
+    animateMenu(false);
+  }
+}
+
+
+function animateMenu(open) {
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  if (open) {
+    navMenuOverlay.style.opacity = "0"; 
+    navMenuOverlay.style.display = "none";   
+  } else {
+    navMenuOverlay.style.opacity = "1";
+    navMenuOverlay.style.display = "block";
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {  
+  initHeader();  
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  navMenuOverlay.style.display = "none"; 
+});
+
+function validateEmail() {
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // Expresión regular para validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailInput.value.trim() === '') {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('invalid'); 
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = true; 
+    } else if (emailRegex.test(emailInput.value)) {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailInput.classList.remove('invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = false; 
+    } else {
+      emailInput.classList.add('invalid'); 
+      emailInput.classList.add('input-focus-invalid');
+      emailError.textContent = 'Please enter valid email'; 
+      submitBtn.disabled = true; 
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownHoverButton = document.getElementById("dropdownHoverButton");
+    const dropdownHoverButton2 = document.getElementById("dropdownHoverButton2");
+    const dropdownHoverButton3 = document.getElementById("dropdownHoverButton3");
+    const dropdownHover = document.getElementById("dropdownHover");
+    const dropdownHover2 = document.getElementById("dropdownHover2");
+    const dropdownHover3 = document.getElementById("dropdownHover3");
+    //const groupElements = document.querySelectorAll(".rounded-l-md");
+
+    dropdownHover.classList.add('hidden');    
+    dropdownHoverButton.addEventListener('mouseenter', function () {      
+      dropdownHover.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover.style.opacity = '1';
+      }, 300);
+    });
+
+    dropdownHover2.classList.add('hidden');    
+    dropdownHoverButton2.addEventListener('mouseenter', function () {      
+      dropdownHover2.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover2.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover2.style.opacity = '1';
+      }, 300);
+    });
+
+
+    dropdownHover3.classList.add('hidden');    
+    dropdownHoverButton3.addEventListener('mouseenter', function () {      
+      dropdownHover3.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover3.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover3.style.opacity = '1';
+      }, 300);
+    });
+
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener("mouseover", function() {     
+      this.classList.add("font-bold", "text-teal-900");  
+      this.style.backgroundColor = "#eef1f9";     
+      dropdownButtons.forEach(otherButton => {
+        if (otherButton !== this) {
+          otherButton.classList.remove("font-bold", "text-teal-900");
+          otherButton.style.backgroundColor = "transparent";
+        }
+      });
+    });
+  });
+});
+
+
+//load active 
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownMenus = document.querySelectorAll("[id^='dropdownHover']");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+ 
+  dropdownMenus.forEach(dropdownMenu => {
+   
+    const links = dropdownMenu.querySelectorAll("a");
+    const currentURL = window.location.pathname;
+
+    
+    const urlStyles = {
+    "/theseus": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton" },
+    "/enterprise-support": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton" },
+    "/codex": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/benchmarks": { backgroundColor: "#F6F8FD", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/blog": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/flexibility": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/productivity": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/lower-cost": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton3" },
+    "/about": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/news": { backgroundColor: "#F6F8FD" , textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/careers": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/contact": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton2" }
+  };
+ 
+    links.forEach(link => {
+     
+      const linkURL = link.getAttribute("href");
+
+      
+      if (currentURL === linkURL || (currentURL.endsWith('/') && currentURL.slice(0, -1) === linkURL)) {
+       
+        const styles = urlStyles[linkURL];
+        
+       
+        if (styles) {
+          
+          const button = document.getElementById(styles.btnId);
+          
+          
+          if (button) {
+            button.classList.add("font-bold", styles.textColor);
+            button.style.backgroundColor = styles.backgroundColor;
+            
+            dropdownButtons.forEach(otherButton => {
+              if (otherButton !== button) {
+                otherButton.classList.remove("font-bold", styles.textColor);
+                otherButton.style.backgroundColor = "transparent";
+              }
+            });
+          }
+        }
+
+      }
+    });
+  });
+});
+
+
+</script>
+
+<script type="text/javascript" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+  document.write('<style type="text/css">div.cp_oculta{display: none; font-weight:300}</style>');
+  function MostrarOcultar(capa)
+  { 
+      if (document.getElementById)
+      {
+          var aux = document.getElementById(capa).style;
+          aux.display = aux.display ? "" : "block";
+          document.getElementById("enlace" + "arrow").text = aux.display ? "" : "";
+      }
+  }
+</script>
+    <main class="page-content-codex" aria-label="Content">
+
+        <div class="article-css mx-auto max-w-7xl px-10 md:px-6 lg:px-4">
+          
+          <div class="pt-28 md:pt-36 lg:pt-44 mb-[3.5rem] lg:mb-[4rem]">
+            <a href="/codex">
+              <img class="h-20 w-full object-contain my-2" src="/assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            </a>          
+          </div>
+
+          <div class="mt-0 lg:mt-10 mb-10 md:mb-14 lg:mb-32 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-3 lg:gap-5 align-middle">
+
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/a-new-frontier" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-0.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">00</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">A New</span> Frontier</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/open-standards" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-1.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">01</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Open</span> Standards</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/language-interoperability" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-2.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">02</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Language</span> Interoperability</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/data-connectivity" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-3-active.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-semibold inline md:inline-block lg:inline-block">03</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem] font-semibold">
+                    <span class="inline md:block lg:block">Data</span> Connectivity</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/accelerated-hardware" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-0.5 lg:px-0.5 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-4.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">04</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Accelerated </span> Hardware</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+
+          <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-14 lg:gap-16 mt-18 md:mt-24 lg:mt-32">
+            <div class="chapter-intro col-span-1 md:col-span-3 lg:col-span-3 pb-4 order-2 md:order-1 lg:order-1">
+              <div class="text-xs hidden md:block lg:block">
+                <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono">
+                  Chapter 03
+                </div>
+              </div>
+<br>
+
+              <h1 class="hidden md:block lg:block mb-4 lg:mb-10">From data sprawl to <br>data connectivity</h1>
+
+              <div class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6">
+                If you have ever been asked "How do I get this data that I need right now?" and you answered "It is complicated and it depends," you have made it to The Bad Data Place. Once you have more than one place where data is stored, the complexity and costs of your system can only go one direction: up (for now).
+                <br><br>
+                Data sprawl necessitates solutions that can reach across storage layers and databases. Instead of dealing with costly migrations, lengthy rewrites, and mazes of glue code, composable data systems rely on standards to make the data sprawl feel small.
+              </div>
+              <br>
+              <h2 class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6 pt-6 lg:pt-8">
+                Why does data connectivity matter? <a href="#data-connectivity-to-connectivity">Keep reading below</a>.
+              </h2>
+            </div>
+
+
+            <div class="seo-li col-span-1 md:col-span-2 lg:col-span-2 order-1 md:order-2 lg:order-2">
+              <div class="pb-0 md:pb-4 pt-3 lg:pt-0">
+                <div class="px-3 md:px-6 lg:px-6 py-10 border border-black">
+                  
+                  <div class="my-0 lg:my-[2.1rem] text-xs block md:hidden lg:hiddenk pl-[1.35rem]">
+                    <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono text-[0.65rem]">
+                      Chapter 03
+                    </div>
+                  </div>
+                  <p class="block md:hidden lg:hidden !pb-2 pl-[1.35rem] text-2xl font-bold">From data sprawl to <br>data connectivity</p>
+
+                  <div class="grid grid-cols-3 gap-2 text-xs px-6 lg:px-8">
+                    <div class="col-span-2">
+                      <div class="inline text-xs font-light bg-[#e3e3e3] w-fit py-1 px-1.5">Estimated Read Time:</div>
+                    </div>
+                    <div class="text-gray-900 text-left font-extralight">15 minutes</div>
+                  </div>
+                  
+                  <div>
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.14em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.18rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Topics:
+                      </div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        
+                        <li class="text-xs font-space">Connectivity</li>
+                        
+                        <li class="text-xs font-space">Data Access</li>
+                        
+                        <li class="text-xs font-space">Data Transport</li>
+                        
+                        </ul>
+                      </div>
+                    </div>
+                
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.15em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.2rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Tags:
+                      </div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        
+                        <li class="text-xs font-space">Networking</li>
+                        
+                        <li class="text-xs font-space">Data Access</li>
+                        
+                        <li class="text-xs font-space">Serialization</li>
+                        
+                        <li class="text-xs font-space">Silos</li>
+                        
+                      </ul>
+                    </div>
+
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.15em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.2rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Tools:
+                      </div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        
+                        <li class="text-xs font-space">Arrow data format</li>
+                        
+                        <li class="text-xs font-space">Arrow Database Connectivity (ADBC)</li>
+                        
+                        <li class="text-xs font-space">Arrow Flight SQL</li>
+                        
+                        <li class="text-xs font-space">Arrow Flight RPC</li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>          
+            </div>
+          </div>          
+        
+
+
+        <div class="article-css bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter3/main-image-full-chapter-03.jpg')]">
+          <!-- Banner -->
+          <div class="my-14 banner-phrase">
+            <div class="mx-auto max-w-[27rem] md:max-w-[37rem] lg:max-w-[48rem] px-5 md:px-20 lg:px-20">
+              <div class="pt-20 pb-28 md:pt-24 md:pb-32 lg:pt-24 lg:pb-32 !text-center">
+                <p class="banner-quote !text-center text-[1.8rem] sm:!text-4xl lg:!text-5xl lg:!leading-[3.8rem] !mb-8">"Listen: there’s a hell of a good universe next door; let’s go."</p>
+                <p class="!text-center text-[16px] md:text-[16px] lg:text-[18px] font-semibold !mx-auto">
+                  E.E. Cummings<br>
+                  <span class="!font-light">
+                     </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-css mx-auto max-w-7xl">
+          <div class="px-10 md:px-6 lg:px-4">
+
+            <!-- FIX ToC -->
+            <nav id="navegacion" class="section-nav w-[100%] md:w-[17rem] lg:w-[21rem] xl:w-[24rem] pt-6 md:pt-4 lg:pt-6 navegacion float-none md:float-left lg:float-left">
+              
+              <div class="px-10 md:px-5 lg:px-8 pt-9 pb-7 border border-black">
+          
+                  <center>
+                    <div class="bg-[#000000] text-white w-fit py-0.5 px-[0.3rem] text-[0.74rem] border-black border font-semibold">
+                      Contents
+                    </div>
+                  </center>
+
+                
+                <div class="-mt-3 pb-10">
+                  <span class="-mt-[0.148em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.17rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                </div>
+
+
+                <div class="list-3 text-gray-900 text-xs leading-5">
+
+                  <ol class="zero">
+                    <li>
+                      <a href="#data-connectivity-to-connectivity" class="nav-id nav-link">
+                        From data sprawl to data connectivity
+                      </a>
+                    </li>
+                  </ol>
+
+                  <ol>
+                    <li>
+<a href="#complexities-of-data-connectivity" class="nav-id nav-link">
+                      The complexities of data connectivity</a>
+
+                        <ol class="foo" style="padding: 4px 0 0 1px;">
+                          <li><a href="#data-connectivity-in-systems" class="nav-id nav-link">Defining data connectivity in systems</a></li>
+                          <li><a href="#essential-complexities-of-data-connectivity" class="nav-id nav-link">Essential complexities of data connectivity</a></li>
+                          <li><a href="#database-connectivity" class="nav-id nav-link">Database connectivity with asterisks</a></li>
+                        </ol>
+                    </li>
+
+                    <li>
+<a href="#three-data-connectivity-standards" class="nav-id nav-link">
+                      Three essential data connectivity standards</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#standard-data-format-for-connectivity" class="nav-id nav-link">A standard data format for connectivity</a></li>
+                        <li><a href="#standard-data-access-layer" class="nav-id nav-link">A standard data access layer</a></li>
+                        <li><a href="#standard-data-transport-layer" class="nav-id nav-link">A standard data transport layer</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#composable-data-connectivity" class="nav-id nav-link">
+                      Composable data connectivity</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#modular" class="nav-id nav-link">Modularity in data connectivity</a></li>
+                        <li><a href="#interoperable" class="nav-id nav-link">Interoperability in data connectivity</a></li>
+                        <li><a href="#customizable" class="nav-id nav-link">Customizing data connectivity solutions</a></li>
+                        <li><a href="#extensible" class="nav-id nav-link">Extending connectivity in data systems</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#keep-data-connected" class="nav-id nav-link">
+                      Keep your data connected</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#keep-up-with-voltron-data" class="nav-id nav-link">How can I keep up with Voltron Data?</a></li>
+                        <li><a href="#who-wrote-the-composable-codex" class="nav-id nav-link">Who wrote The Composable Codex?</a></li>
+                        <li><a href="#how-can-I-cite-the-codex" class="nav-id nav-link">How can I cite The Codex?</a></li>
+                      </ol>
+                    </li>
+                  </ol>  
+
+                </div>
+              </div>    
+              <div class="grid grid-cols-5 border-l border-r border-b border-black">
+                <a class="group col-span-2  py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex/language-interoperability">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-1 mr-1 group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"></path>
+                    </svg>
+                    <span class="inline h-5 text-xs group-hover:!text-white tracking-wide">Prev</span>
+                  </center>                 
+                </a>
+                <a class="group border-x border-black py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-[0.35rem] group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+                    </svg>
+                  </center>                 
+                </a>
+                <a class="group col-span-2 py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex/accelerated-hardware">
+                  <center>
+                    <span class="inline h-5 text-xs group-hover:!text-white tracking-wide">Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-1 ml-1 group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                    </svg>                    
+                  </center>
+                </a>
+              </div>          
+            </nav>
+
+            <div id="NavigationContent" class="top-fix w-full md:w-[60%] lg:w-[62%] top-0 relative inline-block float-none md:float-right lg:float-right">
+              <a id="data-connectivity-to-connectivity"></a>
+              <p><a id="data-connectivity-to-connectivity" name="data-connectivity-to-connectivity"></a></p>
+<h2 class="!pt-8 md:!pt-0 lg:!pt-0">
+<font>3.0</font> From data sprawl to data connectivity</h2>
+
+<p>There is a certain ceremony that happens on data teams everywhere when new people come on board. It is reminiscent of the cook’s tour of an old historic home.</p>
+
+<blockquote>
+  <p>Here is the dumbwaiter that made sense at a certain point in time - one person
+over there still uses it, but do not try this if Margot is on PTO…</p>
+
+  <p>Over there is a door to nowhere - they removed the legacy porch in the last
+renovation, so now you can technically use this door, but be careful because
+there is nothing behind it.</p>
+
+  <p>That is the main stairwell that we are all supposed to use “for security
+reasons.” But shhhh…nobody uses that stairwell because some of the steps are broken. Back here are the secret real stairs our team uses…</p>
+
+  <p>This drawer is where we keep all the account keys! We aren’t supposed to write
+them down, but this is quicker and easier than asking for new access
+permissions…</p>
+</blockquote>
+
+<p>This ceremony is the passing of the data knowledge - where the data is stored, who has the right permissions to touch it, how to connect to it, what the data actually looks like, and why it is the way it is.</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pt-5 lg:pt-2 lg:pb-10">
+  <p class="!mt-0 !mb-0">Most data teams carry this knowledge around in various places. If they are lucky, all the knowledge is documented somewhere steadfast. Unfortunately, even if docs exist, they often miss the practical asterisks like "works but only if this happens" or "works-ish depending on the moon phase." </p>
+  <!-- Quote  -->
+  <div class="block pl-0 lg:pl-16 py-5 lg:py-0">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+      <div>
+        <img class="h-8" src="/assets/images/codex/quote-mark-white.svg" alt="Quote">
+        <div class="border-l ml-[1rem] border-black h-4/6 md:h-4/5 lg:h-4/5 "></div>
+        <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+      </div>
+      <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+        <p class="text-left !mb-2">Documentation is often a patch for a process that should be easier to use in the first place.</p>
+        <p class="!mt-2 !text-xs"><a href="https://es.linkedin.com/in/juanluiscanor" target="_blank">Juan Luis Cano Rodríguez</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+<p class="!mt-4">
+For that reason, many people just keep the knowledge in their head, or in their own personal data diary so that their current self can save their future self time and agony.<span class="block mt-5 lg:mt-6">There is rarely a clear or easy answer to "How do I get this data that I need right now?" without an oral history filled with a lot of asterisks and apologies.</span>
+</p>
+<!-- Image  -->
+<div class="block pl-0 lg:pl-10">
+    <div class="max-auto pt-8 lg:pt-0 font-space">
+        <img class="h-64 md:h-52 lg:h-[13rem] w-full object-contain " src="/assets/images/codex/chapter3/it-depends.png" alt="Cover of a parody of the O'Reilly Media definitive guide series that features animal drawings on their cover. This fictitious book is titled It Depends. Underneath, there is the tagline: The Definitive Guide. At the top of the cover, there is the sentence The answer to every programming question ever conceived. At the bottom of the cover, the title of this parodic series O RLY? and the handle of the author @ThePracticalDev. The cover features a black ink drawing of an elephant's head raising its trunk and with its ears pulled back as if it were smiling.">
+        <br>
+        <center><figcaption class="!-mt-0">
+        <span class="font-bold pr-1 text-xs">Figure 03.01. </span>
+        It depends: The Definitive Guide; a parodic book cover. Source: <a href="https://github.com/thepracticaldev/orly-full-res/tree/master" target="_blank">@ThePracticalDev</a>.
+        </figcaption></center>
+    </div>
+</div>
+</div>
+
+<p>Many of our team members have lived in these homes, and some have even tried to renovate these kinds of homes. But usually the attitude is “if it is not broken, do not fix it.” Most teams try to just get by because the foundation is in place, the wiring is good enough, and the plumbing works* (*-ish).</p>
+
+<p>But what happens at scale in an enterprise setting is a different story: now there is a whole neighborhood of homes with (distributed) problems just like these. And these data systems are not just filled with asterisks but also anxiety about making changes to the fragile house of cards that connects the people with the data.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                A file in the project's repository…deletes prod using our CI/CD pipelines if it is ever moved into the wrong folder. It comes complete with the key and password required for an admin account. It was produced by the former lead engineer, who has moved on to a new role before his sins catch up with him.
+            </p>
+            <p class="mt-2 !text-xs"><a href="https://ludic.mataroa.blog/blog/i-accidentally-saved-half-a-million-dollars/" target="_blank">Ludicity, "I accidentally saved half a million dollars"</a></p>
+        </div>
+    </div>
+</div>
+
+<p><mark>At a systems level, once you have more than one place where data is stored, the complexity and costs of your system can only go one direction: <em>up</em> (for now).</mark></p>
+
+<p>How do these costs rack up?</p>
+
+<ol>
+  <li>
+<mark>Many data copies:</mark> To get around the system sprawl, the same data    gets copied many, many times – some in legit places and some in not-so-legit     places. This leads to stale, out-of-date data copies at varying levels of legitness, and analyses that never reach the latest or most complete data (not to mention security and privacy risks).</li>
+  <li>
+<mark>Costly data copies:</mark> When talking about terabyte or
+    petabyte-sized data that gets copied over and over again, the costs for storing the original data plus
+    its offspring can get very expensive.</li>
+  <li>
+<mark>Costly complexity:</mark> More data sources means more maintenance
+    which means more people, time, and resources:
+  </li>
+  </ol>
+<ul class="pl-10">
+      <li>
+<b>More people</b> are needed to do the same work because the systems are too complex.</li>
+      <li>
+<b>More time</b> is needed to get new work done because of the amount of tools and steps involved.</li>
+      <li>
+<b>More resources</b> are needed to fix things: to notice when things break, figure out what went wrong, and fix them.</li>
+  </ul>
+
+
+<p>There are human costs, as well. The data people - the people who need to use the system to access and analyze data - inherit much of the complexity of the system. Data sprawl has a way of bubbling up to the surface of any data system.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                In fact, ideas expressed in a programming language also often reach the end users of the program - people who will never read or even know about the program, but who nevertheless are affected by it.
+            </p>
+            <p class="mt-2 !text-xs"><a href="https://gvanrossum.github.io/" target="_blank">Guido van Rossum</a> (Python’s BDFL), <a href="http://neopythonic.blogspot.com/2016/04/kings-day-speech.html" target="_blank"><i>King’s Day Speech</i></a></p>
+        </div>
+    </div>
+</div>
+
+<p>Data sprawl creates an onerous data environment to work in. This disproportionately affects the most advanced teams the most because they are performing the most advanced tasks on data, and they have the most to lose from a decrease in visibility and data access.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                We are responsible for gluing together hundreds of tiny components and shipping networking logic to build a single app that is dependent on each cloud vendor’s implementations of specific technologies. From a historical context, it makes sense. As an engineer who just wants to build and ship substantial products, it makes me miserable.
+            </p>
+            <p class="mt-2 !text-xs"><a href="https://vickiboykis.com/" target="_blank">Vicki Boykis</a> ,<a href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/" target="_blank">The cloudy layers of modern-day programming</a></p>
+        </div>
+    </div>
+</div>
+
+<p>The costs of this complexity also rack up in the system as one-off solutions accumulate over time. In some instances, teams develop their way out of data connectivity problems. Unfortunately, this development work usually involves band-aid solutions like adding more <a href="/codex/open-standards#hacking-data-interoperability">glue-infra</a> to the system. All gains are short-term, rather than long-term investments. But just as likely, teams can also get stuck in The Bad Data Place when trying to deal with data connectivity problems:</p>
+
+<ul>
+  <li>
+<strong>Shadow IT:</strong> When groups become so frustrated that they sign up for new data services and plan to ask for forgiveness rather than permission, just to get a data project unstuck.</li>
+  <li>
+<strong>Leapfrog development work:</strong> Teams are stuck or they are doing things they should not be doing, like data analysts creating new databases or data scientists building data engineering workloads.</li>
+</ul>
+
+<p><img src="/assets/images/codex/chapter3/xkcd-2054.png" alt="xkcd comic 2054, titled data pipeline. Cueball is standing with an open laptop, showing it to Ponytail and White Hat. Cueball: Check it out - I made a full automated data pipeline that collects and processes all the information we need. Ponytail is looking down at Cueball's laptop. Ponytail: Is it a giant house of cards built from random scripts that will all completely collapse the moment any input does anything weird? Borderless beat panel. Cueball looks at his laptop. Cueball: It... might not be. Ponytail: I guess that's someth- Cueball: Whoops, just collapsed. Hang on, I can patch it."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.02. 
+</span>Data Pipeline. Source: <a href="https://xkcd.com/2054/" target="_blank">xkcd.com</a>
+</figcaption></center>
+
+<p>How do you escape the sprawl? The short answer that many of our team members have learned the hard way is that you do not - you embrace the sprawl, and all the gnarly complexity that comes with it.</p>
+
+<p>Embracing data sprawl means that you leave the data alone: you do not have to move your data, you do not have to get your whole organization to try yet another large-scale data migration to a new system, and you definitely do not have to pull off a “grand centralization” initiative to unify around a single data system that includes access to all of the most important data for the company.</p>
+
+<p>So, how do you embrace sprawl yet still keep the trains all running on time so that data people can connect to the data they need when they need it? We think the answer is a composable data system built on top of three essential connectivity standards:</p>
+
+<ol>
+  <li>
+<mark>Data formats:</mark> Standard data formats can remove a lot of the asterisks around data connectivity in a system for end users and for the data systems people that support those users.</li>
+  <li>
+<mark>Data access:</mark> Connectivity standards can create a smoother and more consistent data access layer for people in all corners of the organization who use the data system, regardless of the underlying database(s) in use.</li>
+  <li>
+<mark>Data transport:</mark> Standard wire protocols, and a standard way to represent data on the wire, create a smoother and more predictable developer experience when designing data systems that can scale.</li>
+</ol>
+
+<p>On their own or together, these connectivity standards make the sprawl feel smaller to end users, and provide pathways (if the spirit moves you) for eventually taking steps to tame data sprawl in a composable system.</p>
+
+<p><a name="complexities-of-data-connectivity"></a></p>
+<h2 id="31-the-complexities-of-data-connectivity">
+<font>3.1</font> The complexities of data connectivity</h2>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pt-5 lg:pb-5">
+  <p>Why is it so hard to embrace data sprawl?<br><br>Because trying to manage multiple "client → wire protocol → database server" stacks running multiple data pipelines across multiple but interrelated data sources is like trying to understand a Rube Goldberg machine.</p>
+  <!-- Quote  -->
+  <div class="block pl-0 lg:pl-16 py-5 lg:py-0">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+      <div>
+        <img class="h-8" src="/assets/images/codex/quote-mark-white.svg" alt="Quote">
+        <div class="border-l ml-[1rem] border-black h-4/6 md:h-4/5 lg:h-5/6 "></div>
+        <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+      </div>
+      <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+        <p class="text-left !mb-2">Complex systems are based off of multiple simple processes that interact, which means that it is very very hard to determine what is going to happen next.</p>
+        <p class="!mt-2 !text-xs"><a href="https://se.linkedin.com/in/johanobrink" target="_blank">Johan Öbrink</a>, <a href="https://youtu.be/PXwVt5X_vgg?si=HTcWjWry5Gsy1PKY" target="_blank">How to get it right by being wrong all the time</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>All of data connectivity boils down to processes that are relatively simple in isolation. The complexity snowballs as more data sources are added to the system, and the processes and number of people who use them multiply. Many organizations have a high number of data platforms currently in use, often accumulated over years of incomplete system migrations. When it comes to sprawling data sources in such a system, it is difficult to know the difference between the essential and accidental complexities:</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[90%] md:h-[90%] lg:h-[85%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                </p>
+<ul class="pt-4">
+                <li>
+<mark>Essential complexity</mark> is the complexity inherent in the problem itself and the "state of the art" for how it needs to be solved. Essential complexity happens when you cannot simplify something without removing value.</li>
+                <li class="mt-4">
+                <mark>Accidental complexity</mark> is everything else - complexity that would not exist in an ideal world (e.g. complexity arising from tools that do not interoperate as well as they could, tools that require what feels like unnecessarily convoluted configuration settings, etc.).</li>
+                </ul>
+            
+            <p class="mt-2 ml-6 !text-xs">Source: "<a href="https://github.com/papers-we-love/papers-we-love/blob/main/design/out-of-the-tar-pit.pdf" target="_blank">Out of the Tar Pit</a>" by Moseley &amp; Marks, 2006</p>
+        </div>
+    </div>
+</div>
+
+<p>While data sprawl has a way of rising to the surface to complicate the end user experience, the really sneaky thing about data sprawl is that it <em>also</em> has a way of seeping way down deep into the bits and bytes of the data system. To embrace the complexity, we have to make sense of what is essential about it. To make sense of it, we have to head down to the basement of the data system and peek at the circuit breakers and the plumbing.</p>
+
+<p><a name="data-connectivity-in-systems"></a></p>
+<h3 id="311-defining-data-connectivity-in-systems">
+<font>3.1.1</font> Defining data connectivity in systems</h3>
+
+<p>Data connectivity refers to the layer in a data system that allows people in an organization to productively interact with data stored in databases: to submit queries and get useful results back from a database.</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/composable-data-system-open-standards.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<!-- Column 2 Images  -->
+<center>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 md:gap-5 lg:gap-5 border border-black py-10 px-8">
+  <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter0/composable-data-system-open-standards--key.json" alt="A diagram that shows the three layers of a data system with emphasis on the standards between each layer. On the left is an alphabetical Key that defines the Standards. Letter A defines Intermediate Representation as a standard way to represent query plans. Letter B represents Connectivity and defines it as a standard for accessing databases. Letter C represents Data Memory Layout and defines it as a standard format for representing data in memory." class="w-full">
+  </lottie-player>
+  <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter0/composable-data-system-open-standards--stack.json" alt="A diagram that shows the three layers of a data system with important standards layered in. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users. Between the User Interface and Execution Engine layer is Intermediate Representation which is a standard way to represent query plans and Connectivity which is a standard for accessing databases. Between the execution engine and data storage layer is Intermediate Representation and Dataset Memory Layout which is a standard format for representing data in memory." class="w-full h-80">
+  </lottie-player>
+</div>
+<figcaption class="pt-6"><span class="font-bold">Figure 03.03. 
+</span>A composable data system, with three key standards.
+</figcaption>
+</center>
+
+<p>What does connectivity have to do with embracing data sprawl? Everything. Teams around the world are continually asked to move their data on the promise that the migration will remove every asterisk about data connectivity in their system. Want a faster, cheaper, simpler system? Want a better life? First, just move all your data from over there to over here.</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pb-0">
+  <p class="!mt-0">
+    Why does everyone try to start there to try to make things better? Part of the reason may be because, historically, transporting large data files has never been easy nor fast. Moving data from one system to another may be the highest level of system complexity at scale. Compared to the actual logistics of physically moving data files or literally shipping them (a very high bandwidth operation!), strengthening system connectivity with standards sounds like a better construction bid than "tear it all down and rebuild."
+  </p>
+  <!-- Quote  -->
+  <div class="block pl-0 lg:pl-16 py-3 md:py-4 lg:py-0">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-5">
+      <div>
+        <img class="h-8" src="/assets/images/codex/quote-mark-white.svg" alt="Quote">
+        <div class="border-l ml-[1rem] border-black h-5/6 md:h-5/6 lg:h-5/6 "></div>
+        <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+      </div>
+      <div class="col-span-6 md:col-span-9 lg:col-span-4 text-left">     
+        <p class="text-left !mb-2">If you want to transfer a few hundred gigabytes of data, it’s generally faster to FedEx a hard drive than to send the files over the internet.</p>
+        <p class="!mt-2 !text-xs"><a href="https://xkcd.com/about/" target="_blank">Randall Munroe</a>, <a href="https://what-if.xkcd.com/31/" target="_blank">What if? Fedex bandwidth</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><a name="essential-complexities-of-data-connectivity"></a></p>
+<h3 id="312-essential-complexities-of-data-connectivity">
+<font>3.1.2</font> Essential complexities of data connectivity</h3>
+
+<p>Data sprawl will continue to exist but the fragile house of cards need not be so fragile. The tools connecting everything are like rebar in concrete: it will make a brittle material stronger. When designing data connectivity for any data system, there are three essential complexities:</p>
+
+<ol>
+  <li>
+    <p><strong>Data formats</strong> - this is the format of the results that the data
+  people receive in return. While what ultimately matters is the format of the
+  end result, there are a lot of intermediate data formats that happen along the
+  journey from storage to end user. This is because several layers in the
+  connectivity stack have a say in the results format at various stages in the
+  data transport process:</p>
+
+    <ol>
+      <li>The <strong>database</strong> itself has a (usually proprietary) binary format for serving to clients</li>
+      <li>The database uses a <strong>wire protocol</strong> with its own “on the wire” format</li>
+      <li>The <strong>client API</strong> wants to deliver the results to the user in a specific format</li>
+    </ol>
+
+    <div class="bg-[#D2CFDF] font-semibold pt-3 pb-[0.9rem] px-6 text-gray-700 mt-5">
+<span class="text-xs font-extralight">⇢</span> Most systems do not agree on a <a href="/codex/open-standards#open-standards-on-arrow">standard data format like Arrow</a>.</div>
+  </li>
+  <li>
+    <p><strong>Data access</strong> - connectors are how data people connect their query to the data
+that they want to run it on. It is how people submit queries to a database
+server, and how those queries are then sent over the wire to the database
+according to a database-specific wire protocol (also called a server API).
+Connectors might be proprietary (specific to a single database) or generic
+(usable across &gt;1 database). A connector has two elements: an API and a
+driver.</p>
+
+    <div class="bg-[#D2CFDF] font-semibold pt-3 pb-[0.9rem] px-6 text-gray-700">
+<span class="text-xs font-extralight">⇢</span> Either way, data people end up accruing a collection of connectors, with a preferred one for almost every database occasion.</div>
+  </li>
+  <li>
+    <p><strong>Data transport</strong> - most people do not dive this deep into the server-side
+of the system, but data engineers and systems developers wade into this layer
+often. The data transport layer is full of protocols that define how messages
+and data get sent over the wire, and tools that power and support those
+protocols.</p>
+
+    <div class="bg-[#D2CFDF] font-semibold pt-3 pb-[0.9rem] px-6 text-gray-700">
+<span class="text-xs font-extralight">⇢</span> When you go from one data system to another, one of the most
+difficult parts of switching is that they use different protocols, so adding one
+more thing is an expensive operation.</div>
+  </li>
+</ol>
+
+<p>Data is the lynchpin in any data system: the data needs to flow where it needs to go when people need it, and the people who need it do not want to dwell on data connectivity at all – it needs to be as quick and painless as possible.</p>
+
+<p><a name="database-connectivity"></a></p>
+<h3 id="313-database-connectivity-with-asterisks">
+<font>3.1.3</font> Database connectivity with asterisks</h3>
+
+<p>A data system without connectivity standards comes with a lot of asterisks. In the figure below, you can follow the user query from the user interface through the connectivity layer and ultimately over the wire to the database. But the return trip of the results back to the user: that is where the asterisks start adding up. With one query-database combination, it may not be too onerous. But if you need to connect to data across more than one database, and especially if you want to combine those results, you are going to have a bad time.</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1717520328/sprawling-data-silos.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/sprawling-data-silos.svg" alt="Diagram representing the complexity of the database connectivity landscape by showing the path from a user query to the result set, using three fictitious database systems: turtleDB, snailDB, and slothDB. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. This icon connects with an arrow going down to a box labeled API sitting on top of another box labeled driver. This takes place on the client side. After the arrow leaves the box labeled driver, it passes on the server side, where the arrow carries the query to the bottom layer labeled database. As the query goes through an icon representing the database system, it goes through an icon representing the internal data representation for this system. As the arrow leaves the database layer, it goes back to the the driver on the client side. The arrow is labeled wire protocol and is stylized differently for each database system. Another arrow connects the driver box to the API box illustrating another data conversion which is different for each system. The final step of the pathway is represented by an arrow leaving the API box towards the result set representation usable by the user. For turtleDB, the final format is tabular, for snailDB the final format is JSON, and for slothDB it is a custom file system."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.04. 
+</span>All the sprawl
+</figcaption></center>
+
+<p>Here is how you want connecting to a database to work*:</p>
+
+<p><em>*and what will get in the way of making it work</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sequence</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<ol start="1"><li>Pick a database connector</li></ol>
+</td>
+      <td class="!p-0">
+<table class="!m-0 !p-0">
+<tr>
+<td class="!border-b !border-0">
+You pick from available database <b>connectors</b>.* Ideally, the connector is the same for &gt;1 databases so you can use a consistent connector across different data sources.**
+</td>
+</tr>
+<tr>
+<td class="!border-0">
+*Most databases offer their own proprietary native connectors. But is it available for the programming language used by your <a href="/codex/language-interoperability#composable-user-interfaces">user interface</a>?
+<br>
+**Non-native connectors may also be an option (like ODBC or JDBC), but they could be slower because there will be extra rounds of de/serialization.
+<br>
+<i>Read more: "<a href="https://arxiv.org/pdf/2004.14471.pdf" target="_blank">Mainlining Databases: Supporting Fast Transactional Workloads on Universal Columnar Data File Formats</a>" by Li et al.</i>
+</td>
+</tr>
+</table>
+</td>
+    </tr>
+    <tr class="!bg-transparent">
+      <td>
+<ol start="2"><li>Stage a query</li></ol>
+</td>
+      <td>You use the <b>client API</b> to stage a query. The client API calls the driver and submits the query to the driver on your behalf. The query stays client-side for now.</td>
+    </tr>
+    <tr>
+      <td>
+<ol start="3"><li>Send a query</li></ol>
+</td>
+      <td class="!p-0">
+<table class="!m-0 !p-0">
+<tr>
+<td class="!border-b !border-0">
+You use a <b>driver</b> for the database you need to connect to.*** After receiving the query from the client API, the driver generates a request that is sent over the database-specific wire protocol to the database server.
+</td>
+</tr>
+<tr>
+<td class="!border-0">
+***Lots of variability in behavior across different drivers.
+<br>
+<i>Read more: "<a href="https://www.prequel.co/blog/database-drivers-naughty-or-nice" target="_blank">Database Drivers: Naughty or Nice?</a>"</i>
+</td>
+</tr>
+</table>
+</td>
+    </tr>
+    <tr class="!bg-transparent">
+      <td>
+<ol start="4"><li>Execute the query &amp; return the result set</li></ol>
+</td>
+      <td class="!p-0">
+<table class="!m-0 !p-0">
+<tr>
+<td class="!border-b !border-0">
+The <b>database server</b> receives the query and generates a result. This result set is formatted and transported back to the client driver over the database-specific wire protocol.****
+</td>
+</tr>
+<tr>
+<td class="!border-0">
+****Most wire protocols use a different data format from the in-memory format used by the database server. This requires the server to  de/serialize the data before transporting.
+<br>
+<i>Read more: "<a href="https://hannes.muehleisen.org/publications/p852-muehleisen.pdf" target="_blank">Don’t hold my data hostage</a>", Raasveldt &amp; Muhleisen.</i>
+</td>
+</tr>
+</table>
+</td>
+    </tr>
+    <tr>
+      <td>
+<ol start="5"><li>Ready the result set</li></ol>
+</td>
+      <td class="!p-0">
+<table class="!m-0 !p-0">
+<tr>
+<td class="!border-b !border-0">
+The <b>client driver</b> receives the result set. Again, depending on the data format needs of the client API, it may need to be de/serialized. If not, the result just passes through.*****
+</td>
+</tr>
+<tr>
+<td class="!border-0">
+*****For O/JDBC as the client API, the required format is row-oriented. This means that if the server returned columnar data and the wire protocol preserved that columnar format, the result set would be converted to row-oriented on the client-side.
+</td>
+</tr>
+</table>
+</td>
+    </tr>
+    <tr class="!bg-transparent">
+      <td>
+<ol start="6"><li>Present results to users</li></ol>
+</td>
+      <td class="!p-0">
+<table class="!m-0 !p-0">
+<tr>
+<td class="!border-b !border-0">
+The <b>client API</b> arranges the result set to present to users.******
+</td>
+</tr>
+<tr>
+<td class="!border-0">
+******It is anyone’s guess what the returned data format will be: client’s native dataframe format; text-based format like CSV, XML, JSON; or something else. Usually, this last conversion exercise is left to the user to make the data useful (i.e., to analyze, combine with other data, and share). In most cases, users can expect another round of data format conversion.
+</td>
+</tr>
+</table>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here is how it actually works:</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                Sorry I'm late, I just Hadooped my way through a Hive, and I've been living in a powder keg and giving off Apache Sparks…
+            </p>
+            <p class="mt-2 !text-xs"><a href="https://x.com/dataandme/status/955161154585792512?s=20" target="_blank">Mara Averick</a></p>
+        </div>
+    </div>
+</div>
+
+<p>Skimming the sequence above, most of the asterisks are about the format of the results set: converting, re-converting, and yet again converting the format of the return results so that users can get the result set in an interoperable data format based on standards.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[85%] md:h-[90%] lg:h-[85%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                The dumbest piece of the modern data stack:
+            </p>
+              <ol>
+                <li>Store columnar data in an RDBMS (relational database management system).</li>
+                <li>Pivot that data to a row-oriented format for transport over the wire.</li>
+                <li>Pivot the row-oriented format back to columnar for viz/analysis.</li>
+              </ol>
+            <p class="text-left !my-2">We gotta fix this.</p>
+            <p class="mt-2 !text-xs"><a href="https://x.com/josh_wills/status/1493970814286237696?s=20" target="_blank">Josh Wills</a></p>
+        </div>
+    </div>
+</div>
+
+<p>Maybe it is not the dumbest but it is one of the oldest pieces - the problem stems from data systems designed for yesterday’s workloads with yesterday’s connectivity layers, built for yesterday’s row-wise database systems. Nowadays, these are exactly the kind of accidental complexities that make modern data teams develop around the data system, adding shadow IT infrastructure and leapfrogging around established data engineering pipelines. Many of the asterisks listed would benefit from systems designed on top of standard data formats that maintain that format throughout the path the data is traveling.</p>
+
+<p>Why the focus on columnar format? For most analytics use cases, a columnar format is more than just functional - it is performant. The reason we recommend standards and tools that support columnar-based formats is that today’s data systems were built for yesterday’s row-wise workflows when row-based as the default format made sense. A columnar default makes the most common workflows faster, but flips the burden of data conversions to the opposite end, so that users can convert from columnar to row-oriented when their workflows call for it.</p>
+
+<p><a name="three-data-connectivity-standards"></a></p>
+<h2 id="32-three-essential-data-connectivity-standards">
+<font>3.2</font> Three essential data connectivity standards</h2>
+
+<p>A composable data system cannot decrease the number of databases in use. But, it can increase the composability of the databases in use. In short, a composable data system can make the data sprawl feel smaller because people can connect to data no matter where exactly it is stored.</p>
+
+<p>What does it mean to make the sprawl feel smaller? It means that a composable system can:</p>
+
+<ul>
+  <li>Make it easier on users to reach across data systems to combine data from
+different sources, answer bigger questions with more complete and current
+datasets, and rest assured that they can connect to the data they need with
+less surprises, asterisks, and “it depends.”</li>
+  <li>Reduce the number of surfaces and knobs that data people have to touch to
+access data.</li>
+  <li>Reduce waste in the system, like the confetti of data copies, glue-infra, and
+band-aid connectivity solutions.</li>
+  <li>Reduce waiting time for results to make it easier to iterate quickly.</li>
+</ul>
+
+<p>Standards distill data connectivity down to three essential complexities:</p>
+
+<ol>
+  <li>
+<strong>Results set format</strong> - data people like columnar data for most analytics use cases</li>
+  <li>
+<strong>Data access</strong> - data people want seamless and snappy access</li>
+  <li>
+<strong>Data transport</strong>  - developers want to (a) keep the data format the same throughout the data pipeline and (b) use columnar format as the default data format (for goodness sake)</li>
+</ol>
+
+<p>These are mainly quality of life improvements for data people using the data systems. Here are some things that data people do not want to care about:</p>
+
+<ol>
+  <li>
+<mark>The specific <em>database</em> where the data is stored</mark> - It should not matter exactly where the data is stored, only that they can access it from a reliable client API. Bonus points for a consistent client database API that works for &gt;1 data source.</li>
+  <li>
+<mark>Which <em>driver</em> they need to use</mark> - It depends on the database, so the most important things are that the driver exists (i.e., it is compatible with the required wire protocol).</li>
+  <li>
+<mark>What <em>wire protocol</em> they are using under the hood</mark> - Again, nobody wants to care about this, but as long as it does no harm: if the data storage layer serves Arrow data, users would like to be able to keep their Arrow data. No additional acrobatics should be required on the part of the user end to pivot columnar data back to columnar format after transport.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>Complexity pain</th>
+      <th>Connectivity gain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Results set</td>
+      <td>So many data formats to deal with</td>
+      <td>A single interoperable data format based on standards</td>
+    </tr>
+    <tr>
+      <td>Data access</td>
+      <td>
+<table class="!m-0 !p-0"><tbody>
+<tr class="!p-0"><td class="!border-0 !px-0 !pt-0 !pb-3">So many client APIs</td></tr>
+<tr class="!bg-transparent !p-0"><td class="!border-gray-200 !border-t !border-0 !px-0 !pb-0 !pt-2">So many different drivers</td></tr>
+</tbody></table>
+</td>
+      <td>
+<table class="!m-0 !p-0"><tbody>
+<tr class="!p-0"><td class="!border-0 !px-0 !pt-0 !pb-3">A single client API</td></tr>
+<tr class="!bg-transparent !p-0"><td class="!border-gray-200 !border-t !border-0 !px-0 !pb-0 !pt-2">A single driver to manage, without extra downloads, dependencies, or gaps in functionality</td></tr>
+</tbody></table>
+</td>
+    </tr>
+    <tr>
+      <td>Data transport</td>
+      <td>So many wire protocols to support/maintain</td>
+      <td>A single wire protocol</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>How does it all work? Let’s go.</p>
+
+<p><a name="standard-data-format-for-connectivity"></a></p>
+<h3 id="321-a-standard-data-format-for-connectivity">
+<font>3.2.1</font> A standard data format for connectivity</h3>
+
+<p>Data systems return different data formats. Most cloud vendors use a proprietary on-disk binary file format. Often, this means that the best way to share data between systems is to convert into a common text-based format like CSV, JSON, or XML. This means that data people have to grapple with wrangling various unfriendly tabular data formats into shapes they can work with, like dataframes.</p>
+
+<p>Although most data storage is now columnar, most off-the-shelf wire protocols are row-oriented by default. This means that most data systems convert columnar data to row-oriented for transport over the wire. Even if the wire protocol did preserve columnar data, the client API can still intervene and convert to row-oriented just before delivering the results. Naturally, this forces data people waiting at the end of the pipeline to manually convert the row-oriented data that is returned from the client API back into a columnar format that is more usable for in-memory processing.</p>
+
+<p>While it would be ideal to preserve data formats, actually doing that can be harder than just accepting the fate of all the conversions.</p>
+
+<p>At this point you might be thinking: does anyone really care about all this? Why does it matter if all the conversions happen behind the scenes, or if we ask the data people at the end of the pipeline to wrangle <a href="https://vickiboykis.com/2018/01/28/working-with-aws/" target="_blank">yet another JSON file</a>? It matters to data people because it is annoying and wastes their time - they are constantly faced with developing around the accidental complexities of data connectivity, which takes their time and energy away from focusing on the essential complexities. It matters to data systems people because the unnecessary conversions clog up data pipelines, rack up costs, and expends electricity (kW) while providing no added value because the most useful returned results can get pretty large, and every convert step is actually a “copy and convert” step.</p>
+
+<p>A composable data system enables Arrow data connectivity. Unfortunately, a standard data format is not enough. To make composable connectivity a reality, we need to add two standards to the data system connectivity layer:</p>
+
+<ol>
+  <li><strong><a href="#3-2-2-a-standard-data-access-layer">A standard data access layer</a></strong></li>
+  <li><strong><a href="#3-2-3-a-standard-data-transport-layer">A standard data transport layer</a></strong></li>
+</ol>
+
+<p><a name="standard-data-access-layer"></a></p>
+<h3 id="322-a-standard-data-access-layer">
+<font>3.2.2</font> A standard data access layer</h3>
+
+<p>Every system provides a database interface to allow users to connect to the database server from a client application. The interface separates database access into a “front-end” and a “back-end” on the client application side:</p>
+
+<ul>
+  <li>
+<strong>Front-end:</strong> The client API is there to let users submit queries to the database.</li>
+  <li>
+<strong>Back-end:</strong> The client driver handles translating the generic commands generated by the client API into database-specific instructions. It then ferries the request to the database, and when the database responds, it ferries the response back to the client API.</li>
+</ul>
+
+<p>There are two existing, widely used standard client APIs:</p>
+
+<ul>
+  <li><a href="https://learn.microsoft.com/en-us/sql/odbc/microsoft-open-database-connectivity-odbc?view=sql-server-ver16" target="_blank">Open Database Connectivity (ODBC)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity" target="_blank">Java Database Connectivity (JDBC)</a></li>
+</ul>
+
+<p>Both ODBC and JDBC are row-oriented client APIs that allow developers to access data independent of the underlying database being used. They both work with a pluggable ecosystem of drivers to handle different wire protocols for accessing data. Which sounds great. But row-oriented client APIs means we are still introducing a lot of “copy and convert” steps on the return trip from the database, and at the end of the journey, our Arrow-loving, dataframe-hugging users are still unhappy.</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1717520343/row-based-client-side-data-connectivity-solutions.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/row-based-client-side-data-connectivity-solutions.svg" alt="Diagram representing how O/JDBC provides a standardized API by showing the path from a user query to the result set, using three fictitious database systems: turtleDB, snailDB, and slothDB. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. This icon connects with an arrow going down to a box labeled O/JDBC API sitting on top of another box labeled driver. This takes place on the client side. After the arrow leaves the box labeled driver, it passes on the server side, where the arrow carries the query to the bottom layer labeled database. As the query goes through an icon representing the database system, it goes through an icon representing the internal data representation for this system. As the arrow leaves the database layer, it goes back to the the driver on the client side. The arrow is labeled 'wire protocol' and is stylized differently for each database system. Another arrow connects the driver box to the API box illustrating the data conversion to the J/ODBC format before being converted to the client’s format. The final step of the pathway is represented by an arrow leaving the API box towards the result set representation usable by the user."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.05. 
+</span>O/JDBC standardize data connectivity, but one row at a time.
+</figcaption></center>
+
+<p>A columnar client API, on the other hand, can preserve columnar results (like Arrow-formatted data) transported over the wire. It could also convert any result set from a database to columnar, so that users do not have to ever fiddle around with conversions after the fact. The Arrow Database Connectivity (ADBC) project was designed to do just that: return results in Arrow format regardless of the format served by the database and the format required by the wire protocol for transporting it. ADBC is a composable client API for fetching and returning Arrow data from databases. ADBC comes with a pluggable ecosystem of drivers to handle different wire protocols including <a href="https://medium.com/snowflake/arrow-database-connectivity-adbc-support-for-snowflake-7bfb3a2d9074" target="_blank">Snowflake</a>, <a href="https://arrow.apache.org/adbc/current/driver/duckdb.html" target="_blank">DuckDB</a>, <a href="https://arrow.apache.org/adbc/current/driver/postgresql.html" target="_blank">Postgres</a>, <a href="https://arrow.apache.org/adbc/current/driver/sqlite.html" target="_blank">SQLite</a>, <a href="https://arrow.apache.org/adbc/current/driver/jdbc.html" target="_blank">JDBC</a>, and <a href="https://github.com/googleapis/google-cloud-go/pull/8506" target="_blank">BigQuery</a> (in the works).</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/columnar-client-side-data-connectivity-solutions.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/columnar-client-side-data-connectivity-solutions.svg" alt="Diagram representing how ADBC simplifies the database connectivity landscape by showing the path from a user query to the result set, using three fictitious database systems: turtleDB, snailDB, and slothDB. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. This icon connects with an arrow going down to a box labeled API sitting on top of another box labeled driver. This takes place on the client side. After the arrow leaves the box labeled driver, it passes on the server side, where the arrow carries the query to the bottom layer labeled database. As the query goes through an icon representing the database system, it goes through an icon representing the internal data representation for this system. As the arrow leaves the database layer, it goes back to the the driver on the client side. The arrow is labeled 'wire protocol' and is stylized differently for each database system. Another arrow connects the driver box to the API box illustrating the data conversion to the Arrow format. The final step of the pathway is represented by an arrow leaving the API box towards the result set representation usable by the user. For the three database systems, the data is returned is Arrow-formatted."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.06. 
+</span>ADBC standardizes data connectivity: regardless of the database system, ADBC returns Arrow data.
+</figcaption></center>
+
+<p>When <a href="https://duckdb.org/2023/08/04/adbc.html" target="_blank">DuckDB benchmarked their ADBC interface</a> compared to ODBC, they found that ADBC was 38x faster than ODBC at reading in data from a data source to the client. They attributed the difference to “the extra allocations and copies that exist in ODBC.” Our <a href="https://voltrondata.com/resources/comparing-performance-of-adbc-and-jdbc-in-python-for-arrow-flight-sql" target="_blank">own team at Voltron Data</a> found similar results comparing ADBC and JDBC at reading in data to the client.</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 md:gap-8 lg:gap-8">
+  <table>
+    <caption style="caption-side: bottom; padding-top: 20px; font-family: 'Space Grotesk', sans-serif;">
+      <span class="font-bold pr-1">Table 03.01.</span>
+   Comparison of data reading times using ODBC and ADBC. Data from <a href="https://duckdb.org/2023/08/04/adbc.html#benchmark-adbc-vs-odbc" target="_blank">DuckDB</a> (August 2023)
+   </caption>
+    <thead>
+      <tr>
+        <th class="th-full">Connector</th>
+        <th class="th-full">Time (s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ODBC</td>
+        <td>28.149</td>
+      </tr>
+      <tr>
+        <td>ADBC</td>
+        <td>0.724</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  <table>
+    <caption style="caption-side: bottom; padding-top: 20px; font-family: 'Space Grotesk', sans-serif;">
+      <span class="font-bold pr-1">Table 03.02.</span>
+   Comparison of data reading times using two JDBC drivers and ADBC. Data from <a href="https://voltrondata.com/resources/comparing-performance-of-adbc-and-jdbc-in-python-for-arrow-flight-sql" target="_blank">Voltron Data</a> (May 2023)
+   </caption>
+    <thead>
+      <tr>
+        <th class="th-full">Connector</th>
+        <th class="th-full">Time (s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JDBC - Py4J</td>
+        <td>130.58</td>
+      </tr>
+      <tr>
+        <td>JDBC - Super Jar</td>
+        <td>9.09</td>
+      </tr>
+      <tr>
+        <td>ADBC</td>
+        <td>6.03</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p><a name="standard-data-transport-layer"></a></p>
+<h3 id="323-a-standard-data-transport-layer">
+<font>3.2.3</font> A standard data transport layer</h3>
+
+<p>Every system exposes a way for external client applications to access data from the database server. When clients and servers are located either on different machines or on different cloud systems, the data is sent over the wire. Sending data over the wire between two systems requires that both sides of the exchange need to shake hands on two main things:</p>
+
+<ul>
+  <li>A <strong>wire protocol</strong>, which defines the format for exchanging messages between a database server and its clients. Many data systems roll their own wire protocol.</li>
+  <li>A <strong>result set wire format</strong>, which defines the format of the results that need to be packaged up and sent back to the client driver, according to the wire protocol.</li>
+</ul>
+
+<p>How would a standard wire protocol support better connectivity in a composable data system? <strong>This one is for the data system developers and maintainers.</strong> Say you want to keep all the data in the exact same format throughout the journey from database to user, and you want to be sure that the returned data is columnar because 99% of your data sources are columnar.</p>
+
+<p>The Arrow Flight SQL project is a composable client-server database protocol, also called a wire protocol, for transporting Arrow data between clients and servers that are separated by a network boundary. Flight SQL defines a standard format, agnostic of any specific database or other type of data system, for doing common actions with SQL databases like executing queries, getting metadata, and fetching query results as Arrow data.</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/full-stack-apache-arrow-connectivity-solution.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/full-stack-apache-arrow-connectivity-solution.svg" alt="Diagram representing how ADBC and Flight SQL simplify the database connectivity landscape by showing the path from a user query to the result set, using three fictitious database systems: turtleDB, snailDB, and slothDB. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. This icon connects with an arrow going down to a box labeled API sitting on top of another box labeled driver. This takes place on the client side. After the arrow leaves the box labeled driver, it passes on the server side, where the arrow carries the query to the bottom layer labeled database. As the query goes through an icon representing the database system, it returns Arrow data. As the arrow leaves the database layer, it goes back to the the driver on the client side. The arrow is labeled 'wire protocol' and is the same for the three database systems and is shown to transport Arrow data. The final step of the pathway is represented by an arrow leaving the API box towards the result set representation usable by the user. For the three database systems, the data is returned is Arrow-formatted."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.07. 
+</span>ADBC and Flight SQL work together to standardize data connectivity: regardless of the database system, users always get Arrow data in return with a standard client API, and system developers get a standard columnar wire protocol to rely on.
+</figcaption></center>
+
+<p>Adopting Flight SQL as a standard on the server-side saves database developers from:</p>
+
+<ul>
+  <li>Writing their own wire protocol for transporting columnar Arrow data</li>
+  <li>Supporting that protocol in multiple languages</li>
+  <li>Developing client drivers for each database</li>
+  <li>Developing their own client API (folks who want an Arrow-native API can swap in ADBC, folks who have legacy code that relies on J/ODBC can swap in those respective drivers)</li>
+</ul>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[90%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                We implemented the Arrow FlightSQL protocol, on top of Flight, which lets InfluxDB 3.0 work in the SQL-based ecosystem. There are clients for FlightSQL that implement popular interfaces such as JDBC, ODBC, and Python DBI, which we can use without modification. 
+                <span class="block !mt-2">
+                Unlike other systems I have worked on, InfluxDB 3.0 does not have a client driver team and likely won’t need one, thanks to Flight and FlightSQL. (By the way, if you don’t understand why implementing a JDBC or ODBC driver is so complex and nuanced it often takes a whole team of developers, consider yourself lucky.)
+                </span>
+            </p>
+            <p class="mt-2 !text-xs"><a href="https://www.influxdata.com/blog/flight-datafusion-arrow-parquet-fdap-architecture-influxdb/" target="_blank">Andrew Lamb, InfluxDB</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Figure + Caption -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-2 lg:gap-4 mb-5 place-items-center pt-10 pb-0 md:pt-12 md:pb-0 lg:pt-10 lg:pb-5">
+<div class="col-span-1 md:col-span-2 lg:col-span-2">
+<center><img class="h-[26rem]" src="/assets/images/codex/chapter3/client-server-communication-software.svg" alt="Figure representing the time spent on the different steps involved in a typical client-server communication for query execution comparing with and without Flight. The client and server are represented by thick black lines separated with a space representing the networking/communication between the two. In both cases, the first step is the Authentication represented with a bidirectional arrow connecting the client and the server. The second step is the client sending the query represented with a side way arrow. The third step is the query execution represented by a pink rectangle on the server bar. This step is a little bit shorter on a server with Flight as computation on Arrow data is typically faster. Once the computation is done, the result header is sent back to the client. After that, on a server without Flight, the result set needs to be serialized to be sent over the wire. This steps takes a long time, represented by a long blue bar. Some time after serialization starts, the result is being sent to the client represented by a shaded area between the server and the client. Once reaching the client, the result set is also serialized taking also a long time represented by a long green rectangle. On a server with Flight, the result set is in Arrow format, which takes a short time represented by a very short blue rectangle on the server side, the transport also does not take long represented by a narrow shaded section, and the result set does not need to be serialized by the client as it is already in Arrow."></center>
+<p class="!my-0 !pb-4 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/client-server-communication-software.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+</div>
+<div class="pl-0 md:pl-5 lg:pl-5">
+    <figcaption class="!text-center md:!text-left lg:!text-left">
+    <span class="font-bold">Figure 03.08. </span>Comparison of typical client-server communication versus with Flight. Source: “<a href="https://dl.acm.org/doi/fullHtml/10.1145/3527199.3527264" target="_blank">Benchmarking Apache Arrow Flight - A wire-speed protocol for data transfer, querying and microservices</a>" by Ahmad et al.
+</figcaption>
+</div>
+</div>
+
+<p><a name="composable-data-connectivity"></a></p>
+<h2 id="33-composable-data-connectivity">
+<font>3.3</font> Composable data connectivity</h2>
+
+<p>A healthy data connectivity layer is fundamental to any data system design or redesign that does not start with “move all your data from over there to over here.” A composable data connectivity layer can help data systems developers climb the <a href="/codex/open-standards#the-data-systems-hierarchy-of-needs">data system hierarchy of needs</a>: all you need is <strong>MICE</strong>.</p>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/mice-complete-implementation.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<lottie-player speed="0.5" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-complete-implementation.json" alt="A diagram titled The Data Systems Hierarchy of Needs with the subhead All You Need is MICE. The main element of the image is a pyramid (or, upside down triangle) broken into four layers. The layers are in shades of gray. Starting from the bottom Layer 1 represents Modular: Standalone + swappable parts. Layer 2 represents Interoperable: Parts can connect and exchange information. Layer 3 represents Customizable: parts can be combined into a complete custom system. Layer 4 represents Extensible: Extended system parts to new hardware, engines, etc. The first letter of each of these words spells MICE, which is the acronym used. Between the Customizable and Extensible layer is an illustration of a cute mouse wearing glasses." class="w-full !mb-5">
+</lottie-player>
+<figcaption class="pb-12 center">
+    <span class="font-bold">Figure 03.09. </span>The data systems hierarchy of needs: All you need is MICE.
+</figcaption>
+
+<p>In true composable fashion, the standards for data connectivity can be mixed and matched, so in this section, we will focus on two common design patterns for strengthening a composable connectivity layer:</p>
+
+<ol>
+  <li>
+    <p><mark>Arrow-native data access:</mark> This approach, shown as snailDB in the figure, is enabled by adopting ADBC (Arrow Database Connectivity) as a client API. Compared to the status quo data system (turtleDB), ADBC layers in as a client API that can fetch Arrow data from an Arrow-native database. ADBC can also convert any formatted results into Arrow format to return to users, regardless of the format(s) used by the database and the wire protocol. Adopting ADBC involves only making changes to the client side of a data system, and returns Arrow data to users. This design pattern is a “two birds, one stone” solution: you get both Arrow as a data format and Arrow-native data access.</p>
+  </li>
+  <li>
+    <p><mark>Arrow-native data access and transport:</mark> This approach is shown as slothDB in the figure, and it is enabled by adopting ADBC as an Arrow-native client API on the client side, and changing the underlying wire protocol for the database. As such, this solution requires development work on the server side, which may not always be possible. This design pattern is Arrow all the way if the database serves Arrow-formatted data. If not, the fallback is to return Arrow data from the ADBC client API, converting the data format on the client side.</p>
+  </li>
+</ol>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/different-data-sources-data-connectivity.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/different-data-sources-data-connectivity.svg" alt="Diagram representing the three data connectivity approaches illustrated with three fictitious database systems called turtleDB, snailDB, and slothDB. For each system, the path from the user query to the result set is shown. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. In the middle, there is the connectivity layer represented by a box with two components: API and driver. At the bottom, there is the database layer. For turtleDB, representing the Status Quo, The query connects to the API in the middle layer. The API is turtleDB specific and sits on top of a turtleDB specific driver. The query leaves the driver to go to the database layer, where the query is processed and a result set is materialized in the form of a cloud of data with a turtle on top to represent a database specific data format. This data is sent back to the driver via a database specific wire protocol. Once it reaches the driver, the result set is shown to be serialized into a different format to return a tabular artifact to the the user. With  snailDB, which represents the ADBC + non-Arrow native approach, the pathway for the query is the same as with the turtleDB but because it uses ADBC, the API layer is represented using the Arrow project logo. For the return trip of the data, the data is serialized to the Arrow format which is then returned to the user. For slothDB, which represents the ADBC + Arrow-native driver, when the data leaves the database it is already in the Arrow format, and the Arrow wire protocol carries it back to the user without needing to be converted, making the process faster."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.10. 
+</span>Comparison of the three connectivity approaches: with a database-specific connector (Status Quo), with ADBC and a non-Arrow native driver, and with ADBC and an Arrow-native driver.  
+</figcaption></center>
+
+<p>In the following four sections, we will outline the advantages and asterisks involved in each of these two composable connectivity design patterns.</p>
+
+<p><a name="modular"></a></p>
+<h3 id="331-modularity-in-data-connectivity">
+<font>3.3.1</font> Modularity in data connectivity</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter2/mice-modular-language-interoperability.json" alt="This diagram demonstrates the concept of Modular. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says Codex looking up at a computer monitor. On the computer monitor is a green box with three shapes - from left to right there is a square, circle, and triangle.  A speech bubble comes from the mouse with the text, Does it do what we need? How easy is it to snap into our system?" class="w-full mt-8 !mb-5">
+</lottie-player>
+</center>
+<div class="block mx-auto">
+<figcaption class="!text-center">
+<span class="font-bold">Figure 03.11. </span>A modular connector is swappable: you can easily choose to use it or leave it.
+</figcaption>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="w-[20%]">MODULAR</th>
+      <th class="w-[40%]">Advantages</th>
+      <th class="w-[40%]">Asterisks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADBC + non-Arrow native driver</td>
+      <td>
+<ul>
+<li>Available in multiple programming languages (C/C++, Go, Java, Python, R)</li>
+<li>Multiple data systems supported (DuckDB, Snowflake, Postgres, SQLite, and more on the way)</li>
+</ul>
+</td>
+      <td>
+<ul>
+<li>System still uses different drivers and different protocols under the hood</li>
+<li>Data system developers still have to support and manage drivers for each database in use</li>
+<li>Your database may not have a supported driver (yet)</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <td>ADBC + Flight SQL as an Arrow-native driver</td>
+      <td>
+<ul>
+<li>Use the same driver to connect to different databases as long as they expose a Flight SQL endpoint</li>
+<li>If you cannot switch to ADBC as a client API, there is a specific driver already developed for O/JDBC data pipelines, so you can swap in Flight SQL and leave the O/JDBC client API in place (see Figure 03.12)</li>
+</ul>
+</td>
+      <td>
+<ul><li>Requires server-side support that may not be easy to add</li></ul>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="!mt-8 !mb-0 !pb-0 !text-right">
+    <a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/seamlessly-connect-with-ojdbc.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a>
+</p>
+<p class="!mt-0">
+<img class="w-full" src="/assets/images/codex/chapter3/seamlessly-connect-with-ojdbc.svg" alt="Diagram representing how Flight SQL can be used with ODBC and JDBC by showing the path from a user query to the result set, using three fictitious database systems: turtleDB, snailDB, and slothDB. Each system is organized the same way: on the top, there is the user interface area with an icon representing a query. This icon connects with an arrow going down to a box labeled O/JDBC API sitting on top of another box labeled Arrow driver. This takes place on the client side. After the arrow leaves the box labeled driver, it passes on the server side, where the arrow carries the query to the bottom layer labeled database. As the query goes through an icon representing the database system, it returns Arrow data. As the arrow leaves the database layer, it goes back to the the driver on the client side. The arrow is labeled 'wire protocol' and is the same for the three database systems and is shown to transport Arrow data. The final step of the pathway is represented by an arrow leaving the O/JDBC API box towards the result set representation usable by the user."></p>
+<center><figcaption class="!-mt-1"><span class="font-bold">Figure 03.12. 
+</span>The Flight SQL protocol is compatible with ODBC and JDBC. You can augment your system by using Flight SQL but keep your O/JDBC client API code in place.
+</figcaption></center>
+
+<p><a name="interoperable"></a></p>
+<h3 id="332-interoperability-in-data-connectivity">
+<font>3.3.2</font> Interoperability in data connectivity</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter2/mice-interoperable-language-interoperability.json" alt="This diagram demonstrates the concept of Interoperable. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says Codex looking up at a computer monitor. On the computer monitor, there are two boxes vertically stacked. The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The Green Circle and the Blue Square line up and are highlighted. The rest of the shapes in both rows are transparent.  A speech bubble comes from the mouse with the text, Will this work with what we have?" class="w-full mt-8 !mb-5">
+</lottie-player>
+</center>
+<div class="block mx-auto max-w-lg">
+<figcaption class="!text-center">
+<span class="font-bold">Figure 03.13. </span>A connector needs to interoperate on two levels:
+<ol class="pt-2">
+<li class="!text-xs">
+<b>Data format:</b> Return results a standard format that does not require conversions</li>
+<li class="!text-xs">
+<b>Wire protocol:</b> Provide a consistent API regardless of the database system</li>
+</ol>
+</figcaption>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="w-[20%]">INTEROPERABLE</th>
+      <th class="w-[40%]">Advantages</th>
+      <th class="w-[40%]">Asterisks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADBC + non-Arrow native driver</td>
+      <td>
+<ul>
+<li>Arrow data back regardless of database system: users get the same results back for the same query across supported databases</li>
+<li>Consistent user experience across databases with the same client API</li>
+</ul>
+</td>
+      <td>
+<ul>
+<li>Your pipeline may still have kinks: you still have de/serializations happening that slow data flow</li>
+<li>Still have to worry about how to actually write equivalent queries spanning SQL dialects that vary across databases</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <td>ADBC + Flight SQL as an Arrow-native driver</td>
+      <td>
+<ul>
+<li>Consistent developer experience using a standard API for transporting Arrow data from any database system</li>
+<li>The data stays in Arrow format all the way, without internal de/serialization</li>
+</ul>
+</td>
+      <td>
+<ul>
+<li>Flight SQL is a young growing project with support for the following database systems Postgres, Dremio, Graphana, <a href="https://github.com/prestodb/presto/issues/19419#issuecomment-1702778253" target="_blank">Presto on possible horizon</a>
+</li>
+<li>Still have to worry about how to actually write equivalent queries spanning SQL dialects that vary across databases</li>
+</ul>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="customizable"></a></p>
+<h3 id="333-customizing-data-connectivity-solutions">
+<font>3.3.3</font> Customizing data connectivity solutions</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter2/mice-customizable-language-interoperability.json" alt="This diagram demonstrates the concept of Customizable. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says Codex looking up at a computer monitor. On the computer monitor, there are three boxes vertically stacked The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The bottom row is a pink box with three shapes - from left to right there is a square, circle, and triangle. The Green Circle, the Blue Square, and the Pink Triangle line up and are highlighted. The rest of the shapes in all three rows are transparent. A speech bubble comes from the mouse with the text, Can it help me compose a data system? Can it help me compose a better system?" class="w-full mt-8 !mb-5">
+</lottie-player>
+</center>
+<div class="block mx-auto max-w-lg">
+<figcaption class="!text-center">
+<span class="font-bold">Figure 03.14. </span>A connector does not get in the way if a system needs to flex and adapt to changes, and can even make changes safer and smoother.
+</figcaption>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="w-[20%]">CUSTOMIZABLE</th>
+      <th class="w-[40%]">Advantages</th>
+      <th class="w-[40%]">Asterisks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADBC + non-Arrow native driver</td>
+      <td>
+<ul>
+<li>Common data format makes it possible to combine results across different databases</li>
+<li>Any programming language that can talk to C can create a library to use ADBC as a data access interface</li>
+</ul>
+</td>
+      <td>
+</td>
+    </tr>
+    <tr>
+      <td>ADBC + Flight SQL as an Arrow-native driver</td>
+      <td>
+<ul>
+<li>Common wire protocol makes it possible to compose with different Flight SQL clients. Flight SQL also supports JDBC and ODBC clients</li>
+<li>Fetch data in parallel and distribute results across machines, enabled by <a href="https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/#horizontal-scalability-parallel-and-partitioned-data-access" target="_blank">multiple endpoints feature</a>
+</li>
+</ul>
+</td>
+      <td>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="extensible"></a></p>
+<h3 id="334-extending-connectivity-in-data-systems">
+<font>3.3.4</font> Extending connectivity in data systems</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter2/mice-extensible-language-interoperability.json" alt="This diagram demonstrates the concept of Extensible. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says Codex looking up at a computer monitor. On the computer monitor, there are three boxes vertically stacked The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The bottom row is a pink box with three shapes - from left to right there is a square, circle, and triangle. The Green Circle, the Blue Square, and the Pink Triangle line up and are highlighted and each shape has white inside of it. The rest of the shapes in all three rows are transparent. A speech bubble comes from the mouse with the text, Can we make it work the way we need it to?" class="w-full mt-8 !mb-5">
+</lottie-player>
+</center>
+<div class="block mx-auto max-w-lg">
+<figcaption class="!text-center">
+<span class="font-bold">Figure 03.15. </span>The connector can be easily modified to add new features or functionality.
+</figcaption>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="w-[20%]">EXTENSIBLE</th>
+      <th class="w-[40%]">Advantages</th>
+      <th class="w-[40%]">Asterisks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADBC + non-Arrow native driver</td>
+      <td>
+<ul>
+<li>Any vendor can build a client driver to support returning Arrow-formatted data</li>
+<li>Gain polyglot client API support for all programming languages that ADBC is available in</li>
+<li>A driver can be developed to expose partitioned and/or distributed results sets to clients, enabled by ADBC’s <a href="https://arrow.apache.org/adbc/current/format/specification.html#partitioned-result-sets" target="_blank">partitioned results sets feature</a> </li>
+</ul>
+</td>
+      <td>
+<ul><li>Extensions limited by supported databases and existing wire protocols</li></ul>
+</td>
+    </tr>
+    <tr>
+      <td>ADBC + Flight SQL as an Arrow-native driver</td>
+      <td>
+<ul>
+<li>Developers can use one language on the server side and implement clients in the languages they need to support</li>
+<li>Open source protocol and drivers allow for <a href="/codex/language-interoperability#extensible" target="_blank">greenfield and piggybacked extensions</a>
+</li>
+</ul>
+</td>
+      <td>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="keep-data-connected"></a></p>
+<h2 id="34-keep-your-data-connected">
+<font>3.4</font> Keep your data connected</h2>
+
+<p>Drumroll… the final installment of The Composable Codex is next. In the last chapter, it is time to face The Wall. It is a place where most data systems are headed and we make the case for how to navigate your system over it (hello, engines).</p>
+
+<div class="n-box" style="border: solid 1px black; box-shadow: 5px 5px 1px black;">
+    <div class="n-text !my-auto font-medium !w-full">
+     <p><a href="/codex/accelerated-hardware">Read Chapter 04: The Wall &amp; The Machine</a></p>
+
+     <p><em>Optimization. Performance. A rock. A hard place. Until you understand accelerator-native systems.</em></p>
+
+     <p>Access all of <a href='/codex'>The Composable Codex chapters</a>.</p>
+	</div>
+</div>
+
+<p><a name="keep-up-with-voltron-data"></a></p>
+<h3 id="341-how-can-i-keep-up-with-voltron-data">
+<font>3.4.1</font> How can I keep up with Voltron Data?</h3>
+
+<p>You can keep up with all things Voltron Data by following us on <a href="https://www.linkedin.com/company/voltrondata/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/VoltronData" target="_blank">X</a> (formerly Twitter). If you want to receive alerts for future content like The Composable Codex, sign up for our email list.</p>
+
+<p><a data-modal-target="form-codex" data-modal-toggle="form-codex" class="bg-greenvoda-500 hover:bg-black shadow-sm hover:shadow-xl px-[0.75rem] py-[0.42rem] text-sm rounded-full w-[100%] cursor-pointer" style="text-decoration-line: none !important;">
+<span style="color:white;">Sign up with your email
+</span></a></p>
+
+<p><a name="who-wrote-the-composable-codex"></a></p>
+<h3 id="342-who-wrote-the-composable-codex">
+<font>3.4.2</font> Who wrote The Composable Codex?</h3>
+
+<p>The Codex is written by engineers, data scientists, and leaders at Voltron Data. You can find out more about what we do at Voltron Data here: <a href="https://voltrondata.com/product">https://voltrondata.com/product</a></p>
+
+<p><a name="how-can-I-cite-the-codex"></a></p>
+<h3 id="343-how-can-i-cite-the-codex">
+<font>3.4.3</font> How can I cite The Codex?</h3>
+
+<p>For attribution, please cite this work as:</p>
+
+<p>Voltron Data. 2023. The Composable Codex. <a href="https://voltrondata.com/codex">https://voltrondata.com/codex</a></p>
+
+<pre class="text-[0.6rem] h-auto overflow-x-hidden overflow-y-hidden bg-white">
+<button type="button" class="group !cursor-pointer absolute right-[0.1rem] top-2 font-normal hover:font-semibold w-fit text-left bg-transparent !opacity-60 hover:!opacity-100" onclick="copyToClipboard('#p5')"><img class="h-[0.9rem] w-[0.9rem] inline mr-2 !opacity-60 hover:!opacity-100" src="/assets/images/icon-copy.svg" alt="copy icon"></button>
+<code id="p5" class="BibTeX" style="background-color:white !important; font-size:12.5px !important">@ONLINE{composablecodex,
+    author = {Voltron Data},
+    title = {"The Composable Codex"},
+    year = {2023},
+    url = {https://voltrondata.com/codex},
+    langid = {en}
+} <br></code></pre>
+
+<p><br></p>
+
+            </div>
+          </div>
+        </div>
+
+    </main><footer class="items-center justify-between" aria-label="Global">
+      <div class="mx-auto max-w-7xl px-6 md:px-5 lg:px-5 mt-10 md:mt-10 lg:mt-10 mb-5 md:mb-5 lg:mb-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 border-t border-l border-black">
+
+
+          <div class="col-span-1 md:col-span-2 lg:col-span-5 order-2 md:order-1 lg:order-1">
+
+            <div class="grid grid-cols-3 lg:grid-cols-6 font-space text-black font-extralight text-[0.8rem] tracking-wide text-center">
+              <a href="/" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Home
+              </a>
+              <a href="/theseus" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Product
+              </a>
+              <a href="/about" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Company
+              </a>
+              <a href="/careers" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Careers
+              </a>
+              <a href="/blog" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Resources
+              </a>
+              <a href="/contact" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Contact
+              </a>
+            </div>
+            
+            <div class="block text-[0.75rem] text-center font-extralight font-space border-r border-b border-black py-2.5">
+              
+              
+              <div class="text-black font-light tracking-wide">
+                Copyright © Voltron Data. 2024
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-span-1 md:col-span-1 lg:col-span-2 order-1 md:order-2 lg:order-2">
+            <a href="/" class="block py-[0.59rem] md:py-[1.35rem] lg:py-[0.71rem] border-r border-black">
+              <svg class="w-[10rem] items-center mx-auto" version="1.1" id="Voltron Data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 351.7 45" style="enable-background:new 0 0 351.7 45;" xml:space="preserve">
+                <style type="text/css">
+                  .st0{fill:#000000;}
+                </style>
+                <g>
+                  <g>
+                    <path class="st0" d="M75.7,14.4c-0.2-0.3-0.1-0.5,0.2-0.5h2.2c0.2,0,0.4,0,0.5,0.1c0.2,0.1,0.2,0.2,0.3,0.4l5.6,11.5h0.1l5.6-11.5
+                      c0.1-0.2,0.2-0.3,0.3-0.4c0.2-0.1,0.4-0.1,0.5-0.1h2.2c0.3,0,0.4,0.2,0.2,0.5L85,31.3c-0.1,0.2-0.2,0.3-0.4,0.3h-0.2
+                      c-0.2,0-0.3-0.1-0.4-0.3L75.7,14.4z"></path>
+                    <path class="st0" d="M111.1,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9S106.1,13.6,111.1,13.6z M111.1,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      C105.1,26.1,107.5,29,111.1,29L111.1,29z"></path>
+                    <path class="st0" d="M141.7,28.8c0.4,0,0.5,0.1,0.5,0.5v1.5c0,0.4-0.1,0.5-0.5,0.5h-10.2c-0.4,0-0.5-0.1-0.5-0.5V14.4
+                      c0-0.4,0.1-0.5,0.5-0.5h1.9c0.4,0,0.5,0.1,0.5,0.5v14.4H141.7z"></path>
+                    <path class="st0" d="M162.1,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5h-5.1c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H162.1L162.1,13.9z"></path>
+                    <path class="st0" d="M175.6,30.8c0,0.4-0.1,0.5-0.5,0.5h-1.9c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5h6.5
+                      c2.9,0,6.2,1.4,6.2,5.5c0,3.2-2,4.8-4.3,5.3l4.2,6c0.3,0.4,0.1,0.7-0.4,0.7h-2c-0.2,0-0.4-0.1-0.5-0.1c-0.2-0.1-0.3-0.2-0.4-0.4
+                      l-4.1-6h-2.8V30.8z M179.5,22.2c2.7,0,3.5-1.3,3.5-2.9s-0.8-2.9-3.5-2.9h-3.9v5.7L179.5,22.2L179.5,22.2z"></path>
+                    <path class="st0" d="M204.8,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9C195.8,17.5,199.7,13.6,204.8,13.6z M204.8,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      S201.2,29,204.8,29L204.8,29z"></path>
+                    <path class="st0" d="M227.5,20L227.5,20l-0.1,10.9c0,0.4-0.1,0.5-0.5,0.5h-1.8c-0.4,0-0.5-0.1-0.5-0.5v-17c0-0.2,0.1-0.2,0.3-0.2
+                      h0.1c0.1,0,0.2,0,0.2,0.1c0.1,0.1,0.1,0.1,0.2,0.2l11.1,11.4h0.1v-11c0-0.4,0.1-0.5,0.5-0.5h1.8c0.4,0,0.5,0.1,0.5,0.5v16.9
+                      c0,0.2-0.1,0.3-0.3,0.3H239c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.1-0.1-0.2-0.2L227.5,20z"></path>
+                    <path class="st0" d="M270.6,13.9c5,0,8.8,3.6,8.8,8.7s-3.8,8.7-8.8,8.7h-6.3c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5
+                      H270.6L270.6,13.9z M266.7,16.5v12.3h3.9c3.6,0,5.9-2.8,5.9-6.2s-2.3-6.2-5.9-6.2L266.7,16.5z"></path>
+                    <path class="st0" d="M305.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.3-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L305.9,30.8z M297,19.1l-2.9,5.9h5.8L297,19.1L297,19.1z"></path>
+                    <path class="st0" d="M326,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5H313c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H326L326,13.9z"></path>
+                    <path class="st0" d="M350.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.4-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L350.9,30.8z M342,19.1l-2.9,5.9h5.8L342,19.1L342,19.1z"></path>
+                  </g>
+                  <g>
+                    <path class="st0" d="M26.1,0.6L26.1,0.6H13.5H0.8l6.3,10.9l6.3,11l6.3,10.9L26,44.3l6.3-10.9l6.3-10.9l-6.3-10.9L26.1,0.6z
+                      M30.8,32.5l-4.7,8.1l-4.7-8.1l-5.8-10l5.8-10l4.7-8.1l4.7,8.1l5.7,10L30.8,32.5z"></path>
+                    <polygon class="st0" points="37.6,0.6 38.8,2.6 48.1,2.6 43.4,10.6 44.5,12.6 51.4,0.6 		"></polygon>
+                  </g>
+                </g>
+              </svg>
+            </a>
+  
+            <div class="grid grid-cols-8 text-center border-t border-b border-r py-[0.2rem] md:py-[0.21rem] lg:py-[0.2rem] border-black">
+              <div></div>
+<div></div>
+<div></div>
+              <a href="https://twitter.com/voltrondata" target="_blank" class=" hover:no-underline pt-[0.5rem] pb-[0.45rem] rounded-full">
+                <img alt="Twitter" title="Twitter" src="/assets/images/footer/twitter.svg" class="opacity-70 hover:opacity-100" style="height: 15px">
+              </a>
+              <a href="https://www.linkedin.com/company/voltrondata" target="_blank" class="hover:no-underline pt-[0.1rem] pb-[0.45rem]">
+                <svg class="w-[0.85rem] h-[0.9rem] text-gray-800 hover:text-[#0072b1] inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 15 15">
+                  <path fill-rule="evenodd" d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"></path>
+                  <path d="M3 5.012H0V15h3V5.012Z"></path>
+                </svg>
+              </a>
+              <div></div>
+<div></div>
+<div></div>
+            </div>
+          </div>
+
+
+
+        </div>
+        
+      </div>
+
+</footer>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+  
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="50bd322f-7036-440a-87b8-6c335591e4b1" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="REDACTED" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script></body>
+</html><html>
+<style>
+  body {
+    background-color: #F5F3F5;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .active-link {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    letter-spacing: 0.35px !important;
+    border-bottom: #000000 0.03em solid !important;
+    letter-spacing: 0.25px !important;
+  }
+  nav{
+    background-color: #F5F3F5 !important;
+  }
+  #dropdownHoverButton{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton2{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton3{
+    font-size: 14px !important;
+  }
+  b{
+    font-weight: 600;
+  }
+  strong{
+    font-weight: 600;
+  }
+  .banner-quote{
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1 {
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h2 {
+    color: #000000;
+    font-weight: 700 !important;
+    padding: 60px 0 20px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  h3 {
+    color: #000000 !important;
+    padding: 50px 0 20px 0;
+    font-size: 21px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  h4 {
+    color: #000 !important;
+    font-weight: 600 !important;
+    padding: 40px 0 20px 0;
+    font-size: 18px;
+  }
+  h5 {
+    color: #000 !important;
+    margin: 40px 0 10px 0;
+    font-size: 18px !important;
+    line-height: 26px !important;
+  }
+  h6 { /* txt-md-light */
+    margin: 25px 0 10px 0;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.4px;
+    font-family:  'Plus Jakarta Sans', sans-serif;
+    color: rgb(17 24 39);
+    text-align: left;
+    font-weight: 400;
+  }
+  p {
+    color: rgb(17 24 39);
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    line-height: calc(1ex / 0.32);
+    margin: calc(1ex / 0.33) 0; 
+  }
+  .text-force{ /* font-size = p */
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+  }
+  mark{
+    background-color: #D2CFDF !important;
+    padding: 1px 4px;
+    font-weight: 600;
+  }
+  .center{
+    text-align: center !important;
+  }
+
+  ul{
+    list-style-type: disc;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  ol{
+    list-style-type: decimal;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  li{
+    padding-left: 8px;
+    padding-top: 0;
+    padding-bottom: 5px;
+  }
+  li:before {
+    font-family: 'DM Mono', monospace;
+  }
+  figcaption{
+    margin-top: 0px !important;
+    padding-bottom: 20px;
+  }
+  img{
+    padding-top: 20px;
+  }
+
+
+/* CSS CODE CODEX */
+  pre{
+    font-size: 14px !important;
+  }
+  .hljs {
+    margin-top: 5px !important;
+    background-color: #F5F3F5 !important;
+  }
+  pre.badge::before {
+    background-color: #D2CFDF !important;
+    color: black;
+    font-size: 12px !important;
+    left: 0 !important;
+    width: fit-content !important;
+  }
+  .th-full{
+    width: 100% !important;
+  }
+
+
+
+  .navegacion.fijo {
+    position: fixed;
+    top: 0px;
+    left: auto;
+    z-index: 10;
+    background-color: #F5F3F5;
+  }
+
+  .input-focus-valid {
+    border-color: black !important;
+    outline: 2px solid black !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus-invalid {
+    border-color: red !important;
+    outline: 2px solid red !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus {
+    outline: 2px solid black;
+    border-radius: 1px !important;
+  }
+  img{
+    padding: 0;
+  }
+
+
+  @media (min-width: 661px) and (max-width: 1150px) {
+    .banner-quote{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h1{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h2{
+      font-size: 28px;
+      line-height: 32px;
+    }
+    h3{
+      font-size: 20px;
+      line-height: 28px;
+    }
+    p {
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    ol{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    li{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    h6{
+      font-size: 14.5px !important;
+      line-height: 25px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      position: fixed;
+    }
+    figcaption{
+      margin-top: -10px !important;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navegacion.fijo {
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+    }
+    .top-fix{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .banner-quote{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    p {
+      font-size: 13px;
+    }
+    h1{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    h2{
+      font-size: 25px;
+      line-height: 30px;
+    }
+    h3{
+      font-size: 18px;
+      line-height: 23px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    h6{
+      font-size: 16px !important;
+      line-height: 28px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+    }
+    figcaption{
+      margin-top: 0px !important;
+      padding-bottom: 20px;
+    }
+    ul{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+    ol{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+  }
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script> 
+<script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9"></script>
+<script nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+  const cloudinary = require('cloudinary');
+
+  cloudinary.v2.config({
+    cloud_name: 'dm6arzeue',
+    api_key: 'REDACTED',
+    api_secret: 'REDACTED',
+    secure: true,
+  });
+
+  cloudinary.v2.api
+  .resource_by_asset_id('3e534ee11403fc7babf0ef02495b9bd6')
+  .then(console.log)
+  
+</script>
+
+<script nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+// Cloudinary Download
+const downloadLinks = document.querySelectorAll('a[download]');
+
+downloadLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+
+    const imageUrl = link.href;
+    const fileName = link.download || imageUrl.split('/').pop();
+
+    fetch(imageUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => console.error('Error downloading image:', error));
+  });
+});
+
+
+let navegacionFija = false; // Variable para controlar si la navegación está fija
+const navegacion = document.getElementById("navegacion");
+let posicionInicial = navegacion.getBoundingClientRect().top + window.scrollY;
+
+function ajustarNavegacionFija() {  
+  const scrollActual = window.scrollY;
+
+  if (scrollActual >= posicionInicial) {
+    if (!navegacionFija) {
+      navegacionFija = true;
+      navegacion.classList.add("fijo");
+    }
+  } else {
+    if (navegacionFija) {
+      navegacionFija = false;
+      navegacion.classList.remove("fijo");
+    }
+  }
+}
+
+
+const contenedor = document.getElementById("NavigationContent");
+const titulos = contenedor.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+
+function resaltarEnlaceActivo() {
+    // Recorre los títulos y verifica su posición en relación con la posición inicial
+    titulos.forEach((titulo) => {
+        let rectTitulo = titulo.getBoundingClientRect();
+        let posicionTitulo = rectTitulo.top + window.scrollY;
+        
+        const scrollActual = window.scrollY;
+        
+        if (Math.round(scrollActual)   >= (Math.round(posicionTitulo) - 1)  ) {
+          
+          const enlaces = document.querySelectorAll(".nav-id.nav-link");
+            enlaces.forEach((enlace) => {
+            let tituloTextoLimpio = titulo.outerText;
+            let enlaceTextoLimpio = enlace.outerText;            
+            if(tituloTextoLimpio.includes(enlaceTextoLimpio)){
+              enlace.classList.add("active-link");
+            }
+            else{
+              enlace.classList.remove("active-link");
+            }
+                
+            });
+        } else {
+
+         
+      
+        }      
+    });
+}
+
+window.addEventListener("scroll", ajustarNavegacionFija);
+window.addEventListener("scroll", resaltarEnlaceActivo);
+
+window.addEventListener('DOMContentLoaded', () => {
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    if (entry.intersectionRatio > 0) {      
+      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+    } else {
+      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+    }
+  });
+});
+
+// Track all sections that have an `id` applied
+document.querySelectorAll('section[id]').forEach((section) => {
+  observer.observe(section);
+});
+
+});
+
+
+</script>
+
+<script type="text/javascript" nonce="8WDsx6M2ajTu6uReAVz25kVFWOFBh8f9">
+  function copyToClipboard(p5) {  
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  var codeContent = $(p5).text().trim();
+  
+  var indentedCode = codeContent.replace(/^/gm, '   '); // Add three indentation spaces to the left of each line
+  var indentedCodeWithRightMargin = indentedCode.replace(/$/gm, '   '); // Add three spaces indent to the right of each line
+  $temp.val(indentedCodeWithRightMargin);
+  $temp.select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+function copyToClipboard(p6) {  
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  var codeContent = $(p6).text().trim();
+  
+  var indentedCode = codeContent.replace(/^/gm, '   '); // Add three indentation spaces to the left of each line
+  var indentedCodeWithRightMargin = indentedCode.replace(/$/gm, '   '); // Add three spaces indent to the right of each line
+  $temp.val(indentedCodeWithRightMargin);
+  $temp.select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+</html>

@@ -1,0 +1,2781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+  
+  <meta property="og:title" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Open data standards can serve your system (and developers) well. Learn how composable standards like Substrait, Arrow, and ADBC glue your system together.">
+  <meta property="og:image" content="/assets/images/codex/seo/cover-seo-chapter-1.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="556">
+  <meta property="og:image:type" content="image/png">
+  <meta property="twitter:domain" content="">
+  <meta property="twitter:url" content="https://voltrondata.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@VoltronData">
+  <meta name="twitter:title" content="Open standards over silos">
+  <meta name="twitter:description" content="Open data standards can serve your system (and developers) well. Learn how composable standards like Substrait, Arrow, and ADBC glue your system together.">
+  <meta name="twitter:image" content="/assets/images/codex/seo/cover-seo-chapter-1.png">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Open standards over silos | Voltron Data</title>
+<meta name="generator" content="Jekyll v4.2.1">
+<meta property="og:title" content="Open standards over silos">
+<meta name="author" content="Voltron Data">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Open data standards can serve your system (and developers) well. Learn how composable standards like Substrait, Arrow, and ADBC glue your system together.">
+<meta property="og:description" content="Open data standards can serve your system (and developers) well. Learn how composable standards like Substrait, Arrow, and ADBC glue your system together.">
+<link rel="canonical" href="https://voltrondata.com/codex/open-standards">
+<meta property="og:url" content="https://voltrondata.com/codex/open-standards">
+<meta property="og:site_name" content="Voltron Data">
+<meta property="og:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-1.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-05-03T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-1.png">
+<meta property="twitter:title" content="Open standards over silos">
+<script type="application/ld+json" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Voltron Data"},"dateModified":"2023-05-03T00:00:00+00:00","datePublished":"2023-05-03T00:00:00+00:00","description":"Open data standards can serve your system (and developers) well. Learn how composable standards like Substrait, Arrow, and ADBC glue your system together.","headline":"Open standards over silos","image":"https://voltrondata.com/assets/images/codex/seo/cover-seo-chapter-1.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://voltrondata.com/codex/open-standards"},"url":"https://voltrondata.com/codex/open-standards"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;display=swap">
+
+
+  <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link href="/output.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+
+  <script src="/assets/js/main.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+  <script defer data-domain="voltrondata.com" src="https://plausible.io/js/script.tagged-events.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+  
+  <link type="application/atom+xml" rel="alternate" href="https://voltrondata.com/feed.xml" title="Voltron Data">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<header class="fixed inset-x-0 top-0 z-40">
+
+  <nav class="site-header-codex bg-transparent border-gray-200 !tracking-[0.01em]" aria-label="Global">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto my-auto pl-6 md:pl-6 lg:pl-4 pr-4 pt-[0.4rem] sm:pt-[1.4rem] md:pt-[1.7rem] lg:pt-[1.7rem]">
+        <a href="/" class="flex items-center space-x-2 rtl:space-x-reverse">
+          <img class="h-[1.15rem] sm:h-[1.2rem] md:h-[1.4rem] lg:h-[1.4rem] -mt-1" src="/assets/images/voltron-data.svg" alt="Voltron Data">
+        </a>
+        <div class="flex items-center">
+            <button onclick="toggleMenu()" type="button" class="sm:inline-flex md:hidden lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span id="nav-trigger" class="nav-trigger sr-only">Open main menu</span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mega-menu-icons" class="items-center justify-between hidden w-full sm:hidden md:flex md:w-auto md:order-1">
+          <ul class="flex flex-col mt-4 font-normal md:flex-row md:mt-0 md:space-x-8 lg:space-x-12 rtl:space-x-reverse">
+            <li>
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+                <!-- Product -->
+                  Product
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover" class="absolute z-10 hidden w-auto">
+                <div aria-labelledby="dropdownHoverButton group">
+                  <div class="grid grid-cols-2 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group w-[18.2rem] rounded-l-md">
+                      <a href="/theseus" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-l-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-theseus.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Theseus
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Our embeddable data engine.<br>Your product.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group w-[18.2rem] rounded-r-md">
+                      <a href="/enterprise-support" type="button" class="group-hover:bg-white hover:!no-underline block text-left  rounded-r-md block">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-enterprise.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          Enterprise Support
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          Get help adopting open standards.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <button id="dropdownHoverButton3" data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Resources -->
+                  Resources
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover3" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+
+                <div aria-labelledby="dropdownHoverButton3 group">
+                  <div class="grid grid-cols-3 border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-l-md">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 pl-4">
+                        Featured
+                      </p>
+                      <a href="/codex" type="button" class="bg-transparent group-hover:bg-white hover:!no-underline block text-left rounded-bl-md">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-codex.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="flex px-4 items-center text-black text-[1.7rem] leading-snug font-bold !my-0">
+                          The Composable<br>Codex
+                        </p>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 px-4 !my-0">
+                          A 5-part guide to understanding composable data systems.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem]">
+                      <p class="flex invisible items-center text-black text-[20px] leading-snug font-semibold mt-3 mb-1 px-4">
+                        Featured
+                      </p>
+                      <a href="/benchmarks" type="button" class="group-hover:bg-white hover:!no-underline block text-left">
+                        <div class="py-1 px-4">
+                          <img class="h-48 w-full object-contain" src="/assets/images/nav/cover-benchmark.jpg" alt="Voltron Data">
+                        </div>
+                        <p class="relative px-4 text-black text-[1.7rem] leading-snug font-bold mr-4 !my-0">
+                          Benchmarks <span class="inline-block mr-2">Report</span>
+                        </p>
+                        <span class="absolute text-greenvoda-500 text-[0.65rem] bg-[#EBF4F4] font-space px-2.5 !py-2 -mt-8 ml-[7.5rem] font-light rounded inline !mb-0">NEW</span>
+                        <p class="font-space text-[15px] leading-snug text-[#6D6D6D] pt-1 pb-4 pl-4 px-4 md:mb-9 lg:mb-0 !mt-0">
+                          Read about our 2024 benchmarks for our data engine, Theseus.
+                        </p>
+                      </a>
+                    </div>
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 pr-3 mr-4">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Resources
+                      </p>
+                      <a href="/blog" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-blog.svg" alt="Blog icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/flexibility" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/productivity" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/lower-cost" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Spotlight icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="flex items-center justify-between w-full -mt-2 py-2 px-3 font-normal text-black hover:!text-[#005151] hover:border hover:bg-white rounded-md">
+              <!-- Company -->
+                  Company
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m1 1 4 4 4-4"></path>
+                  </svg>
+              </button>
+              <div id="dropdownHover2" class="absolute z-10 hidden w-auto text-sm bg-transparent shadow-md rounded-lg">
+                <div aria-labelledby="dropdownHoverButton2 group">
+                  <div class="border border-gray-200 bg-[#F5F3F5] rounded-md shadow-md">
+                    <div class="group md:w-[15.5rem] lg:w-[19rem] rounded-md py-3 mx-3">
+                      <p class="flex items-center text-black text-[20px] leading-snug font-semibold mb-3 !mt-0">
+                        Company
+                      </p>
+                      <a href="/about" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 mb-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-about.svg" alt="About icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            About
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/news" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-news.svg" alt="News icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            News
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/careers" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-careers.svg" alt="Careers icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Careers
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/contact" type="button" class="grid grid-cols-6 hover:bg-white hover:!no-underline text-left rounded-md md:py-2 lg:py-2.5 my-1">
+                        <div class="pt-1">
+                          <img class="h-5 w-full object-contain" src="/assets/images/header/icon-contact.svg" alt="Contact icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-snug font-semibold font-space !my-0">
+                            Contact
+                          </p>
+                          <span class="font-space text-[15px] leading-snug text-[#6D6D6D]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+  
+    <!-- Mobile Menu -->
+    <div id="nav-menu-overlay" class="lg:invisible" role="dialog" aria-modal="true">
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+  
+        <div class="flex flex-wrap items-center justify-between w-full !px-5">
+          <a href="/">
+            <span class="sr-only">Voltron Data</span>
+            <img class="h-[1.3rem] sm:h-[1.3rem] md:h-[1.4rem] lg:h-[1.4rem] w-auto my-5" src="/assets/images/voltron-data.svg" alt="Voltron Data">
+          </a>
+          <button onclick="toggleMenu()" class="rounded-md py-2.5 text-[#005151]">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <div class="flow-root">
+          <div class="mt-0 my-10">
+            
+            <div id="accordion-color" data-accordion="collapse">
+              <div class="group">
+                <p id="accordion-flush-heading-1" data-accordion="collapse" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
+                    <span class="pl-5 text-black">Product</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                  <a href="/theseus" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Theseus</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Our embeddable data engine. Your product.
+                    </p>
+                  </a>
+                  <a href="/enterprise-support" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Enterprise Support</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Get help adopting open standards.
+                    </p>
+                  </a>
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-2" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class=" sgroup flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-active-classes="bg-transparent" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                    <span class="pl-5 text-black">Resources</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                  <a href="/codex" class="!my-0 py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">The Composable Codex</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      A 5-part guide to understanding composable data systems.
+                    </p>
+                  </a>
+                  <a href="/benchmarks/theseus" class="py-4 hover:no-underline hover:text-greenvoda-500 !font-medium hover:!font-bold block border-b border-[#D4D4D4]">
+                    <p class="!mb-1 mr-6 text-left text-black text-base !mt-0">
+                      <span class="px-5">Benchmarking Report</span>
+                    </p>
+                    <p class="pl-5 font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                      Read about our 2024 benchmarks for our data engine, Theseus.
+                    </p>
+                  </a>
+                  <div class="py-3 block border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="/blog" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-blog.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Blog
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Read articles and tutorials
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/flexibility" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Flexibility
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Augment with standards
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/productivity" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Productivity
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Open standards built to improve language interoperability
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/resources/data-systems/lower-cost" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left5">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-spotlight.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space !my-0">
+                            Lower Costs
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6] !my-0">
+                            Synchronize open standards with accelerated hardware
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+        
+              <div class="group">
+                <p id="accordion-flush-heading-3" data-accordion="close" data-active-classes="bg-transparent" class="group my-0">
+                  <button type="button" class="group flex items-center text-base justify-between w-full py-4 tracking-normal font-bold text-left border-b border-[#D4D4D4]" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                    <span class="pl-5 text-black">About</span>
+                    <svg data-accordion-icon class="mr-5 w-3 h-3 rotate-180 shrink-0 stroke-[1.5] group-hover:stroke-2 stroke-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 10 6">
+                      <path stroke="auto" stroke-linecap="round" stroke-linejoin="round" stroke-width="auto" d="M9 5 5 1 1 5"></path>
+                    </svg>
+                  </button>
+                </p>
+                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                  <div class="py-3 border-b border-[#D4D4D4]">
+                    <div class="group">
+                      <a href="/about" type="button" class="group py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-about.svg" alt="Icon">
+                        </div>
+                        <div class="group col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            About
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Company story
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/news" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-news.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            News
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Keep up with Voltron Data
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/careers" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-careers.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Careers
+                          </p>
+                          <span class="font-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            We’re hiring!
+                          </span>
+                        </div>
+                      </a>
+                      <a href="/contact" type="button" class="py-2 grid grid-cols-6 hover:!no-underline text-left !my-0 ">
+                        <div class="pt-1">
+                          <img class="h-4 w-full object-contain" src="/assets/images/header/icon-contact.svg" alt="Icon">
+                        </div>
+                        <div class="col-span-5 px-2">
+                          <p class="!my-0 flex items-center text-black text-[15px] leading-tight font-medium hover:font-extrabold font-space">
+                            Contact
+                          </p>
+                          <span class="ont-space font-light leading-snug text-[0.9rem] text-[#6D6D6]">
+                            Get in touch
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- <div class="pt-20 mx-14 absolute inset-x-0 bottom-4"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+
+<!-- Codex modal -->
+<div id="form-codex" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 !z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white shadow-xl px-0 py-9">
+          <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="form-codex">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+          </button>
+          <div id="form-container" class="px-0">
+            <img class="h-[4.2rem] w-full object-contain mb-3 mt-6 " src="/assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            <br>
+            <p class="!text-[0.95rem] !my-0 !px-14 !font-light !text-center" style="color: black !important">Sign up to receive email notifications<br>to stay in The Composable Codex loop.</p>
+            <br>
+            <form id='my-form' method='POST' name='contact-codex'><input type='hidden' name='form-name' value='contact-codex' />
+              <div class="px-14 mt-3">
+
+                <!--Email-->
+                <div>
+                  <label for="email" class="block text-sm font-normal leading-6 text-black pb-0.5 md:pb-1.5 lg:pb-1.5">Email</label>
+                  <div>
+                    <input required id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" onchange="validateEmail()" class="block w-full border-b py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#005151] sm:text-sm sm:leading-6">
+                    <span id="email-error" style="color: red; font-size: 12px;"></span>
+                  </div>                  
+                </div>
+              
+              </div>
+              <center>
+                <button type="submit" id="submit-btn" class="mt-6 flex w-fit justify-center bg-black hover:bg-[#005151] px-6 py-3 !text-base !tracking-wide font-medium leading-6 text-white rounded-full">
+                  Submit
+                </button>
+              </center>
+            </form>       
+          </div>
+          <div id="success-message" class="hidden !text-center px-10 pt-1 ">
+            <p class="font-semibold" style="color: black !important; font-size:25px !important; margin-top: 0px !important; padding-top: 0px !important; margin-bottom: 0px !important;">
+              Message Sent
+            </p>
+            <p class="text-base leading-6 text-black">
+              Thanks for your interest!
+            </p>
+          </div>
+      </div>
+  </div>
+</div> 
+
+<script nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+
+  // Form
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      // Enviar el formulario
+      fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+          // Mostrar mensaje de éxito
+          document.getElementById('form-container').classList.add('hidden');
+          document.getElementById('success-message').classList.remove('hidden');
+      })
+      .catch((error) => {
+          console.error("Error sending form: ", error);
+      });
+  };
+  document.querySelector("#my-form").addEventListener("submit", handleSubmit);
+  
+  function initHeader() {    
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+    function storeScrollData() {      
+      var y = getScrollPos().y;
+
+      var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+    setActivePageLink();
+  }
+
+  function setActivePageLink() { 
+  var pageLinks = document.querySelectorAll('a.page-link');
+  var currentUrl = window.location.pathname;
+  if(currentUrl === "/resources/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+  if(currentUrl === "/product/") {
+    currentUrl = currentUrl.slice(0, -1); // Delete end-slash
+  }
+
+  pageLinks.forEach(function(link) {
+    var linkUrl = new URL(link.href).pathname;
+
+    if (currentUrl === linkUrl) {
+      link.classList.add('active');
+    }
+    else{
+      link.classList.add('inactive');
+    }
+  });
+}
+
+function toggleMenu() {  
+  var navTrigger = document.getElementById("nav-trigger");  
+  if (navTrigger.checked) {
+    navTrigger.checked = false;
+    animateMenu(true);
+  } else {
+    navTrigger.checked = true;
+    animateMenu(false);
+  }
+}
+
+
+function animateMenu(open) {
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  if (open) {
+    navMenuOverlay.style.opacity = "0"; 
+    navMenuOverlay.style.display = "none";   
+  } else {
+    navMenuOverlay.style.opacity = "1";
+    navMenuOverlay.style.display = "block";
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {  
+  initHeader();  
+  var navMenuOverlay = document.getElementById("nav-menu-overlay");
+  navMenuOverlay.style.display = "none"; 
+});
+
+function validateEmail() {
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // Expresión regular para validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailInput.value.trim() === '') {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('invalid'); 
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = true; 
+    } else if (emailRegex.test(emailInput.value)) {
+      emailInput.classList.add('input-focus-valid');
+      emailInput.classList.remove('input-focus-invalid'); 
+      emailInput.classList.remove('invalid'); 
+      emailError.textContent = ''; 
+      submitBtn.disabled = false; 
+    } else {
+      emailInput.classList.add('invalid'); 
+      emailInput.classList.add('input-focus-invalid');
+      emailError.textContent = 'Please enter valid email'; 
+      submitBtn.disabled = true; 
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownHoverButton = document.getElementById("dropdownHoverButton");
+    const dropdownHoverButton2 = document.getElementById("dropdownHoverButton2");
+    const dropdownHoverButton3 = document.getElementById("dropdownHoverButton3");
+    const dropdownHover = document.getElementById("dropdownHover");
+    const dropdownHover2 = document.getElementById("dropdownHover2");
+    const dropdownHover3 = document.getElementById("dropdownHover3");
+    //const groupElements = document.querySelectorAll(".rounded-l-md");
+
+    dropdownHover.classList.add('hidden');    
+    dropdownHoverButton.addEventListener('mouseenter', function () {      
+      dropdownHover.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover.style.opacity = '1';
+      }, 300);
+    });
+
+    dropdownHover2.classList.add('hidden');    
+    dropdownHoverButton2.addEventListener('mouseenter', function () {      
+      dropdownHover2.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover2.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover2.style.opacity = '1';
+      }, 300);
+    });
+
+
+    dropdownHover3.classList.add('hidden');    
+    dropdownHoverButton3.addEventListener('mouseenter', function () {      
+      dropdownHover3.style.transition = 'opacity 1s ease-in-out';
+      dropdownHover3.style.opacity = '0';
+      setTimeout(() => {
+        dropdownHover3.style.opacity = '1';
+      }, 300);
+    });
+
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener("mouseover", function() {     
+      this.classList.add("font-bold", "text-teal-900");  
+      this.style.backgroundColor = "#eef1f9";     
+      dropdownButtons.forEach(otherButton => {
+        if (otherButton !== this) {
+          otherButton.classList.remove("font-bold", "text-teal-900");
+          otherButton.style.backgroundColor = "transparent";
+        }
+      });
+    });
+  });
+});
+
+
+//load active 
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  const megaMenuIcons = document.getElementById("mega-menu-icons");
+  const dropdownMenus = document.querySelectorAll("[id^='dropdownHover']");
+  const dropdownButtons = megaMenuIcons.querySelectorAll("[id^='dropdownHoverButton']");
+
+ 
+  dropdownMenus.forEach(dropdownMenu => {
+   
+    const links = dropdownMenu.querySelectorAll("a");
+    const currentURL = window.location.pathname;
+
+    
+    const urlStyles = {
+    "/theseus": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton" },
+    "/enterprise-support": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton" },
+    "/codex": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/benchmarks": { backgroundColor: "#F6F8FD", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/blog": { backgroundColor: "#eef1f9", textColor: "text-teal-900",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/flexibility": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/productivity": { backgroundColor: "#000000", textColor: "text-white",btnId:"dropdownHoverButton3" },
+    "/resources/data-systems/lower-cost": { backgroundColor: "#000000", textColor: "text-white", btnId:"dropdownHoverButton3" },
+    "/about": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/news": { backgroundColor: "#F6F8FD" , textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/careers": { backgroundColor: "#eef1f9", textColor: "text-teal-900", btnId:"dropdownHoverButton2" },
+    "/contact": { backgroundColor: "#F6F8FD", textColor: "text-teal-900", btnId:"dropdownHoverButton2" }
+  };
+ 
+    links.forEach(link => {
+     
+      const linkURL = link.getAttribute("href");
+
+      
+      if (currentURL === linkURL || (currentURL.endsWith('/') && currentURL.slice(0, -1) === linkURL)) {
+       
+        const styles = urlStyles[linkURL];
+        
+       
+        if (styles) {
+          
+          const button = document.getElementById(styles.btnId);
+          
+          
+          if (button) {
+            button.classList.add("font-bold", styles.textColor);
+            button.style.backgroundColor = styles.backgroundColor;
+            
+            dropdownButtons.forEach(otherButton => {
+              if (otherButton !== button) {
+                otherButton.classList.remove("font-bold", styles.textColor);
+                otherButton.style.backgroundColor = "transparent";
+              }
+            });
+          }
+        }
+
+      }
+    });
+  });
+});
+
+
+</script>
+
+<script type="text/javascript" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+  document.write('<style type="text/css">div.cp_oculta{display: none; font-weight:300}</style>');
+  function MostrarOcultar(capa)
+  { 
+      if (document.getElementById)
+      {
+          var aux = document.getElementById(capa).style;
+          aux.display = aux.display ? "" : "block";
+          document.getElementById("enlace" + "arrow").text = aux.display ? "" : "";
+      }
+  }
+</script>
+    <main class="page-content-codex" aria-label="Content">
+
+        <div class="article-css mx-auto max-w-7xl px-10 md:px-6 lg:px-4">
+          
+          <div class="pt-28 md:pt-36 lg:pt-44 mb-[3.5rem] lg:mb-[4rem]">
+            <a href="/codex">
+              <img class="h-20 w-full object-contain my-2" src="/assets/images/codex/chapter0/the-composable-codex.svg" alt="The Composable Codex">
+            </a>          
+          </div>
+
+          <div class="mt-0 lg:mt-10 mb-10 md:mb-14 lg:mb-32 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-3 lg:gap-5 align-middle">
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/a-new-frontier" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-0.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">00</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">A New</span> Frontier</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/open-standards" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-1-active.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-semibold inline md:inline-block lg:inline-block">01</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem] font-semibold">
+                    <span class="inline md:block lg:block">Open</span> Standards</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/language-interoperability" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-2.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">02</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Language</span> Interoperability</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/data-connectivity" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-2 lg:px-3 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-3.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">03</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Data</span> Connectivity</span>
+                </div>
+              </a>
+            </div>
+            <div class="block md:inline-block lg:inline-block transition hover:-translate-x-1 hover:scale-[1.03] text-left md:text-center lg:text-center">
+              <a href="/codex/accelerated-hardware" style="text-decoration: none;">
+                <div class="group my-auto pt-2 pb-3 md:pt-3 md:pb-[1.2rem] lg:pt-5 lg:pb-6 px-4 md:px-0.5 lg:px-0.5 bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter-4.jpg')] shadow-md hover:shadow-2xl">
+                  <span class="font-mono text-[0.55rem]  md:text-[0.8rem]  lg:text-[0.8rem] rounded-full px-2 py-[0.4rem] text-[#f3f3f3] border-[1px] border-white font-light inline md:inline-block lg:inline-block">04</span>
+                  <span class=" text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]  text-white inline md:block lg:block pt-[0.8rem] px-[0.3rem]">
+                    <span class="inline md:block lg:block">Accelerated </span> Hardware</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+
+          <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-0 md:gap-14 lg:gap-16 mt-18 md:mt-24 lg:mt-32">
+            <div class="chapter-intro col-span-1 md:col-span-3 lg:col-span-3 pb-4 order-2 md:order-1 lg:order-1">
+              <div class="text-xs hidden md:block lg:block">
+                <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono">
+                  Chapter 01
+                </div>
+              </div>
+<br>
+
+              <h1 class="hidden md:block lg:block mb-4 md:mb-6 lg:mb-10">Open standards over silos</h1>
+              
+              <div class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6">
+                The happy path to composable data systems builds on top of standards. But not all standards are created equal. Half the battle is knowing what types of standards are needed, and how to choose good ones. We highlight strong composable standards like Substrait, Arrow, and ADBC (Arrow Database Connectivity) as examples.
+                <br><br>
+                The second half of the battle is learning how to use standards to build towards a composable data system. Developing with standards is a lot like using anchors while rock climbing: they help you chart a course to your final destination, and offer protection when changes need to happen in the future.
+              </div>
+              <h2 class="font-mono text-sm md:text-sm lg:text-base font-light leading-5 lg:leading-6 pt-6 lg:pt-10 mb-0 md:mb-3 lg:mb-5">
+                What are open standards? <a href="#navegacion">Keep reading below</a>.
+              </h2>
+            </div>
+
+
+            <div class="seo-li col-span-1 md:col-span-2 lg:col-span-2 order-1 md:order-2 lg:order-2">
+              <div class="pb-0 md:pb-4 pt-3 lg:pt-0">
+                <div class="px-3 md:px-6 lg:px-6 py-10 border border-black">
+                  
+                  <div class="my-0 lg:my-[2.1rem] text-xs block md:hidden lg:hiddenk pl-[1.35rem]">
+                    <div class="inline bg-[#D2CFDF] w-fit py-1 px-1.5 font-bold font-mono text-[0.65rem]">
+                      Chapter 01
+                    </div>
+                  </div>
+                  <p class="block md:hidden lg:hidden !pb-2 pl-[1.35rem] text-2xl font-bold">Open standards over silos</p>
+            
+                  <div class="grid grid-cols-3 gap-2 text-xs px-6 lg:px-8">
+                    <div class="col-span-2">
+                      <div class="inline text-xs font-light bg-[#e3e3e3] w-fit py-1 px-1.5">Estimated Read Time:</div>
+                    </div>
+                    <div class="text-gray-900 text-left font-extralight">15 minutes</div>
+                  </div>
+                  
+                  <div>
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.14em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.18rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Topics:
+                      </div>
+                    </div>
+                      <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                        <ul>
+                          <li class="text-xs font-space">Standards</li>
+                          <li class="text-xs font-space">Modules</li>
+                        </ul>
+                      </div>
+                    </div>
+                
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.15em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.2rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Tags:
+                      </div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        <li class="text-xs font-space">Modular</li>
+                        <li class="text-xs font-space">Interoperable</li>
+                        <li class="text-xs font-space">Customizable</li>
+                        <li class="text-xs font-space">Extensible</li>
+                        <li class="text-xs font-space">Data Systems</li>
+                      </ul>
+                    </div>
+
+                    <div class="py-4 md:py-6 lg:py-8 px-5">
+                      <span class="-mt-[0.15em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.2rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                    </div>
+                    <div class="text-xs font-light px-6 lg:px-8">
+                      <div class="inline bg-[#e3e3e3] w-fit py-1 px-1.5">
+                        Tools:
+                      </div>
+                    </div>
+                    <div class="text-gray-700 pl-8 lg:pl-11 pt-4">
+                      <ul>
+                        <li class="text-xs font-space">Arrow</li>
+                        <li class="text-xs font-space">Substrait</li>
+                        <li class="text-xs font-space">ADBC</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>          
+            </div>
+          </div>          
+        
+
+
+        <div class="article-css bg-no-repeat bg-cover bg-center bg-[url('../../assets/images/codex/chapter1/main-image-full-chapter.png')]">
+          <!-- Banner -->
+          <div class="my-14 banner-phrase">
+            <div class="mx-auto max-w-[27rem] md:max-w-[37rem] lg:max-w-[48rem] px-5 md:px-20 lg:px-20">
+              <div class="pt-20 md:pt-[8rem] lg:pt-8rem pb-14 md:pb-28 lg:pb-[7rem]">
+                <p class="banner-quote !text-center text-[1.8rem] sm:!text-4xl lg:!text-5xl lg:!leading-[3.8rem] !pb-3 !mb-0">"The early bird gets the worm, but the second mouse gets the cheese."</p>
+                <p class="!text-center text-[16px] md:text-[16px] lg:text-[18px] font-semibold !text-black">Willie Nelson</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-css mx-auto max-w-7xl">
+          <div class="px-10 md:px-6 lg:px-4">
+
+            <!-- FIX ToC -->
+            <nav id="navegacion" class="section-nav w-[100%] md:w-[17rem] lg:w-[21rem] xl:w-[24rem] pt-6 md:pt-4 lg:pt-6 navegacion float-none md:float-left lg:float-left">
+              
+              <div class="px-10 md:px-5 lg:px-8 pt-9 pb-7 border border-black">
+          
+                  <center>
+                    <div class="bg-[#000000] text-white w-fit py-0.5 px-[0.3rem] text-[0.74rem] border-black border font-semibold">
+                      Contents
+                    </div>
+                  </center>
+
+                
+                <div class="-mt-3 pb-10">
+                  <span class="-mt-[0.148em] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-left"></span><hr class="border-black">
+<span class="-mt-[0.17rem] bg-black w-[0.3rem] h-[0.3rem] rounded-full float-right"></span>
+                </div>
+
+
+                <div class="list-1 text-gray-900 text-xs leading-5">
+
+                  <ol class="zero">
+                    <li>
+                      <a href="#open-standards" class="nav-id nav-link">
+                        The quiet power of open standards
+                      </a>
+                    </li>
+                  </ol>
+
+                  <ol>
+                    <li>
+<a href="#shifting-to-open-standards" class="nav-id nav-link">
+                      Shifting to open standards</a>
+
+                        <ol class="foo" style="padding: 4px 0 0 1px;">
+                          <li><a href="#hacking-data-interoperability" class="nav-id nav-link">Hacking data interoperability</a></li>
+                          <li><a href="#seeking-data-standards-that-stick" class="nav-id nav-link">Seeking data standards that stick</a></li>
+                        </ol>
+                    </li>
+
+                    <li>
+<a href="#open-standards-on-arrow" class="nav-id nav-link">
+                      Targeting open standards: Arrow hits the mark</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#the-arrow-format" class="nav-id nav-link">The Arrow format</a></li>
+                        <li><a href="#composable-systems-with-arrow" class="nav-id nav-link">Composable systems with Arrow</a></li>
+                        <li><a href="#a-composable-ecosystem" class="nav-id nav-link">A composable ecosystem</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#the-data-systems-hierarchy-of-needs" class="nav-id nav-link">
+                      The data systems hierarchy of needs</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#modular" class="nav-id nav-link">Modular</a></li>
+                        <li><a href="#interoperable" class="nav-id nav-link">Interoperable</a></li>
+                        <li><a href="#customizable" class="nav-id nav-link">Customizable</a></li>
+                        <li><a href="#extensible" class="nav-id nav-link">Extensible</a></li>
+                        <li><a href="#composability-through-open-standards-MICE" class="nav-id nav-link">MICE: Composability through open standards</a></li>
+                      </ol>
+                    </li>
+
+                    <li>
+<a href="#build-on-open-standards" class="nav-id nav-link">
+                      Build your stack on top of open standards</a>
+
+                      <ol class="foo" style="padding: 4px 0 0 1px;">
+                        <li><a href="#how-can-I-keep-up-with-voltron-data" class="nav-id nav-link">How can I keep up with Voltron Data?</a></li>
+                        <li><a href="#who-wrote-the-composable-codex" class="nav-id nav-link">Who wrote The Composable Codex?</a></li>
+                        <li><a href="#how-can-I-cite-the-codex" class="nav-id nav-link">How can I cite The Codex?</a></li>
+                      </ol>
+                    </li>
+                  </ol>  
+
+                </div>
+              </div>    
+              <div class="grid grid-cols-5 border-l border-r border-b border-black">
+                <a class="group col-span-2 py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex/a-new-frontier">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-1 mr-1 group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"></path>
+                    </svg>
+                    <span class="inline h-5 text-xs group-hover:!text-white tracking-wide">Prev</span>
+                  </center>                 
+                </a>
+                <a class="group border-x border-black py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-[0.35rem] group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+                    </svg>
+                  </center>                 
+                </a>
+                <a class="group col-span-2 py-2 !w-full cursor-pointer hover:bg-[#005151] hover:!w-full" href="/codex/language-interoperability">
+                  <center>
+                    <span class="inline h-5 text-xs group-hover:!text-white tracking-wide">Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline -mt-1 ml-1 group-hover:text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                    </svg>                    
+                  </center>
+                </a>
+              </div>          
+            </nav>
+
+            <div id="NavigationContent" class="top-fix w-full md:w-[60%] lg:w-[62%] top-0 relative inline-block float-none md:float-right lg:float-right">
+              <a id="open-standards"></a>
+              <p><a id="open-standards"></a></p>
+
+<p><a name="open-standards"></a></p>
+<h2 class="!pt-8 md:!pt-0 lg:!pt-0"> <font>1.0</font> The quiet power of open standards</h2>
+
+<p>It can be hard to be a champion for standards. Standards have zero marketing budget. Standards are also not the kind of technology that gets most people excited: the excitement often comes later from seeing software that is built on top of the standards.</p>
+
+<p>But that may be exactly the charm of standards. And in the history of revolutionary technology that has changed our world, standards have actually played a quiet starring role. As one example, <a href="/codex/a-new-frontier#standards-help-you-make-better-choices" target="_blank">open standards</a> were key to the early success of the World Wide Web:</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-8">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[90%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">It was the standardization around HTML that allowed the web to take off. It was not only the fact that it is standard but the fact that it is open and royalty-free.
+            <span class="block !my-2">
+            If HTML had not been free, if it had been proprietary technology, then there would have been the business of actually selling HTML and the competing JTML, LTML, MTML products…
+            </span>
+            Yes, we need standards, because the money, the excitement is not competing over the technology at that level. The excitement is in the businesses and the applications that you built on top.</p>
+            <p class="!mt-2 !text-xs"><a href="http://www.ecis.eu/news/documents/OpenForumEuropeDeclaration.pdf" target="_blank">Tim Berners-Lee,</a> inventor of the World Wide Web</p>
+        </div>
+    </div>
+</div>
+
+<p>Standards are also critical to how data systems work, but they do not always get the recognition they deserve in the “<a href="https://a16z.com/emerging-architectures-for-modern-data-infrastructure/" target="_blank">modern data stack</a>.”</p>
+
+<p><img src="/assets/images/codex/chapter1/open-standards-mad-landscape.jpg" alt="A landscape map in the form of a diagram showing the Machine Learning, Artificial Intelligence, and Data Landscape. Created by FirstMark, it is the definitive guide of the companies and products in this space. The source image can be found here: https://mad.firstmark.com/"></p>
+<center><figcaption style="margin-top: -10px !important"><span class="font-bold">Figure 01.01. 
+</span>The ML/AI/Data (MAD) Landscape. Source: 
+<a href="https://mad.firstmark.com/" target="_blank">https://mad.firstmark.com/
+</a></figcaption></center>
+
+<p>For engineers, celebrating the adoption of a new standard may feel like something you throw in an internal Slack message, rather than share with the rest of the world. It is hard to convey just how good it feels to remove thousands of lines of glue code, and replace it with a few API calls to a standard library. We want to briefly honor that feeling by highlighting two success stories of standards shared by developers.</p>
+
+<p>In 2021, the <a href="https://streamlit.io/" target="_blank">Streamlit</a> development team wrote about a big shift in their infrastructure to Arrow, a standard we will dive into <a href="#1-2-standardizing-on-arrow">later in this chapter</a>:</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-8">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[94%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !font-plus">In our legacy serialization format, as DataFrame size grew, the time to serialize also increased significantly… Just compare the performance of our legacy format vs Arrow. It's not even funny!</p>
+            <p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/open-source-software-with-open-standard.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit pr-2">Download ↓</a></p>
+            <center>
+            <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/open-source-software-with-open-standard.json" alt="A chart showing faster and more efficient DataFrames in Streamlit, an open-source app framework for Machine Learning and Data Science teams, when using Arrow instead of Legacy DataFrames. There are two lines representing Legacy (in purple) and Arrow (in green). The Y-axis represents Time to Serialize (in seconds) and goes from 00 to 10 to 20 to 30 to 40 seconds. The X-axis represents DataFrame size. It goes left to right from 10x10 to 100x100, to 1,000x1,000, to 5,000x5,000. The data is equal up until just before the 1,000x1000 plot point on the X-axis. At that point, the purple Legacy line shoots up going from just above 00 on the Y-axis landing between 30 and 40 seconds. The line ends at the 5,000x5,000 plot point on the X-axis. The green Arrow line slightly goes up still remains under 10 seconds when it reaches 5,000x5,000." class="w-full">
+            </lottie-player>
+            </center>
+            <figcaption class="center !mt-6 !pb-3"><span class="font-bold">Figure 01.02. </span>Source: 
+            <a href="https://blog.streamlit.io/all-in-on-apache-arrow/" target="_blank">Streamlit
+            </a></figcaption>
+            <p class="text-left !mb-2">This one is mostly a benefit for us, Streamlit devs: we <b>get to delete over 1k lines of code from our codebase</b>. You can't believe how good this feels 😃</p>
+            <p class="!mt-2 !text-xs"><a href="https://blog.streamlit.io/all-in-on-apache-arrow/" target="_blank">Henrikh Kantuni, "All in on Apache Arrow"</a></p>
+        </div>
+    </div>
+</div>
+
+<p>We actually can believe it 🤠</p>
+
+<p>Similarly, a team of engineers at Meta, many of whom have been leading the composable data systems movement, wrote in their article “<a href="https://research.facebook.com/publications/shared-foundations-modernizing-metas-data-lakehouse/" target="_blank">Shared Foundations: Modernizing Meta’s Data Lakehouse</a>”:</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[90%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+            Over the last three years, we have implemented a generational leap in the data infrastructure landscape at Meta through the Shared Foundations effort. The result has been:</p>
+            <ul>
+            <li>a more modern, composable, and consistent stack,</li>
+            <li>with fewer components, richer features, consistent interfaces, and</li>
+            <li>better performance for the users of our stack, particularly, machine learning and analytics.</li>
+            </ul>
+            <p class="text-left !my-2">
+            We have deprecated several large systems and removed hundreds of thousands of lines of code, improving engineering velocity and decreasing operational burden.
+            </p>
+            <p class="!mt-2 !text-xs"><a href="https://research.facebook.com/publications/shared-foundations-modernizing-metas-data-lakehouse/" target="_blank">Chattopadhyay et al. (2023)
+            </a></p>
+        </div>
+    </div>
+</div>
+
+<p>When should you start to search for standards? Here is a good rule of thumb:</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-6">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[60%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">When things don't work as they should, it often means that standards are absent.</p>
+            <p class="!mt-2 !text-xs"><a href="https://www.iso.org/standards.html" target="_blank">The International Organization for Standardization (ISO)</a></p>
+        </div>
+    </div>
+</div>
+
+<p>So, saving developers from writing and maintaining thousands of lines of <a href="https://en.wikipedia.org/wiki/Glue_code">glue code</a> is great, but what is in it for the company? In <a href="https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf" target="_blank">The Composable Data Management System Manifesto (2023)</a>, a group of engineers at Meta, Voltron Data, Databricks, and Sundeck outlined the following benefits of developing on top of an open standards ecosystem:</p>
+
+<ol>
+  <li>
+<mark>Faster and more productive engineering teams</mark> – Less duplicated work means more time for innovation.</li>
+  <li>
+<mark>Tighter innovation cycles</mark> – Targeted feature development on a smaller code base means faster releases.</li>
+  <li>
+<mark>Co-evolution of database software and hardware</mark> – Unifying the core layers means better performance and scalability.</li>
+  <li>
+<mark>Better user experience</mark> – More consistent interfaces and semantics means a smoother user experience.</li>
+</ol>
+
+<p>With all these gains, why do standards fly under the radar? We suspect it is partially because these gains happen invisibly - no new algorithm, no shiny new product, no press release, just thousands of lines of glue code deleted and developers who can sleep easier at night. Because of this, a good standard can be hard to find*. In the rest of this chapter, we will surface the core standards that we trust and build composable data systems with.</p>
+
+<p>*If you are already sold on standards and want to find a golden one fast, skip ahead to <a href="#1-2-standardizing-on-arrow">1.2: Standardizing with Arrow</a>.</p>
+
+<p><a name="shifting-to-open-standards"></a></p>
+<h2 id="11-shifting-to-open-standards">
+<font>1.1</font> Shifting to open standards</h2>
+
+<p>In Chapter 00 “A New Frontier”, we shared a <a href="/codex/a-new-frontier#standards-help-you-make-better-choices" target="_blank">starter definition of standards</a>. To adapt to the world of data systems, we arrive at a new definition:</p>
+
+<!-- Quote -->
+<div class="block mt-8 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6 md:h-5/6 lg:h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                Standards are documented, reusable agreements that make it possible for components within a data system to connect, without special work or effort on the part of the data system developers or users. In a data system, "connect" means two specific actions:
+            </p>
+            <ul>
+            <li><mark>Exchange data</mark></li>
+            <li><mark>Communicate messages or instructions</mark></li>
+            </ul>
+            <p class="block !mt-0">
+            Standards are used when it is important to be able to rely on the format of the data, messages, or instructions that are sent and received between components.
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>To support a minimum viable <a href="/codex/a-new-frontier#structure-of-a-composable-data-system" target="_blank">composable data system</a>, three core standards are needed:</p>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/composable-data-system-open-standards.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a></p>
+<!-- Column 2 Images  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-0 md:gap-0 lg:gap-10 border border-black pt-4 md:pt-8 lg:pt-8 pb-4 lg:pb-8 pr-4 lg:pr-8 pl-4 lg:pl-12">
+    <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter0/composable-data-system-open-standards--key.json" alt="A diagram that shows the three layers of a data system with emphasis on the standards between each layer. On the left is an alphabetical Key that defines the Standards. Letter A defines Intermediate Representation as a standard way to represent query plans. Letter B represents Connectivity and defines it as a standard for accessing databases. Letter C represents Data Memory Layout and defines it as a standard format for representing data in memory. On the right is a diagram with the layers presented vertically. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users. Between the User Interface and Execution Engine layer is Intermediate Representation which is a standard way to represent query plans and Connectivity which is a standard for accessing databases. Between the execution engine and data storage layer is Intermediate Representation and Dataset Memory Layout which is a standard format for representing data in memory." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+    <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter0/composable-data-system-open-standards--stack.json" alt="A diagram that shows the three layers of a data system with important standards layered in. The top layer is the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. The middle layer is the execution engine which performs operations on the data, as specified by users. The bottom layer is data storage which stores data that is available to users. Between the User Interface and Execution Engine layer is Intermediate Representation which is a standard way to represent query plans and Connectivity which is a standard for accessing databases. Between the execution engine and data storage layer is Intermediate Representation and Dataset Memory Layout which is a standard format for representing data in memory." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+</div>
+<center><figcaption class="py-5"><span class="font-bold">Figure 01.03.</span> 
+A composable data system, with three key standards.</figcaption></center>
+
+<p>While “which user interface should we go with?” or “which engine should we support?” debates tend to get more air time, the real complexity and cost of a data system racks up when you sleep on standards and wait on worrying about interoperability.</p>
+
+<p><a name="hacking-data-interoperability"></a></p>
+<h3 id="111-hacking-data-interoperability">
+<font>1.1.1</font> Hacking data interoperability</h3>
+
+<p>At a very high level, there are two groups of tools that can be used to help build interoperability into data systems:</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4">
+<div class="pt-0 md:pt-3 lg:pt-3">
+<ol class="!font-bold">
+    <li>Standards</li>
+    <li>Glue code like "purpose-built" adaptors, connectors, and protocols</li>
+<br>
+</ol>
+</div>
+<!-- Quote  -->
+<div class="block py-5 md:py-5 lg:py-0">    
+<p class="text-left text-xs tracking-wide !mt-1.5 border-dashed border-l border-black ml-0 md:ml-0 lg:ml-10 pl-10" style="line-height: calc(1ex / 0.32);">
+<a href="https://en.wikipedia.org/wiki/Glue_code" target="_blank">What is glue code?</a>
+<br>
+<span class="block pt-3"><i>"Executable code that serves solely to ‘adapt’ different parts of code that would otherwise be incompatible. Glue code does not contribute any functionality towards meeting program requirements."</i></span></p>
+</div>
+<div></div>
+</div>
+
+<p>Glue code may not sound all that bad. But as soon as you add more than one component to the mix, these two tools turn into two very different system-scapes:</p>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+<ol class="pt-4">
+<li>A structured ecosystem of standards and interoperable components
+</li>
+<br>
+<li>A spaghetti architecture of adaptors, connectors, and protocols that carry a combinatorial explosion of maintenance
+</li>
+</ol>
+<!-- Image  -->
+<div class="block pl-0 lg:pl-10">
+    <div class="max-auto pt-8 lg:pt-2 font-space">
+        <img class="h-72 md:h-80 lg:h-auto w-full object-contain mb-2" src="/assets/images/codex/chapter1/xkcd-1406.png" alt="An xkcd cartoon titled 'Universal Converter Box'. The source image can be found at: https://xkcd.com/1406/">
+        <center><figcaption>
+        <span class="font-bold">Figure 01.04. </span>
+        <span class="!text-xs">Universal Converter Box.<br>Source: <a href="https://xkcd.com/1406/" target="_blank">xkcd.com</a></span>
+        </figcaption></center>
+    </div>
+</div>
+</div>
+
+<p>Here are some of the types of glue code that developers end up spending valuable time building and maintaining, versus building with a standard that bakes in all the good design decisions made by an expert community:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Glue Code Solution</th>
+      <th>Example Standards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Custom data serialization/deserialization interfaces between components</td>
+      <td>Use Arrow for zero-copy reads for data access in shared memory</td>
+    </tr>
+    <tr>
+      <td>Custom data transformation processes to convert from row-based to columnar formats and vice versa</td>
+      <td>Use Arrow standard columnar data format</td>
+    </tr>
+    <tr>
+      <td>Custom transport protocols for moving data over a network</td>
+      <td>Use Arrow Flight as a standard to efficiently move data in Arrow format over the wire</td>
+    </tr>
+    <tr>
+      <td>Custom interfaces to databases to establish connections, execute queries, and process results</td>
+      <td>Use Arrow Database Connectivity (ADBC)  protocol to interface with databases and fetch result sets in Arrow format</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Who wants talented engineers working on one-off glue code projects? The answer is that no one wants that, and no one plans for that to happen. And yet, when systems are not designed on top of standards, this is what inevitably will happen.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6 md:h-5/6 lg:h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">There is a need for 'universal glue' as well to enable components to cooperate and build value-added services.</p>
+            <p class="!text-xs !mt-2">
+                <a href="https://www.cs.cmu.edu/~natassa/courses/15-721/papers/P001.pdf" target="_blank">Chaudhuri &amp; Weikum (2000)</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>Without standards, developers become responsible for the glue in a data system. Without standards, developers will pay a steep penalty both in computational cost and development time to force components to interoperate with each other. Standards can help replace developer time solving problems that, in many use cases, have already been solved.</p>
+
+<p><a name="seeking-data-standards-that-stick"></a></p>
+<h3 id="112-seeking-data-standards-that-stick">
+<font>1.1.2</font> Seeking data standards that stick</h3>
+
+<p>Of course, someone has to write code that glue the system layers together. But that person does not have to be you. This is where tried and true standards come in, and why engineers are happy to merge standards into their systems. Nevertheless, you might be skeptical about standards (cue the requisite xkcd cartoon).</p>
+
+<center>
+<img class="h-auto md:h-[16rem] lg:h-[18rem] w-auto" src="/assets/images/codex/chapter1/xkcd-927.png" alt="Figure Standards. Source:xkcd">
+<figcaption>
+    <span class="font-bold">Figure 01.05. </span><span class="!text-xs">Standards. Source: <a href="https://xkcd.com/927/" target="_blank">xkcd.com</a></span>
+</figcaption>
+</center>
+
+<p>Standards can sometimes get a bad rap, and a dose of skepticism is healthy here.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-5/6 md:h-5/6 lg:h-4/5"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                For me, I like fundamental ideas. I like best practices. There’s a saying I like: "Innovate where you can. Where you can’t, use the industry standards." 
+                <span class="block !mt-2">
+                For SMEs, instead of chasing fancy new things, I think they should choose less fancy but more stable solutions.
+                </span>
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://eugeneyan.com/writing/informal-mentors-chip-huyen/" target="_blank">Chip Huyen</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>The key to understanding standards is to see them as a simple equation: rules + community. The first part, the rules, seems easy enough. Anyone can just hammer out some software specs, slap the label “standard” on it, and call it a day. But the rules need to be actually good. A good standard has rules that are:</p>
+
+<ul>
+  <li><mark>Documented</mark></li>
+  <li><mark>Consistent</mark></li>
+  <li><mark>Reusable</mark></li>
+  <li><mark>Stable</mark></li>
+</ul>
+
+<p>The second part, the community, is even harder. Standards need to solve an important problem, and gain vocal, visible advocates who see the value of standardization in that domain. Gaining traction and adoption in a community takes a lot of work. In fact, starting a standard is a lot like <a href="https://sive.rs/ff" target="_blank">starting a movement</a>.</p>
+
+<center>
+<iframe class="w-full h-[24rem] pt-10" src="https://www.youtube.com/embed/fW8amMCVAJQ?si=mFP2nrAj5DVDITlt" title="First Follower: Leadership Lessons from Dancing Guy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<figcaption class="pt-5">
+<span class="font-bold pr-1">Video 01.01. </span>
+Break time: Leadership lessons from a dancing guy. Source: <a href="https://youtu.be/fW8amMCVAJQ" target="_blank">YouTube</a>
+</figcaption>
+</center>
+
+<p>Here is what it might look like to start a standards movement:</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[90%] md:h-5/6 lg:h-5/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                The first follower transforms a lone nut into a leader. If the leader is the flint, the first follower is the spark that makes the fire.
+                <span class="block !my-2">
+                The second follower is a turning point: it's proof the first has done well. Now it's not a lone nut, and it's not two nuts. Three is a crowd and a crowd is news…
+                </span>
+                Now here come two more, then three more. Now we've got momentum. This is the tipping point! Now we've got a movement!
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://sive.rs/" target="_blank">Derek Sivers</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>When shopping for standards, you are shopping for a movement to join. You probably don’t want to be the leader and maybe not even the first follower. You might join a small crowd for your niche needs. But there are at least five important factors to consider:</p>
+
+<ol>
+  <li>
+<mark>Open</mark> – Is the standard open to be inspected by self-selecting members of the community? Does it have an open source license (see <a href="https://choosealicense.com/" target="_blank">https://choosealicense.com/</a>)?</li>
+  <li>
+<mark>Community</mark> – Is there an active community that contributes to the standard? Has the standard evolved since it was created? Can it adapt when the world changes?</li>
+  <li>
+<mark>Governance</mark> – Does the standard have established governance? Is the group made up of people from more than one company?</li>
+  <li>
+<mark>Adoption</mark> – Are people actually using the standard? Is there a list of organizations that are on the record about adopting the standard?</li>
+  <li>
+<mark>Ecosystem</mark> - Is there an ecosystem of software projects that build on top of and extend the standard?</li>
+</ol>
+
+<p><a name="open-standards-on-arrow"></a></p>
+<h2 id="12-targeting-open-standards-arrow-hits-the-mark">
+<font>1.2</font> Targeting open standards: Arrow hits the mark</h2>
+
+<p>Arrow is an open source project that enables developers to efficiently build fast, interoperable data systems based on open standards. The Arrow project ticks all the boxes for a solid standard:</p>
+
+<div class="mx-auto py-4 lg:py-6">
+    <div class="border border-black text-center block py-2 w-full">
+        <center><img class="h-12" src="/assets/images/codex/chapter1/apache-arrow-logo-black.svg" alt="Quote"></center>
+    </div>
+    <div class="grid grid-cols-5 gap-0 md:gap-2 lg:gap-4">
+        <div>
+            <div class="grid grid-cols-2 h-8">
+<div class="border-r border-black"></div>
+<div></div>
+</div>
+            <a type="button" href="https://www.apache.org/licenses/" target="_target" class="link-dark border border-black text-center inline-block py-2 !w-full bg-black">
+                <span class="block md:block lg:inline">✓</span> <span style="border-bottom: #828690 0.05em solid;">Open</span></a>
+        </div>
+        <div>
+            <div class="grid grid-cols-2 h-8">
+<div class="border-r border-black"></div>
+<div></div>
+</div>
+            <a href="https://arrow.apache.org/community/" target="_target" class="link-dark border border-black text-center inline-block py-2 !w-full bg-black">
+                <span class="block md:block lg:inline">✓</span> <span style="border-bottom: #828690 0.05em solid;">Community</span></a>
+        </div>
+        <div>
+            <div class="grid grid-cols-2 h-8">
+<div class="border-r border-black"></div>
+<div></div>
+</div>
+            <a href="https://arrow.apache.org/committers/" target="_target" class="link-dark border border-black text-center inline-block py-2 !w-full bg-black">
+                <span class="block md:block lg:inline">✓</span> <span style="border-bottom: #828690 0.05em solid;">Governance</span></a>
+        </div>
+        <div>
+            <div class="grid grid-cols-2 h-8">
+<div class="border-r border-black"></div>
+<div></div>
+</div>
+            <a href="https://arrow.apache.org/powered_by/" target="_target" class="link-dark border border-black text-center inline-block py-2 !w-full bg-black">
+                <span class="block md:block lg:inline">✓</span> <span style="border-bottom: #828690 0.05em solid;">Adoption</span></a>
+        </div>
+        <div>
+            <div class="grid grid-cols-2 h-8">
+<div class="border-r border-black"></div>
+<div></div>
+</div>
+            <a href="https://arrow.apache.org/docs/developers/guide/index.html" target="_target" class="link-dark border border-black text-center inline-block py-2 !w-full bg-black">
+                <span class="block md:block lg:inline">✓</span> <span style="border-bottom: #828690 0.05em solid;">Ecosystem</span></a>
+        </div>
+    </div>
+</div>
+<center>
+<figcaption>
+<span class="font-bold pr-1">Figure 01.06. </span>
+Arrow is a standard that we build with and trust, in part based on these five factors.
+</figcaption>
+</center>
+
+<p><a name="the-arrow-format"></a></p>
+<h3 id="121-the-arrow-format">
+<font>1.2.1</font> The Arrow format</h3>
+
+<p>Arrow started as a standardized in-memory format for structured tabular data. Why start there? Because when you are building data-intensive analyses and applications, systems get stuck on two main tasks:</p>
+
+<ol>
+  <li>
+<mark>Moving data</mark><br>
+ When a workload is <strong>transport-bound</strong> (or input/output[I/O]-bound), the speed of execution depends on the rate of transfer of data into or out of a system.</li>
+  <li>
+<mark>Processing data</mark><br>
+ When a workload is <strong>compute-bound</strong>, the speed of execution depends on the speed of the processor, whether it is a CPU, GPU, or another type of hardware.</li>
+</ol>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716497851/bottleneck-interoperability-and-data-exchange.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a></p>
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/bottleneck-interoperability-and-data-exchange.json" alt="Adapted from a slide by Vicki Boykis. It demonstrates that data systems get stuck at the compute and transport layer. A the top of the diagram is a box that says Application / analysis logic. To the right of that are lines with the word Compute-bound. Those two elements are contained within a border that has a dotted line. Right outside the dotted line is the word Cloud Instance. Below the Application / analysis logic box are the words Transport / I/O-bound. Below that is another box titled Data Storage contained within a border that has a dotted line. There is an arrow that points up from the Data Storage box to the Application / analysis logic box. To the right of the dotted line border are the words Cloud Instance" class="w-full px-0 md:px-10 lg:px-24 py-5 mb-6 border border-black">
+</lottie-player>
+<figcaption>
+    <span class="font-bold">Figure 01.07. </span>Where data systems get stuck: moving data (transport-bound) and processing data (compute-bound). Source: Adapted from a slide by <a href="https://vickiboykis.com/2023/09/13/build-and-keep-your-context-window/" target="_blank">Vicki Boykis</a>.
+</figcaption>
+</center>
+
+<!-- Col-2  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pt-0 lg:pt-10 lg:pb-8">
+    <p class="!mt-4 !mr-0 md:!mr-10 lg:!mr-14">The Arrow format was designed to accelerate both of these processes. In a data system, the way data is arranged for processing can make a big difference, especially with the way modern processors, like CPUs and GPUs, work. The Arrow data format design improves the performance of processing tabular data on CPUs and accelerated hardware.</p>
+    <!-- Quote  -->
+    <div class="block py-5 lg:py-0">
+        <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-6">
+            <div>
+                <img class="h-8" src="/assets/images/codex/quote-mark-white.svg" alt="Quote">
+                <div class="border-l ml-[1rem] border-black h-4/5 md:h-5/6 lg:h-[86%] "></div>
+                <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+            </div>
+            <div class="col-span-5 md:col-span-4 lg:col-span-5 text-left">     
+                <p class="text-left !mb-2">
+                It's how you arrange the data in memory for processing. It's how it fits in your computer's RAM.
+                You can also put it on disk and load it into memory without having to do any conversions or deserialization, which is a very helpful feature in building systems.</p>
+                <p class="!mt-2 text-xs" style="text-align: left !important">Wes McKinney, <a href="https://roundup.getdbt.com/p/ep-37-what-does-apache-arrow-unlock" target="_blank">The Data Analytics Roundup</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Processors are most efficient when data is laid out in a columnar format in memory. Why is columnar better?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>What</th>
+      <th>How</th>
+      <th>Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Better I/O</strong></td>
+      <td>Reading and writing only the columns that are needed for a particular query</td>
+      <td>Each column can be stored separately, so the processor only needs to read and write the columns that are needed</td>
+    </tr>
+    <tr>
+      <td><strong>Lower memory usage</strong></td>
+      <td>Storing only the values for each column, rather than the entire row</td>
+      <td>Each column can be stored separately, so the processor only needs to store the columns that are needed</td>
+    </tr>
+    <tr>
+      <td><strong>Significantly faster computation</strong></td>
+      <td>Allowing processors to process data in parallel</td>
+      <td>Multiple elements in a column (vector) can be processed simultaneously through vectorized execution, taking advantage of multi-core processors</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>While performance was key to drawing Arrow’s first followers, the Arrow movement gained momentum when developers realized that sharing the same data format could rescue them from their spaghetti junction systems:</p>
+
+<ol>
+  <li>The Arrow format is the same across libraries, so you can share data without copy between processes.</li>
+  <li>It is also the same format on the wire, so you can pass data around the network without the costs of serialization and deserialization.</li>
+</ol>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[74%] lg:h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                It doesn't matter if it’s in your process or in my process, we have the exact same data representation. We can build primitives together. We can ferry the data over each other via IPC, and there is no serialization/deserialization.
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://youtu.be/tUIrR_mj9fQ?si=7QHYCjNVWzIps1Xk" target="_blank">Felipe Aramburú, speaking at the Carnegie Mellon University Database Group (2018)</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>The first wave of avid Arrow developers drove adoption of the standard to where we are today:</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-4/6 md:h-[72%] lg:h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                As the industry standardizes on Arrow for in-memory data representation, the challenge of how data is shared across these new platforms is solved.
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://www.kleinerperkins.com/perspectives/infrastructure-in-23/" target="_blank">Bucky Moore, Kleiner Perkins</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[74%] lg:h-4/6"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                Apache Arrow has recently become the de-facto standard for columnar in-memory data analytics, and is already adopted by a plethora of open-source projects.
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://www.databricks.com/blog/2021/08/11/how-we-achieved-high-bandwidth-connectivity-with-bi-tools.html" target="_blank">Databricks</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[74%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                I think the Apache Arrow umbrella of projects represents the common API around which current and future big data, OLAP, and data warehousing projects will collaborate and innovate.
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://www.influxdata.com/blog/apache-arrow-parquet-flight-and-their-ecosystem-are-a-game-changer-for-olap/" target="_blank">Paul Dix, InfluxDB</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p><a name="composable-systems-with-arrow"></a></p>
+<h3 id="122-composable-systems-with-arrow">
+<font>1.2.2</font> Composable systems with Arrow</h3>
+
+<p>Next, developers started composing data systems around Arrow. But, since Arrow-formatted data was fast for computation, the bottleneck became getting the data into system memory <em>in order to run compute</em>. The struggle was that data tended to be stored elsewhere. In modern data systems, this was increasingly likely to be cloud storage. This meant that there were two major points of friction in a typical data workflow:</p>
+
+<ul>
+  <li>
+<strong>From storage to system memory:</strong> Getting the data into the Arrow format for in-memory computation often meant that developers needed to write glue code to convert or preserve the Arrow format up and down the layers of the stack.</li>
+  <li>
+<strong>From system A memory to system B memory:</strong> Because most pipelines involved moving data through the layers of the stack via multiple processes or systems, engineers were writing glue code to de- and re-format the data so that each system could operate on it.</li>
+</ul>
+
+<p>These composability needs propelled the development of the composable Arrow ecosystem, which now provides a suite of tools to move data fast between the layers in a typical data system because the data stays in the Arrow format.</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[85%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                I'm going to continue to be the ultimate radical, however, and declare that the approach that we're taking today in terms of machine learning is still roughly the approach of the internal combustion engine in the automobile.
+                <span class="block !mt-2">
+                The approach that's happening where Arrow ties together those predictive systems with declarative databases, that's really the creation of the hybrid, or the Prius era.</span>
+            </p>
+            <p class="!text-xs !mt-2">
+                <a href="https://future.com/podcasts/great-data-debate/" target="_blank">Bob Muglia, former Snowflake CEO</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>Developers can build their Arrow hybrid cars in one of two ways:</p>
+
+<ul>
+  <li>
+<strong>Augment data systems:</strong> developers can layer Arrow into existing systems by developing with open source Arrow standards &amp; components individually.</li>
+  <li>
+<strong>Compose Arrow-native data systems:</strong> developers who are starting from scratch can build complete systems with Arrow standards &amp; components at their core.</li>
+</ul>
+
+<p>As <a href="https://news.ycombinator.com/item?id=26018375" target="_blank">George Fraser</a>, CEO of Fivetran, noted:</p>
+
+<!-- Quote -->
+<div class="block mt-10 pb-7">
+    <div class="grid grid-cols-7 md:grid-cols-10 lg:grid-cols-12">
+        <div>
+            <img class="h-8" src="/assets/images/codex/quote-mark-black.svg" alt="Quote">
+            <div class="border-l ml-[1rem] border-[#9F9F9F] h-[85%]"></div>
+            <div class="bg-black ml-[0.79rem] w-2 h-2 rounded-full block"></div>
+        </div>
+        <div class="col-span-6 md:col-span-9 lg:col-span-11">     
+            <p class="text-left !mb-2">
+                Arrow is the most important thing happening in the data ecosystem right now. It's going to allow you to run your choice of execution engine, on top of your choice of data store, as though they are designed to work together. It will mostly be invisible to users…
+                <span class="block !mt-2">
+                As Arrow spreads across the ecosystem, users are going to start discovering that they can store data in one system and query it in another, at full speed, and it's going to be amazing.</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p><a name="a-composable-ecosystem"></a></p>
+<h3 id="123-a-composable-ecosystem">
+<font>1.2.3</font> A composable ecosystem</h3>
+
+<p>As Arrow grew, so did the composable ecosystem of standards. Used together, these standards fulfill the main requirements for building composable data systems.</p>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1717521136/open-standards-interoperable-implementation.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a></p>
+<!-- Column 2 Images  -->
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-0 md:gap-0 lg:gap-10 border border-black py-6 md:py-8 lg:py-8 pr-4 lg:pr-8 pl-4 lg:pl-10">
+     <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/open-standards-interoperable-implementation--key.json" alt="Key: A diagram that explains three main layers of a data system and the standards that fall between each layer. On the left side of the diagram, there is a Key containing numbers one through three for Layers and letters A through C for Standards. Layer one defines the User Interface. Layer two defines the Execution Engine. Layer three defines Data Storage. Letter A represents Intermediate Representation and references Substrait, an open standard. The text in the A box says Substrait is a standard query plan representation. Letter B represents Connectivity and references Arrow Database Connectivity, or ADBC for short,  and defines it as a standard client database API. Letter C represents Data Memory Layout and references Arrow, defining it as a standard columnar format." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+    <lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/open-standards-interoperable-implementation--stack.json" alt="Stack: A diagram representing the layers of a data system visualized by boxes lined up vertically going. This diagram is related to the Key next to it. At the top is layer one, layer two is below it, layer three is at the bottom.  Layer One represents the user interface where users interact with this in order to initiate operations on data. This is typically exposed as a language frontend or API. Layer two is the execution engine which performs operations on the data, as specified by users. Layer three is data storage which stores data that is available to users. Between each layer are boxes that represent the standards. Between Layer One and Layer Two are two boxes: Box A represents Substrait Intermediate Representation and below it is Box B representing Arrow Database Connectivity. Between Layer Two and Layer Three are Box A representing Substrait Intermediate Representation and Box C representing Arrow Data Memory Layout." class="h-80 md:h-60 lg:h-72 w-full">
+    </lottie-player>
+</div>
+<center><figcaption class="pt-5"><span class="font-bold">Figure 01.08. 
+</span>Our three composable standards: Substrait, ADBC, and Arrow.
+</figcaption></center>
+
+<p>As we will see in the coming chapters in The Codex, these three core standards act as the backbone of a composable data system:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">↓</th>
+      <th>Types of standards</th>
+      <th>Standards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">A</td>
+      <td><mark>Intermediate representation</mark></td>
+      <td>
+<a href="https://substrait.io/" target="_blank">Substrait</a> allows any user-interface that produces Substrait to pass the compute operations to a Substrait-consuming execution engine. You could swap any Substrait compatible user interfaces or execution engine.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B</td>
+      <td><mark>Connectivity</mark></td>
+      <td>
+<a href="https://arrow.apache.org/adbc/current/index.html" target="_blank">Arrow Database Connectivity (ADBC)</a> ensures that no matter where the computation is performed the data will be returned in the Arrow format. You can swap your execution engine and know that your downstream code will still work.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">C</td>
+      <td><mark>Data memory layout</mark></td>
+      <td>The <a href="https://arrow.apache.org/docs/format/Columnar.html" target="_blank">Arrow in-memory data format</a> ensures that the data can pass from the storage to the engine (and even across the systems in a distributed environment) and back to the user without slowing down to serialize and deserialize.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="the-data-systems-hierarchy-of-needs"></a></p>
+<h2 id="13-the-data-systems-hierarchy-of-needs">
+<font>1.3</font> The data systems hierarchy of needs</h2>
+
+<p>Change is not just hard, though. Many organizations we work with have accumulated a lot of <a href="/codex/a-new-frontier#micro-trends" target="_blank">scar tissue</a> around making changes to their data infrastructure. These initiatives take time, grit, and resources, and still, even when those stars align, the actual execution can get stuck in organizational quicksand. System changes can feel risky technically and politically. Paraphrasing one engineer: “People and politics are the bottleneck. Not performance.”</p>
+
+<p>We think of shifting to a composable system as climbing the data system hierarchy of needs pyramid (inspired by the <a href="https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007" target="_blank">AI hierarchy of needs</a> by Monica Rogati). To climb the pyramid, all you need is <strong>MICE</strong>.</p>
+
+<p class="!m-0 !text-right"><a href="https://res.cloudinary.com/dm6arzeue/image/upload/v1716476146/mice-complete-implementation.png" download="" class="!font-plus text-xs !font-light !border-b-0 w-fit">Download ↓</a></p>
+<lottie-player speed="0.5" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-complete-implementation.json" alt="A diagram titled The Data Systems Hierarchy of Needs with the subhead All You Need is MICE. The main element of the image is a pyramid (or, upside down triangle) broken into four layers. The layers are in shades of gray. Starting from the bottom Layer 1 represents Modular: Standalone + swappable parts. Layer 2 represents Interoperable: Parts can connect and exchange information. Layer 3 represents Customizable: parts can be combined into a complete custom system. Layer 4 represents Extensible: Extended system parts to new hardware, engines, etc. The first letter of each of these words spells MICE, which is the acronym used. Between the Customizable and Extensible layer is an illustration of a cute mouse wearing glasses." class="w-full pb-6">
+</lottie-player>
+<figcaption class="pb-10 center">
+    <span class="font-bold">Figure 01.09. </span>The data systems hierarchy of needs: All you need is MICE
+</figcaption>
+
+<p>While these concepts might be canon for software engineers, the edges between them can get blurry when the focus turns to data systems. Organized as a hierarchy means:</p>
+
+<ol>
+  <li>Each level in the pyramid forms a strong foundation for leveling up</li>
+  <li>Each level opens up new possibilities that were not possible before</li>
+</ol>
+
+<p>What new possibilities open up at each level? From the bottom to top:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Need</th>
+      <th>Description</th>
+      <th>Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<strong>M</strong>odular</td>
+      <td>Components can be added, removed, or replaced without affecting the rest of the system.</td>
+      <td>Changing a component has no or minimal impact on other components.</td>
+    </tr>
+    <tr>
+      <td>
+<strong>I</strong>nteroperable</td>
+      <td>Components can communicate with each other to exchange and make use of information, using well-defined interfaces.</td>
+      <td>Connect components from different systems.</td>
+    </tr>
+    <tr>
+      <td>
+<strong>C</strong>ustomizable</td>
+      <td>Components can be combined in unique patterns to satisfy specific needs.</td>
+      <td>Tailor a system to specific needs.</td>
+    </tr>
+    <tr>
+      <td>
+<strong>E</strong>xtensible</td>
+      <td>Components can be easily modified to add new features or functionality.</td>
+      <td>Keep a system up-to-date with changing requirements.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="modular"></a></p>
+<h3 id="131-modular">
+<font>1.3.1</font> Modular</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-modular-open-standards.json" alt="This is one of four diagrams that starts subheads 1.2.1 - 1.2.4. This diagram demonstrates the concept of “Modular”. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says “Codex” looking up at a computer monitor. On the computer monitor is a green box with three shapes - from left to right there is a square, circle, and triangle." class="w-full md:w-[70%] lg:w-[60%] pt-10">
+</lottie-player>
+</center>
+<div class="pt-5 md:pt-10 lg:pt-10">
+    <figcaption class="!text-center">
+    <span class="font-bold">Figure 01.10. </span>Modular data systems let you bring your own modules so that components can be added, removed, or swapped seamlessly.
+    </figcaption>
+</div>
+
+<p>A module is a “chunk of reusable software” that does one thing well. The neat thing about a composable data system is you get to pick your own modules. The annoying thing about a composable data system is you get to pick your own modules.</p>
+
+<p>A perfect module is a software component that is self-contained with a well-defined interface to make it. But no module is perfect. A good first step is to take stock of the modules in your existing system: which ones you have in place and which ones you want to augment or replace. Part of this process is to do a quick “smell test” of modules you have. Here are some questions you can ask of your modules:</p>
+
+<ol>
+  <li>
+<strong>Are you focused?</strong> - Are you trying to do too many things? Are you making it difficult for other modules to do their jobs?</li>
+  <li>
+<strong>Are you independent?</strong> - A dependent module will be greedy. It will limit your choices for modules in layers above and below it, and create a silo for users. An independent module, on the other hand, usually has a documented list or matrix to demonstrate the range of choices you are allowed. For example, the documentation for the Ibis dataframe framework in Python features a <a href="https://ibis-project.org/backends/_support_matrix/" target="_blank">backend support matrix</a>.</li>
+  <li>
+<strong>Are you interchangeable?</strong> - A good rule of thumb is to aim for at least two modules for every layer - any time you have a single module for a given layer of your system, you have a single point of failure. For example, does your execution engine allow you to swap in different types of data storage, or is it married to one type of storage?</li>
+</ol>
+
+<p>Once you have a good sense of your modules, you can start thinking about how to wire them together with standards.</p>
+
+<p><a name="interoperable"></a></p>
+<h3 id="132-interoperable">
+<font>1.3.2</font> Interoperable</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-interoperable-implementation-open-standards.json" alt="This is the second of four diagrams that started at subhead 1.2.1. This diagram demonstrates the concept of “Interoperable”. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says “Codex” looking up at a computer monitor. On the computer monitor, there are two boxes vertically stacked. The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The Green Circle and the Blue Square line up and are highlighted. The rest of the shapes in both rows are transparent." class="w-full md:w-[70%] lg:w-[60%] pt-10">
+</lottie-player>
+</center>
+<div class="pt-5 md:pt-10 lg:pt-10">
+    <figcaption class="!text-center">
+    <span class="font-bold">Figure 01.11. </span>Interoperable data systems use standards as glue so that components can communicate with each other to exchange and make use of information.
+    </figcaption>
+</div>
+
+<p class="!mt-2">These are the three core standards in a healthy composable data system:</p>
+
+<ol>
+  <li>
+<strong>Intermediate representation</strong> - a standard representation for query plans</li>
+  <li>
+<strong>Connectivity</strong> - a standard for accessing databases</li>
+  <li>
+<strong>Data memory layout</strong> - a standard format for representing data in memory</li>
+</ol>
+
+<p>In practice, the data memory layout should be the first that you adopt because it is core to how your data system functions. To enhance speed and reduce bottlenecks, the other standards should preserve the data format as information gets passed up and down the layers in the stack.</p>
+
+<p>If your organization has started down a path of “Why can’t we just pick one <code class="language-plaintext highlighter-rouge">[ insert: UI, SQL dialect, engine, etc. ]</code>”, a good strategy is to move the discussion away from unification around modules, and instead steer the collective energy toward unifying around standards. Then, standards serve as guardrails for considering (or re-considering) modules with confidence. For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instead of…</th>
+      <th>Try…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Choosing a single user interface (UI) or programming language that everyone in the organization has to use</td>
+      <td>Adopting an IR standard and choosing UIs that produce it</td>
+    </tr>
+    <tr>
+      <td>Building or selecting a single engine for data processing</td>
+      <td>Choosing engines that can consume the IR standard you adopt</td>
+    </tr>
+    <tr>
+      <td>Attempting to unify data storage</td>
+      <td>Choosing a universal connectivity standard that allows users to access data wherever it is stored</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="customizable"></a></p>
+<h3 id="133-customizable">
+<font>1.3.3</font> Customizable</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-customizable-open-standards.json" alt="This is the third of four diagrams that started at subhead 1.2.1. This diagram demonstrates the concept of “Customizable”. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says “Codex” looking up at a computer monitor. On the computer monitor, there are three boxes vertically stacked The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The bottom row is a pink box with three shapes - from left to right there is a square, circle, and triangle. The Green Circle, the Blue Square, and the Pink Triangle line up and are highlighted. The rest of the shapes in all three rows are transparent." class="w-full md:w-[70%] lg:w-[60%] pt-10">
+</lottie-player>
+</center>
+<div class="pt-5 md:pt-10 lg:pt-10">
+    <figcaption class="!text-center">
+    <span class="font-bold">Figure 01.12. </span>A customizable data system lets you make it yours so that components can be combined to create a bespoke system.
+    </figcaption>
+</div>
+
+<p>A truly composable system will not look like any other organization’s data system. There are two ways that composable systems can be customized:</p>
+
+<ol>
+  <li>
+<strong>Top-down customization</strong>: With the right mix of standards in place, data system designers can create a completely bespoke system by simply reusing available modules. The components may be totally generic or 100% bespoke, but no matter what, the system you compose will operate like a custom system in the ways that matter the most for your application.</li>
+  <li>
+<strong>Bottom-up customization</strong>: If you have played your cards right and have interoperable modules in place with composable standards, then your system’s users can also customize the system as they need, on the fly. For instance, using Ibis as an example, a user can change a single line of code to switch databases:</li>
+</ol>
+
+<pre class="text-[0.6rem] bg-white mt-8">
+<button type="button" class="group !cursor-pointer absolute right-[0.1rem] top-2 font-normal hover:font-semibold w-fit text-left bg-transparent !opacity-60 hover:!opacity-100" onclick="copyToClipboard('#p5')"><img class="h-[0.9rem] w-[0.9rem] inline mr-2 !opacity-60 hover:!opacity-100" src="/assets/images/icon-copy.svg" alt="copy icon"></button>
+<code id="p6" class="PYTHON" style="background-color:white !important; font-size: 12.5px !important">import ibis
+
+# 1. Define a query
+def query(con):
+    table = con.table("table_name")
+    return (
+        table
+        .filter(...)
+        .aggregate(
+            by=[..., ...],
+            count=_.count(),
+        )
+        .order_by([..., ...])
+    )
+
+# 2. Set up your connections
+## with Postgres
+con_pg = ibis.postgres.connect(database, host, user, password)
+
+## with DuckDB
+con_duckdb = ibis.duckdb.connect()
+con_duckdb.register(file, table_name)
+
+## with Spark
+session = SparkSession.builder.getOrCreate()
+con_spark = ibis.pyspark.connect(session)
+
+query(con_pg).execute()
+query(con_duckdb).execute()
+query(con_spark).execute()
+
+<br></code></pre>
+
+<p><a name="extensible"></a></p>
+<h3 id="134-extensible">
+<font>1.3.4</font> Extensible</h3>
+
+<center>
+<lottie-player speed="1" loop="" autoplay="" src="/assets/images/codex/chapter1/mice-extensible-open-standards.json" alt="This is the fourth of four diagrams that started at subhead 1.2.1. This diagram demonstrates the concept of “Extensible”. On the left side of the diagram is an illustration of a small mouse wearing glasses and a t-shirt that says “Codex” looking up at a computer monitor. On the computer monitor, there are three boxes vertically stacked The top row is a green box with three shapes - from left to right there is a square, circle, and triangle. The bottom row is a blue box - from left to right there is a square, circle, and triangle. The bottom row is a pink box with three shapes - from left to right there is a square, circle, and triangle. The Green Circle, the Blue Square, and the Pink Triangle line up and are highlighted and each shape has white inside of it. The rest of the shapes in all three rows are transparent." class="w-full md:w-[70%] lg:w-[60%] pt-10">
+</lottie-player>
+</center>
+<div class="pt-5 md:pt-10 lg:pt-10">
+    <figcaption class="!text-center">
+    <span class="font-bold">Figure 01.13. </span>Extensible data systems help you cover your niche because components can be easily modified to fit your needs.
+    </figcaption>
+</div>
+
+<p>Many organizations have niche needs that go beyond what any commercial or open source data system components can offer. Extensibility in data systems means that one or more components are designed in a way that allows developers to <a href="/codex/a-new-frontier#macro-trends" target="_blank">add new capabilities or functionality</a> to meet their needs. At the top of the pyramid of needs, developers have a couple of options to extend components in the system:</p>
+
+<ol>
+  <li>
+<strong>Piggybacked extensions</strong> - A piggybacked extension is one that builds on top of an existing module or component that fits the mold of your standards ecosystem. The main requirements here are that the module software is open source, and has a license that allows users to reuse the code. For example, Microsoft piggybacked on the <a href="https://ibis-project.org/" target="_blank">Ibis framework</a> for Python to develop their <a href="https://www.cidrdb.org/cidr2021/papers/cidr2021_paper08.pdf" target="_blank">Magpie data science middleware</a>. Similarly, Google piggybacked on Ibis for their <a href="https://cloud.google.com/python/docs/reference/bigframes/latest" target="_blank">BigQuery DataFrames</a>.</li>
+  <li>
+<strong>Greenfield extensions</strong> -  A greenfield extension is one that is developed from scratch to meet a niche need. In a composable system, this is possible when a standard is well documented. For instance, <a href="https://github.com/pytorch/torcharrow" target="_blank">TorchArrow</a> uses the Arrow format internally to represent PyTorch data frames. <a href="https://github.com/geoarrow/geoarrow" target="_blank">GeoArrow</a> is another extension of the Arrow format to represent geospatial data.</li>
+</ol>
+
+<p><a name="composability-through-open-standards-MICE"></a></p>
+<h3 id="135-mice-composability-through-open-standards">
+<font>1.3.5</font> MICE: Composability through open standards</h3>
+
+<p>Composable data systems are MICE: modular, interoperable, customizable, and extensible. They are made up of interchangeable modules that ensure interoperability through open standards for exchanging and operating on data. Building systems on top of the Arrow data format standard means that all modules are able to exchange and operate on data with the same representation, making data exchange fast and smooth. The resulting system is flexible and can evolve, but also resilient because as the world changes, standards adapt.</p>
+
+<p><a name="build-on-open-standards"></a></p>
+<h2 id="14-build-your-stack-on-top-of-open-standards">
+<font>1.4</font> Build your stack on top of open standards</h2>
+
+<p>If you found your way to this chapter of The Composable Codex first, go back to <a href="/codex/a-new-frontier" target="_blank">Chapter 00 A New Frontier</a>, and learn about the work done by companies like Meta, Walmart, and more that have led us to this point.</p>
+
+<div class="n-box" style="border: solid 1px black; box-shadow: 5px 5px 1px black;">
+    <div class="n-text !my-auto font-medium !w-full">
+     <p><a href="/codex/language-interoperability">Read Chapter 02: Bridging Divides</a></p>
+    <p><em>Choose your battles wisely. Learn how standards bring composability and interoperability to systems.</em></p>
+     <p>Access all of <a href='/codex'>The Composable Codex chapters</a>.</p>
+	</div>
+</div>
+
+<p><a name="how-can-I-keep-up-with-voltron-data"></a></p>
+<h3 id="141-how-can-i-keep-up-with-voltron-data">
+<font>1.4.1</font> How can I keep up with Voltron Data?</h3>
+
+<p>You can keep up with all things Voltron Data by following us on <a href="https://www.linkedin.com/company/voltrondata/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/VoltronData" target="_blank">X</a>. If you want to receive alerts for future content like The Composable Codex, sign up for our email list.</p>
+
+<p><a data-modal-target="form-codex" data-modal-toggle="form-codex" class="bg-greenvoda-500 hover:bg-black shadow-sm hover:shadow-xl px-[0.75rem] py-[0.42rem] text-sm rounded-full w-[100%] cursor-pointer" style="text-decoration-line: none !important;">
+<span style="color:white;">Sign up with your email
+</span></a></p>
+
+<p><a name="who-wrote-the-composable-codex"></a></p>
+<h3 id="142-who-wrote-the-composable-codex">
+<font>1.4.2</font> Who wrote The Composable Codex?</h3>
+
+<p>The Codex is written by engineers, data scientists, and leaders at Voltron Data. You can find out more about what we do at Voltron Data here: <a href="https://voltrondata.com/product">https://voltrondata.com/product</a></p>
+
+<p><a name="how-can-I-cite-the-codex"></a></p>
+<h3 id="143-how-can-i-cite-the-codex">
+<font>1.4.3</font> How can I cite The Codex?</h3>
+
+<p>For attribution, please cite this work as:</p>
+
+<p>Voltron Data. 2023. The Composable Codex. <a href="https://voltrondata.com/codex">https://voltrondata.com/codex</a></p>
+
+<pre class="text-[0.6rem] h-auto overflow-x-hidden overflow-y-hidden bg-white">
+<button type="button" class="group !cursor-pointer absolute right-[0.1rem] top-2 font-normal hover:font-semibold w-fit text-left bg-transparent !opacity-60 hover:!opacity-100" onclick="copyToClipboard('#p5')"><img class="h-[0.9rem] w-[0.9rem] inline mr-2 !opacity-60 hover:!opacity-100" src="/assets/images/icon-copy.svg" alt="copy icon"></button>
+<code id="p5" class="BibTeX" style="background-color:white !important; font-size:12.5px !important">@ONLINE{composablecodex,
+    author = {Voltron Data},
+    title = {"The Composable Codex"},
+    year = {2023},
+    url = {https://voltrondata.com/codex},
+    langid = {en}
+} <br></code></pre>
+
+<p><br><br></p>
+
+
+            </div>
+          </div>
+        </div>
+
+    </main><footer class="items-center justify-between" aria-label="Global">
+      <div class="mx-auto max-w-7xl px-6 md:px-5 lg:px-5 mt-10 md:mt-10 lg:mt-10 mb-5 md:mb-5 lg:mb-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 border-t border-l border-black">
+
+
+          <div class="col-span-1 md:col-span-2 lg:col-span-5 order-2 md:order-1 lg:order-1">
+
+            <div class="grid grid-cols-3 lg:grid-cols-6 font-space text-black font-extralight text-[0.8rem] tracking-wide text-center">
+              <a href="/" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Home
+              </a>
+              <a href="/theseus" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Product
+              </a>
+              <a href="/about" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Company
+              </a>
+              <a href="/careers" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Careers
+              </a>
+              <a href="/blog" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Resources
+              </a>
+              <a href="/contact" class="block md:inline-block lg:inline-block hover:no-underline hover:font-semibold border-r border-b border-black py-1.5 lg:py-3">
+                Contact
+              </a>
+            </div>
+            
+            <div class="block text-[0.75rem] text-center font-extralight font-space border-r border-b border-black py-2.5">
+              
+              
+              <div class="text-black font-light tracking-wide">
+                Copyright © Voltron Data. 2024
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-span-1 md:col-span-1 lg:col-span-2 order-1 md:order-2 lg:order-2">
+            <a href="/" class="block py-[0.59rem] md:py-[1.35rem] lg:py-[0.71rem] border-r border-black">
+              <svg class="w-[10rem] items-center mx-auto" version="1.1" id="Voltron Data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 351.7 45" style="enable-background:new 0 0 351.7 45;" xml:space="preserve">
+                <style type="text/css">
+                  .st0{fill:#000000;}
+                </style>
+                <g>
+                  <g>
+                    <path class="st0" d="M75.7,14.4c-0.2-0.3-0.1-0.5,0.2-0.5h2.2c0.2,0,0.4,0,0.5,0.1c0.2,0.1,0.2,0.2,0.3,0.4l5.6,11.5h0.1l5.6-11.5
+                      c0.1-0.2,0.2-0.3,0.3-0.4c0.2-0.1,0.4-0.1,0.5-0.1h2.2c0.3,0,0.4,0.2,0.2,0.5L85,31.3c-0.1,0.2-0.2,0.3-0.4,0.3h-0.2
+                      c-0.2,0-0.3-0.1-0.4-0.3L75.7,14.4z"></path>
+                    <path class="st0" d="M111.1,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9S106.1,13.6,111.1,13.6z M111.1,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      C105.1,26.1,107.5,29,111.1,29L111.1,29z"></path>
+                    <path class="st0" d="M141.7,28.8c0.4,0,0.5,0.1,0.5,0.5v1.5c0,0.4-0.1,0.5-0.5,0.5h-10.2c-0.4,0-0.5-0.1-0.5-0.5V14.4
+                      c0-0.4,0.1-0.5,0.5-0.5h1.9c0.4,0,0.5,0.1,0.5,0.5v14.4H141.7z"></path>
+                    <path class="st0" d="M162.1,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5h-5.1c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H162.1L162.1,13.9z"></path>
+                    <path class="st0" d="M175.6,30.8c0,0.4-0.1,0.5-0.5,0.5h-1.9c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5h6.5
+                      c2.9,0,6.2,1.4,6.2,5.5c0,3.2-2,4.8-4.3,5.3l4.2,6c0.3,0.4,0.1,0.7-0.4,0.7h-2c-0.2,0-0.4-0.1-0.5-0.1c-0.2-0.1-0.3-0.2-0.4-0.4
+                      l-4.1-6h-2.8V30.8z M179.5,22.2c2.7,0,3.5-1.3,3.5-2.9s-0.8-2.9-3.5-2.9h-3.9v5.7L179.5,22.2L179.5,22.2z"></path>
+                    <path class="st0" d="M204.8,13.6c2.4,0.1,4.6,1,6.3,2.8c1.7,1.7,2.6,3.9,2.6,6.3s-0.9,4.7-2.6,6.3c-1.7,1.7-3.9,2.7-6.3,2.8
+                      c-5,0-8.9-3.9-8.9-9C195.8,17.5,199.7,13.6,204.8,13.6z M204.8,29c3.6,0,6.1-3,6.1-6.5s-2.5-6.5-6.1-6.5s-6,3-6,6.5
+                      S201.2,29,204.8,29L204.8,29z"></path>
+                    <path class="st0" d="M227.5,20L227.5,20l-0.1,10.9c0,0.4-0.1,0.5-0.5,0.5h-1.8c-0.4,0-0.5-0.1-0.5-0.5v-17c0-0.2,0.1-0.2,0.3-0.2
+                      h0.1c0.1,0,0.2,0,0.2,0.1c0.1,0.1,0.1,0.1,0.2,0.2l11.1,11.4h0.1v-11c0-0.4,0.1-0.5,0.5-0.5h1.8c0.4,0,0.5,0.1,0.5,0.5v16.9
+                      c0,0.2-0.1,0.3-0.3,0.3H239c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.1-0.1-0.2-0.2L227.5,20z"></path>
+                    <path class="st0" d="M270.6,13.9c5,0,8.8,3.6,8.8,8.7s-3.8,8.7-8.8,8.7h-6.3c-0.4,0-0.5-0.1-0.5-0.5V14.4c0-0.4,0.1-0.5,0.5-0.5
+                      H270.6L270.6,13.9z M266.7,16.5v12.3h3.9c3.6,0,5.9-2.8,5.9-6.2s-2.3-6.2-5.9-6.2L266.7,16.5z"></path>
+                    <path class="st0" d="M305.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.3-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L305.9,30.8z M297,19.1l-2.9,5.9h5.8L297,19.1L297,19.1z"></path>
+                    <path class="st0" d="M326,13.9c0.4,0,0.5,0.1,0.5,0.5V16c0,0.4-0.1,0.5-0.5,0.5h-5v14.3c0,0.4-0.1,0.5-0.5,0.5h-1.9
+                      c-0.4,0-0.5-0.1-0.5-0.5V16.5H313c-0.4,0-0.5-0.1-0.5-0.5v-1.6c0-0.4,0.1-0.5,0.5-0.5H326L326,13.9z"></path>
+                    <path class="st0" d="M350.9,30.8c0.2,0.3,0.1,0.5-0.2,0.5h-2.2c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.2-0.2-0.4-0.4l-1.6-3.3h-8
+                      l-1.6,3.3c-0.1,0.2-0.2,0.3-0.3,0.4c-0.2,0.1-0.4,0.1-0.5,0.1h-2.2c-0.3,0-0.4-0.2-0.2-0.5l8.4-16.9c0.1-0.2,0.2-0.3,0.4-0.3h0.2
+                      c0.2,0,0.3,0.1,0.4,0.3L350.9,30.8z M342,19.1l-2.9,5.9h5.8L342,19.1L342,19.1z"></path>
+                  </g>
+                  <g>
+                    <path class="st0" d="M26.1,0.6L26.1,0.6H13.5H0.8l6.3,10.9l6.3,11l6.3,10.9L26,44.3l6.3-10.9l6.3-10.9l-6.3-10.9L26.1,0.6z
+                      M30.8,32.5l-4.7,8.1l-4.7-8.1l-5.8-10l5.8-10l4.7-8.1l4.7,8.1l5.7,10L30.8,32.5z"></path>
+                    <polygon class="st0" points="37.6,0.6 38.8,2.6 48.1,2.6 43.4,10.6 44.5,12.6 51.4,0.6 		"></polygon>
+                  </g>
+                </g>
+              </svg>
+            </a>
+  
+            <div class="grid grid-cols-8 text-center border-t border-b border-r py-[0.2rem] md:py-[0.21rem] lg:py-[0.2rem] border-black">
+              <div></div>
+<div></div>
+<div></div>
+              <a href="https://twitter.com/voltrondata" target="_blank" class=" hover:no-underline pt-[0.5rem] pb-[0.45rem] rounded-full">
+                <img alt="Twitter" title="Twitter" src="/assets/images/footer/twitter.svg" class="opacity-70 hover:opacity-100" style="height: 15px">
+              </a>
+              <a href="https://www.linkedin.com/company/voltrondata" target="_blank" class="hover:no-underline pt-[0.1rem] pb-[0.45rem]">
+                <svg class="w-[0.85rem] h-[0.9rem] text-gray-800 hover:text-[#0072b1] inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 15 15">
+                  <path fill-rule="evenodd" d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"></path>
+                  <path d="M3 5.012H0V15h3V5.012Z"></path>
+                </svg>
+              </a>
+              <div></div>
+<div></div>
+<div></div>
+            </div>
+          </div>
+
+
+
+        </div>
+        
+      </div>
+
+</footer>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+  
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="50bd322f-7036-440a-87b8-6c335591e4b1" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="REDACTED" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script></body>
+</html><html>
+<style>
+  body {
+    background-color: #F5F3F5;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .active-link {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    letter-spacing: 0.35px !important;
+    border-bottom: #000000 0.03em solid !important;
+    letter-spacing: 0.25px !important;
+  }
+  nav{
+    background-color: #F5F3F5 !important;
+  }
+  #dropdownHoverButton{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton2{
+    font-size: 14px !important;
+  }
+  #dropdownHoverButton3{
+    font-size: 14px !important;
+  }
+  b{
+    font-weight: 600;
+  }
+  strong{
+    font-weight: 600;
+  }
+  .banner-quote{
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1 {
+    color: #000;
+    font-size: 46px;
+    line-height: 52px;
+    padding: 0 0 10px;
+    font-weight: 800;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h2 {
+    color: #000000;
+    font-weight: 700 !important;
+    padding: 60px 0 20px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  h3 {
+    color: #000000 !important;
+    padding: 50px 0 20px 0;
+    font-size: 21px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  h4 {
+    color: #000 !important;
+    font-weight: 600 !important;
+    padding: 40px 0 20px 0;
+    font-size: 18px;
+  }
+  h5 {
+    color: #000 !important;
+    margin: 40px 0 10px 0;
+    font-size: 18px !important;
+    line-height: 26px !important;
+  }
+  h6 { /* txt-md-light */
+    margin: 25px 0 10px 0;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.4px;
+    font-family:  'Plus Jakarta Sans', sans-serif;
+    color: rgb(17 24 39);
+    text-align: left;
+    font-weight: 400;
+  }
+  p {
+    color: rgb(17 24 39);
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    line-height: calc(1ex / 0.32);
+    margin: calc(1ex / 0.33) 0; 
+  }
+  .text-force{ /* font-size = p */
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+  }
+  mark{
+    background-color: #D2CFDF !important;
+    padding: 1px 4px;
+    font-weight: 600;
+  }
+  .center{
+    text-align: center !important;
+  }
+
+  ul{
+    list-style-type: disc;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  ol{
+    list-style-type: decimal;
+    color: rgb(17 24 39);
+    margin: 0px 0 !important;
+    font-size: 16px !important;
+    line-height: calc(1ex / 0.32);
+    letter-spacing: 0.4px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  li{
+    padding-left: 8px;
+    padding-top: 0;
+    padding-bottom: 5px;
+  }
+  li:before {
+    font-family: 'DM Mono', monospace;
+  }
+  figcaption{
+    margin-top: 0px !important;
+    padding-bottom: 20px;
+  }
+  img{
+    padding-top: 20px;
+  }
+
+
+/* CSS CODE CODEX */
+  pre{
+    font-size: 14px !important;
+  }
+  .hljs {
+    margin-top: 5px !important;
+    background-color: #F5F3F5 !important;
+  }
+  pre.badge::before {
+    background-color: #D2CFDF !important;
+    color: black;
+    font-size: 12px !important;
+    left: 0 !important;
+    width: fit-content !important;
+  }
+
+
+
+  .navegacion.fijo {
+    position: fixed;
+    top: 0px;
+    left: auto;
+    z-index: 10;
+    background-color: #F5F3F5;
+  }
+
+  .input-focus-valid {
+    border-color: black !important;
+    outline: 2px solid black !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus-invalid {
+    border-color: red !important;
+    outline: 2px solid red !important;
+    border-radius: 1px !important;
+  }
+
+  .input-focus {
+    outline: 2px solid black;
+    border-radius: 1px !important;
+  }
+  img{
+    padding: 0;
+  }
+
+
+  @media (min-width: 661px) and (max-width: 1150px) {
+    .banner-quote{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h1{
+      font-size: 35px;
+      line-height: 42px;
+    }
+    h2{
+      font-size: 28px;
+      line-height: 32px;
+    }
+    h3{
+      font-size: 20px;
+      line-height: 28px;
+    }
+    p {
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    ol{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    li{
+      font-size: 14px;
+      line-height: calc(1ex / 0.32);
+    }
+    h6{
+      font-size: 14.5px !important;
+      line-height: 25px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      position: fixed;
+    }
+    figcaption{
+      margin-top: -10px !important;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navegacion.fijo {
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+    }
+    .top-fix{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .banner-quote{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    p {
+      font-size: 13px;
+    }
+    h1{
+      font-size: 30px;
+      line-height: 37px;
+    }
+    h2{
+      font-size: 25px;
+      line-height: 30px;
+    }
+    h3{
+      font-size: 18px;
+      line-height: 23px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    h6{
+      font-size: 16px !important;
+      line-height: 28px !important;
+    }
+    .text-force{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .navegacion.fijo {
+      width: 100% !important;
+      position: relative;
+      top: 0px;
+    }
+    figcaption{
+      margin-top: 0px !important;
+      padding-bottom: 20px;
+    }
+    ul{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+    ol{
+      font-size: 13px !important;
+      line-height: 22px !important;
+    }
+  }
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script> 
+
+<script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc"></script>
+<script nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+  const cloudinary = require('cloudinary');
+
+  cloudinary.v2.config({
+    cloud_name: 'dm6arzeue',
+    api_key: 'REDACTED',
+    api_secret: 'REDACTED',
+    secure: true,
+  });
+
+  cloudinary.v2.api
+  .resource_by_asset_id('3e534ee11403fc7babf0ef02495b9bd6')
+  .then(console.log)
+  
+</script>
+
+<script nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+// Cloudinary Download
+const downloadLinks = document.querySelectorAll('a[download]');
+
+downloadLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+
+    const imageUrl = link.href;
+    const fileName = link.download || imageUrl.split('/').pop();
+
+    fetch(imageUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => console.error('Error downloading image:', error));
+  });
+});
+
+let navegacionFija = false; // Variable para controlar si la navegación está fija
+const navegacion = document.getElementById("navegacion");
+let posicionInicial = navegacion.getBoundingClientRect().top + window.scrollY;
+
+function ajustarNavegacionFija() {  
+  const scrollActual = window.scrollY;
+
+  if (scrollActual >= posicionInicial) {
+    if (!navegacionFija) {
+      navegacionFija = true;
+      navegacion.classList.add("fijo");
+    }
+  } else {
+    if (navegacionFija) {
+      navegacionFija = false;
+      navegacion.classList.remove("fijo");
+    }
+  }
+}
+
+
+const contenedor = document.getElementById("NavigationContent");
+const titulos = contenedor.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+
+function resaltarEnlaceActivo() {
+    // Recorre los títulos y verifica su posición en relación con la posición inicial
+    titulos.forEach((titulo) => {
+        let rectTitulo = titulo.getBoundingClientRect();
+        let posicionTitulo = rectTitulo.top + window.scrollY;
+        
+        const scrollActual = window.scrollY;
+        
+        if (Math.round(scrollActual)   >= (Math.round(posicionTitulo) - 1)  ) {
+          
+          const enlaces = document.querySelectorAll(".nav-id.nav-link");
+            enlaces.forEach((enlace) => {
+            let tituloTextoLimpio = titulo.outerText;
+            let enlaceTextoLimpio = enlace.outerText;            
+            if(tituloTextoLimpio.includes(enlaceTextoLimpio)){
+              enlace.classList.add("active-link");
+            }
+            else{
+              enlace.classList.remove("active-link");
+            }
+                
+            });
+        } else {
+
+         
+      
+        }      
+    });
+}
+
+window.addEventListener("scroll", ajustarNavegacionFija);
+window.addEventListener("scroll", resaltarEnlaceActivo);
+
+window.addEventListener('DOMContentLoaded', () => {
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    if (entry.intersectionRatio > 0) {      
+      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+    } else {
+      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+    }
+  });
+});
+
+// Track all sections that have an `id` applied
+document.querySelectorAll('section[id]').forEach((section) => {
+  observer.observe(section);
+});
+
+});
+
+
+</script>
+
+<script type="text/javascript" nonce="dDiH6oKKLRxbQ5bAScMZFCbG69+gsXDc">
+  function copyToClipboard(p5) {  
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  var codeContent = $(p5).text().trim();
+  
+  var indentedCode = codeContent.replace(/^/gm, '   '); // Add three indentation spaces to the left of each line
+  var indentedCodeWithRightMargin = indentedCode.replace(/$/gm, '   '); // Add three spaces indent to the right of each line
+  $temp.val(indentedCodeWithRightMargin);
+  $temp.select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+function copyToClipboard(p6) {  
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  var codeContent = $(p6).text().trim();
+  
+  var indentedCode = codeContent.replace(/^/gm, '   '); // Add three indentation spaces to the left of each line
+  var indentedCodeWithRightMargin = indentedCode.replace(/$/gm, '   '); // Add three spaces indent to the right of each line
+  $temp.val(indentedCodeWithRightMargin);
+  $temp.select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+</html>
